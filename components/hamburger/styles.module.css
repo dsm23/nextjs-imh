@@ -1,0 +1,28 @@
+.hamburger {
+  @apply text-white;
+}
+
+.hamburger .line {
+  transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+  transform-origin: center;
+}
+
+.hamburger.open .line {
+  transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+}
+
+.hamburger.open :is(.top, .bottom) {
+  y: 45;
+}
+
+.hamburger.open .top {
+  rotate: 45deg;
+}
+
+.hamburger.open .middle {
+  opacity: 0;
+}
+
+.hamburger.open .bottom {
+  rotate: -45deg;
+}

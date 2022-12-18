@@ -1,0 +1,14 @@
+schema:
+  - https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}:
+      headers:
+        Content-Type: application/json
+        Authorization: Bearer ${CONTENTFUL_ACCESS_TOKEN}
+# documents:
+#   - ./src/**/*.graphql
+require:
+  - ts-node/register
+generates:
+  ./graphql-types/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
