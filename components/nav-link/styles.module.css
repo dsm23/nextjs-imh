@@ -64,8 +64,8 @@
 
 .dropdown {
   @apply absolute
-      top-full
       right-0
+      top-full
       mt-2
       contents
       w-56

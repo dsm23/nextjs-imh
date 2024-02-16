@@ -64,7 +64,7 @@ const Navbar = () => {
     <>
       <a
         href="#main-content"
-        className="sr-only top-28 left-10 bg-indigo-700 text-white focus:not-sr-only focus:absolute focus:px-6 focus:py-4"
+        className="sr-only left-10 top-28 bg-indigo-700 text-white focus:not-sr-only focus:absolute focus:px-6 focus:py-4"
       >
         Skip to Content
       </a>

@@ -29,6 +29,8 @@ const NavLink: <E extends ElementType = typeof defaultElement>(
   ) => (
     <Component className={cx(styles.navLink, className)} ref={ref} {...props} />
   ),
-);
+) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
+  props: Props<E>,
+) => ReactElement);
 
 export default NavLink;
