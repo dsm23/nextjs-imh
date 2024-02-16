@@ -29,7 +29,7 @@ const Navbar = () => {
   const isMobile = useMedia(
     `(max-width: ${
       (fullConfig.theme?.screens as KeyValuePair<string, string>)?.md as string
-    })`
+    })`,
   );
 
   const toggle = () => setMobileOpen((isMobileOpen) => !isMobileOpen);
@@ -64,7 +64,7 @@ const Navbar = () => {
     <>
       <a
         href="#main-content"
-        className="sr-only top-28 left-10 text-white bg-indigo-700 focus:not-sr-only focus:absolute focus:px-6 focus:py-4"
+        className="sr-only top-28 left-10 bg-indigo-700 text-white focus:not-sr-only focus:absolute focus:px-6 focus:py-4"
       >
         Skip to Content
       </a>
@@ -83,7 +83,7 @@ const Navbar = () => {
           <Hamburger className="h-6 w-6" open={mobileOpen} />
         </button>
         <div
-          className="relative overflow-hidden w-full md:contents"
+          className="relative w-full overflow-hidden md:contents"
           style={{ height: transitionHeight }}
           ref={transitionContainer}
         >
@@ -91,9 +91,9 @@ const Navbar = () => {
             show={!isMobile || active === "default"}
             ref={defaultTransition}
             className={cx(
-              "md:flex ml-auto",
-              { "block absolute w-full": mobileOpen },
-              { hidden: !mobileOpen }
+              "ml-auto md:flex",
+              { "absolute block w-full": mobileOpen },
+              { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
               setTransitionHeight(defaultTransition.current.offsetHeight);
@@ -203,7 +203,7 @@ const Navbar = () => {
               <button
                 className={cx(
                   "flex items-center gap-x-2 text-left",
-                  styles.navLink
+                  styles.navLink,
                 )}
                 onClick={() => {
                   setActive("policies");
@@ -215,7 +215,7 @@ const Navbar = () => {
               <button
                 className={cx(
                   "flex items-center gap-x-2 text-left",
-                  styles.navLink
+                  styles.navLink,
                 )}
                 onClick={() => {
                   setActive("products");
@@ -227,7 +227,7 @@ const Navbar = () => {
               <button
                 className={cx(
                   "flex items-center gap-x-2 text-left",
-                  styles.navLink
+                  styles.navLink,
                 )}
                 onClick={() => {
                   setActive("services");
@@ -243,9 +243,9 @@ const Navbar = () => {
             appear
             ref={policiesTransition}
             className={cx(
-              "md:flex ml-auto",
-              { "block absolute w-full": mobileOpen },
-              { hidden: !mobileOpen }
+              "ml-auto md:flex",
+              { "absolute block w-full": mobileOpen },
+              { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
               setTransitionHeight(policiesTransition.current.offsetHeight);
@@ -279,9 +279,9 @@ const Navbar = () => {
             appear
             ref={productsTransition}
             className={cx(
-              "md:flex ml-auto",
-              { "block absolute w-full": mobileOpen },
-              { hidden: !mobileOpen }
+              "ml-auto md:flex",
+              { "absolute block w-full": mobileOpen },
+              { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
               setTransitionHeight(productsTransition.current.offsetHeight);
@@ -336,9 +336,9 @@ const Navbar = () => {
             appear
             ref={servicesTransition}
             className={cx(
-              "md:flex ml-auto",
-              { "block absolute w-full": mobileOpen },
-              { hidden: !mobileOpen }
+              "ml-auto md:flex",
+              { "absolute block w-full": mobileOpen },
+              { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
               setTransitionHeight(servicesTransition.current.offsetHeight);

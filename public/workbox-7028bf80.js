@@ -33,7 +33,7 @@ define(["exports"], function (t) {
             return s.slice(1);
         },
         e,
-        s
+        s,
       );
     }
   }
@@ -60,7 +60,7 @@ define(["exports"], function (t) {
                 "string" == typeof e && (e = [e]);
                 const s = new Request(...e);
                 return this.handleRequest({ request: s, event: t });
-              })
+              }),
             );
           t.waitUntil(s),
             t.ports && t.ports[0] && s.then(() => t.ports[0].postMessage(!0));
@@ -240,7 +240,7 @@ define(["exports"], function (t) {
         let t;
         t = await fetch(
           n,
-          "navigate" === n.mode ? void 0 : this.u.fetchOptions
+          "navigate" === n.mode ? void 0 : this.u.fetchOptions,
         );
         for (const s of this.iterateCallbacks("fetchDidSucceed"))
           t = await s({ event: e, request: i, response: t });
@@ -292,7 +292,7 @@ define(["exports"], function (t) {
             ((a = i.url),
             new URL(String(a), location.href).href.replace(
               new RegExp(`^${location.origin}`),
-              ""
+              "",
             )),
         });
       var a;
@@ -345,7 +345,7 @@ define(["exports"], function (t) {
               request: n,
               event: this.event,
               params: this.params,
-            })
+            }),
           );
         this.h[s] = n;
       }
@@ -694,7 +694,7 @@ define(["exports"], function (t) {
           (this.U = await (function (
             t,
             e,
-            { blocked: s, upgrade: n, blocking: r, terminated: i } = {}
+            { blocked: s, upgrade: n, blocking: r, terminated: i } = {},
           ) {
             const a = indexedDB.open(t, e),
               o = k(a);
@@ -706,19 +706,19 @@ define(["exports"], function (t) {
                     t.oldVersion,
                     t.newVersion,
                     k(a.transaction),
-                    t
+                    t,
                   );
                 }),
               s &&
                 a.addEventListener("blocked", (t) =>
-                  s(t.oldVersion, t.newVersion, t)
+                  s(t.oldVersion, t.newVersion, t),
                 ),
               o
                 .then((t) => {
                   i && t.addEventListener("close", () => i()),
                     r &&
                       t.addEventListener("versionchange", (t) =>
-                        r(t.oldVersion, t.newVersion, t)
+                        r(t.oldVersion, t.newVersion, t),
                       );
                 })
                 .catch(() => {}),
@@ -795,8 +795,8 @@ define(["exports"], function (t) {
             void 0 !== e && void 0 !== n
               ? ((i = e), (a = n + 1))
               : void 0 !== e && void 0 === n
-              ? ((i = e), (a = r))
-              : void 0 !== n && void 0 === e && ((i = r - n), (a = r)),
+                ? ((i = e), (a = r))
+                : void 0 !== n && void 0 === e && ((i = r - n), (a = r)),
             { start: i, end: a }
           );
         })(i, r.start, r.end),
@@ -811,7 +811,7 @@ define(["exports"], function (t) {
         h.headers.set("Content-Length", String(c)),
         h.headers.set(
           "Content-Range",
-          `bytes ${a.start}-${a.end - 1}/${i.size}`
+          `bytes ${a.start}-${a.end - 1}/${i.size}`,
         ),
         h
       );
@@ -944,7 +944,7 @@ define(["exports"], function (t) {
           i = t.integrity,
           a = !i || i === s;
         (n = await e.fetch(
-          new Request(t, { integrity: "no-cors" !== t.mode ? i || s : void 0 })
+          new Request(t, { integrity: "no-cors" !== t.mode ? i || s : void 0 }),
         )),
           s &&
             a &&
@@ -1032,7 +1032,7 @@ define(["exports"], function (t) {
         }
         if ((this.A.set(r, t), this.F.set(r, i), e.length > 0)) {
           const t = `Workbox is precaching URLs without revision info: ${e.join(
-            ", "
+            ", ",
           )}\nThis is generally NOT safe. Learn more at https://bit.ly/wb-precache`;
           console.warn(t);
         }
@@ -1055,7 +1055,7 @@ define(["exports"], function (t) {
               params: { cacheKey: s },
               request: i,
               event: t,
-            })
+            }),
           );
         }
         const { updatedURLs: s, notUpdatedURLs: n } = e;
@@ -1114,7 +1114,7 @@ define(["exports"], function (t) {
             directoryIndex: s = "index.html",
             cleanURLs: n = !0,
             urlManipulation: r,
-          } = {}
+          } = {},
         ) {
           const i = new URL(t, location.href);
           (i.hash = ""), yield i.href;
@@ -1234,7 +1234,7 @@ define(["exports"], function (t) {
         const a = this.et({ timeoutId: i, request: t, logs: n, handler: e });
         r.push(a);
         const o = await e.waitUntil(
-          (async () => (await e.waitUntil(Promise.race(r))) || (await a))()
+          (async () => (await e.waitUntil(Promise.race(r))) || (await a))(),
         );
         if (!o) throw new s("no-response", { url: t.url });
         return o;
@@ -1299,10 +1299,10 @@ define(["exports"], function (t) {
           (async (t, e = "-precache-") => {
             const s = (await self.caches.keys()).filter(
               (s) =>
-                s.includes(e) && s.includes(self.registration.scope) && s !== t
+                s.includes(e) && s.includes(self.registration.scope) && s !== t,
             );
             return await Promise.all(s.map((t) => self.caches.delete(t))), s;
-          })(e).then((t) => {})
+          })(e).then((t) => {}),
         );
       });
     }),

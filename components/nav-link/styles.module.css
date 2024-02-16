@@ -1,8 +1,8 @@
 .nav {
   @apply flex 
+    w-full
     flex-wrap
     justify-between
-    w-full
     p-4;
   background-image: linear-gradient(
     45deg,
@@ -12,38 +12,38 @@
 }
 
 .hamburger {
-  @apply inline-flex
-      sm:hidden
-      ml-auto
+  @apply ml-auto
+      inline-flex
       items-center
-      px-4
-      py-2
+      rounded-md
       border
       border-transparent
+      bg-indigo-600
+      px-4
+      py-2
       text-sm
       font-medium
-      rounded-md
-      shadow-sm
       text-white
-      bg-indigo-600
+      shadow-sm
       hover:bg-indigo-800
       focus:outline
       focus:outline-offset-2
-      focus:outline-amber-500;
+      focus:outline-amber-500
+      sm:hidden;
 }
 
 .navLink {
   @apply block
+      whitespace-nowrap
+      rounded-lg
       px-4
       py-2
-      rounded-lg
-      whitespace-nowrap
       text-slate-300
       transition-colors
       duration-100
       ease-in-out
-      hover:text-white
       hover:bg-violet-800
+      hover:text-white
       focus:bg-violet-800
       focus:outline-2
       focus:outline-offset-2
@@ -64,15 +64,15 @@
 
 .dropdown {
   @apply absolute
-      contents
-      origin-top-right
       top-full
       right-0
       mt-2
+      contents
       w-56
+      origin-top-right
       rounded-md
-      shadow-lg
       bg-white
+      shadow-lg
       ring-1
       ring-black
       ring-opacity-5
@@ -80,16 +80,16 @@
 }
 
 .hyperlink {
-  @apply text-violet-700
+  @apply rounded
       font-semibold
-      rounded;
+      text-violet-700;
 }
 
 .hyperlink:focus,
 .hyperlink:hover {
-  @apply bg-amber-400
-      p-1
-      -m-1;
+  @apply -m-1
+      bg-amber-400
+      p-1;
 }
 
 @media screen(sm) {

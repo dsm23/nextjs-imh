@@ -21,14 +21,14 @@ export type Props<E extends ElementType> = PlymorphicProps<E> &
 const defaultElement = Link;
 
 const NavLink: <E extends ElementType = typeof defaultElement>(
-  props: Props<E>
+  props: Props<E>,
 ) => ReactElement | null = forwardRef(
   (
     { as: Component = defaultElement, className, ...props }: PlymorphicProps,
-    ref: Ref<Element>
+    ref: Ref<Element>,
   ) => (
     <Component className={cx(styles.navLink, className)} ref={ref} {...props} />
-  )
+  ),
 );
 
 export default NavLink;

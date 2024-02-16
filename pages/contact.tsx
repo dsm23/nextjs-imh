@@ -25,10 +25,10 @@ export default function Page({ mapboxToken, preview }) {
               <title>IMH | Contact</title>
               <meta property="og:title" content="IMH | Contact" key="title" />
             </Head>
-            <h1 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight my-8">
+            <h1 className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
               Contact Us
             </h1>
-            <div className="lg:flex gap-x-2">
+            <div className="gap-x-2 lg:flex">
               <address className="whitespace-nowrap">
                 IMH Technologies Ltd
                 <br />

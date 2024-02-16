@@ -16,12 +16,12 @@ interface Props extends Pick<Page, "content"> {
 const defaultOptions: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => (
-      <span className="text-gray-900 font-bold">{text}</span>
+      <span className="font-bold text-gray-900">{text}</span>
     ),
   },
   renderNode: {
     [BLOCKS.HEADING_2]: (_, children) => (
-      <h2 className="mt-4 font-medium text-2xl text-gray-900">{children}</h2>
+      <h2 className="mt-4 text-2xl font-medium text-gray-900">{children}</h2>
     ),
     [BLOCKS.HEADING_4]: (_, children) => (
       <h4 className="mt-2 text-gray-900">{children}</h4>
@@ -31,12 +31,12 @@ const defaultOptions: Options = {
       <p className="mt-2 text-gray-900">{children}</p>
     ),
     [BLOCKS.UL_LIST]: (_, children) => (
-      <ul className="my-2 list-disc list-outside">{children}</ul>
+      <ul className="my-2 list-outside list-disc">{children}</ul>
     ),
     [BLOCKS.LIST_ITEM]: (_, children) => <li className="ml-8">{children}</li>,
     [BLOCKS.EMBEDDED_ASSET]: (node: Block) => (
       <ContentfulImage
-        className="text-center shadow-lg mx-auto max-w-full lg:max-w-screen-md"
+        className="mx-auto max-w-full text-center shadow-lg lg:max-w-screen-md"
         src={node?.data?.url}
         height={node?.data?.height}
         width={node?.data?.width}
@@ -84,7 +84,7 @@ const PostBody: FunctionComponent<Props> = ({
       data: {
         ...data,
         ...links?.assets?.block?.find(
-          ({ sys }) => sys.id === data?.target?.sys?.id
+          ({ sys }) => sys.id === data?.target?.sys?.id,
         ),
       },
     };

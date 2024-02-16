@@ -67,14 +67,14 @@ const Home = ({ preview, welcome, cards, img }) => {
           )} */}
           <article id="main-content" className="mb-16">
             <h1 className="sr-only">IMH technologies</h1>
-            <div className="grid grid-cols-2 items-center gap-x-5 mt-6">
+            <div className="mt-6 grid grid-cols-2 items-center gap-x-5">
               <div>
                 <PostBody content={welcome.body} />
               </div>
 
               <ContentfulImage
                 src={welcome.welcomePic.url}
-                className="rounded elevation"
+                className="elevation rounded"
                 height={welcome.welcomePic.height}
                 width={welcome.welcomePic.width}
                 alt={welcome.welcomePic.description}
@@ -123,7 +123,7 @@ const Home = ({ preview, welcome, cards, img }) => {
             <section id="cards">
               <h2 className="sr-only">Cards</h2>
               <h3 className="sr-only">Cards group</h3>
-              <div className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
                 {cards.map((card) => (
                   <div className="elevation rounded p-3" key={card.entryUnused}>
                     <PostBody content={card.body} options={options} />

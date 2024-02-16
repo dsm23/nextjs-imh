@@ -30,7 +30,7 @@ export default function Page({ page, morePages, preview }) {
                 key="title"
               />
             </Head>
-            <h1 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight my-8">
+            <h1 className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
               {page.header}
             </h1>
             <PostBody content={page.content} />

@@ -34,11 +34,11 @@ const Map = ({ token }) => {
         trackUserLocation: true,
         // Draw an arrow next to the location dot to indicate which direction the device is heading.
         showUserHeading: true,
-      })
+      }),
     );
   }, []);
 
-  return <div ref={ref} className="w-full h-96 rounded-lg elevation" />;
+  return <div ref={ref} className="elevation h-96 w-full rounded-lg" />;
 };
 
 export default Map;

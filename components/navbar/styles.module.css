@@ -1,10 +1,10 @@
 .nav {
-  @apply flex 
+  @apply sticky 
+    top-0
+    flex
+    w-full
     flex-wrap
     justify-between
-    sticky
-    top-0
-    w-full
     lg:px-4;
   background-image: linear-gradient(
     45deg,
@@ -14,53 +14,53 @@
 }
 
 .hamburger {
-  @apply inline-flex
-      md:hidden
+  @apply m-4
       ml-auto
+      inline-flex
       items-center
-      m-4
-      px-4
-      py-2
+      rounded-md
       border
       border-transparent
+      bg-transparent
+      px-4
+      py-2
       text-sm
       font-medium
-      rounded-md
-      shadow-sm
       text-white
-      bg-transparent
+      shadow-sm
       hover:bg-violet-900
       focus:outline
       focus:outline-offset-2
-      focus:outline-amber-500;
+      focus:outline-amber-500
+      md:hidden;
 }
 
 *:not(.dropdown) .navLink {
-  @apply px-4
-      py-2
-      mx-1
+  @apply mx-1
       my-4
-      lg:px-4
-      rounded-lg
       whitespace-nowrap
+      rounded-lg
+      px-4
+      py-2
       text-slate-300
       transition-colors
       duration-100
       ease-in-out
-      focus:text-white
       focus:bg-violet-800
+      focus:text-white
       focus:outline-2
       focus:outline-offset-2
-      focus:outline-amber-500;
+      focus:outline-amber-500
+      lg:px-4;
 }
 
 *:not(.dropdown) :not(span).navLink {
-  @apply hover:text-white
-    hover:bg-violet-800;
+  @apply hover:bg-violet-800
+    hover:text-white;
 }
 
 .navLink:not(.navHome) {
-  @apply px-2 lg:px-4 w-full sm:w-auto;
+  @apply w-full px-2 sm:w-auto lg:px-4;
 }
 
 /* .nav-home {
@@ -73,15 +73,15 @@
 
 .dropdown {
   @apply absolute
-      contents
-      origin-top-right
       top-full
       right-0
       -mt-0.5
+      contents
       w-56
+      origin-top-right
       rounded-md
-      shadow-lg
       bg-white
+      shadow-lg
       ring-1
       ring-black
       ring-opacity-5
@@ -100,16 +100,16 @@
 }
 
 .hyperlink {
-  @apply text-violet-700
+  @apply rounded
       font-semibold
-      rounded;
+      text-violet-700;
 }
 
 .hyperlink:focus,
 .hyperlink:hover {
-  @apply bg-amber-400
-      p-1
-      -m-1;
+  @apply -m-1
+      bg-amber-400
+      p-1;
 }
 
 @media screen(sm) {
