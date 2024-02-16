@@ -4,6 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
     "setup": "node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN",
     "lint": "next lint",
     "codegen": "gql-gen -r dotenv/config",

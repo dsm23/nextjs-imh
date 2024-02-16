@@ -1,8 +1,8 @@
 import { Inter } from "@next/font/google";
-import Alert from '../components/alert'
+import Alert from "../components/alert";
 // import Footer from '../components/footer'
-import Meta from '../components/meta'
-import Navbar from '../components/navbar'
+import Meta from "../components/meta";
+import Navbar from "../components/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,5 +22,5 @@ export default function Layout({ preview, children }) {
       </div>
       {/* <Footer /> */}
     </>
-  )
+  );
 }
