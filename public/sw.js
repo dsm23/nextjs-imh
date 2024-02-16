@@ -185,7 +185,7 @@ define(["./workbox-7028bf80"], function (e) {
         },
         { url: "/manifest.json", revision: "cb5d82113725c6b6ec44b350804c4717" },
       ],
-      { ignoreURLParametersMatching: [] }
+      { ignoreURLParametersMatching: [] },
     ),
     e.cleanupOutdatedCaches(),
     e.registerRoute(
@@ -211,7 +211,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
@@ -222,7 +222,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,
@@ -233,7 +233,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
@@ -244,7 +244,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
@@ -255,7 +255,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\/_next\/image\?url=.+$/i,
@@ -266,7 +266,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:mp3|wav|ogg)$/i,
@@ -278,7 +278,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:mp4)$/i,
@@ -290,7 +290,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:js)$/i,
@@ -301,7 +301,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:css|less)$/i,
@@ -312,7 +312,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\/_next\/data\/.+\/.+\.json$/i,
@@ -323,7 +323,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       /\.(?:json|xml|csv)$/i,
@@ -334,7 +334,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       ({ url: e }) => {
@@ -350,7 +350,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       ({ url: e }) => {
@@ -365,7 +365,7 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     ),
     e.registerRoute(
       ({ url: e }) => !(self.origin === e.origin),
@@ -377,6 +377,6 @@ define(["./workbox-7028bf80"], function (e) {
           { handlerDidError: async ({ request: e }) => self.fallback(e) },
         ],
       }),
-      "GET"
+      "GET",
     );
 });

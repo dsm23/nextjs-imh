@@ -12,7 +12,7 @@ const Alert: FunctionComponent<Props> = ({ preview }) => (
         This is page is a preview.{" "}
         <a
           href="/api/exit-preview"
-          className="underline hover:text-cyan duration-200 transition-colors"
+          className="underline transition-colors duration-200 hover:text-cyan"
         >
           Click here
         </a>{" "}

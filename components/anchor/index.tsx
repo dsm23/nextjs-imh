@@ -18,21 +18,21 @@ export type Props<E extends ElementType> = PlymorphicProps<E> &
 const defaultElement = "a";
 
 const Anchor: <E extends ElementType = typeof defaultElement>(
-  props: Props<E>
+  props: Props<E>,
 ) => ReactElement | null = forwardRef(
   (
     { as: Component = defaultElement, className, ...props }: PlymorphicProps,
-    ref: Ref<Element>
+    ref: Ref<Element>,
   ) => (
     <Component
       className={clsx(
-        "text-purple-800 font-semibold rounded px-1 -mx-1 hover:bg-yellow-300",
-        className
+        "-mx-1 rounded px-1 font-semibold text-purple-800 hover:bg-yellow-300",
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 
 export default Anchor;

@@ -29,7 +29,7 @@ const NavDropdown = ({ children, label }) => {
       <button
         className={cx(
           "hidden sm:inline-flex sm:justify-between sm:gap-x-2",
-          styles.navLink
+          styles.navLink,
         )}
         onClick={toggle}
       >

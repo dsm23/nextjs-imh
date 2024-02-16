@@ -25,7 +25,7 @@ const Divisor: FunctionComponent<Props> = (props) => {
 
   const callback = (
     entries: IntersectionObserverEntry[],
-    observer: IntersectionObserver
+    observer: IntersectionObserver,
   ) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {

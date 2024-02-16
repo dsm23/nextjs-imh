@@ -4,7 +4,7 @@ import { easing as timing } from "ts-easing";
 
 const useTween = (
   initial: number,
-  { easing = timing.inOutQuad, duration = 250 } = {}
+  { easing = timing.inOutQuad, duration = 250 } = {},
 ): [number, (to: number) => void] => {
   const raf = useRef<number | null>(null);
   const [state, setState] = useState(initial);
@@ -27,7 +27,7 @@ const useTween = (
 
       raf.current = requestAnimationFrame(animate);
     },
-    [duration, easing]
+    [duration, easing],
   );
 
   return [state, setTween];

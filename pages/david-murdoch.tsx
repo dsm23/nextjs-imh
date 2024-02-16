@@ -28,7 +28,7 @@ export default function Page() {
               <h1
                 itemProp="name"
                 id="David Murdoch"
-                className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight my-8"
+                className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter"
               >
                 David Murdoch
               </h1>

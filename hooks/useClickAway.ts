@@ -6,7 +6,7 @@ const on = <T extends Window | Document | HTMLElement | EventTarget>(
 ): void => {
   if (obj && obj.addEventListener) {
     obj.addEventListener(
-      ...(args as Parameters<HTMLElement["addEventListener"]>)
+      ...(args as Parameters<HTMLElement["addEventListener"]>),
     );
   }
 };
@@ -19,7 +19,7 @@ const off = <T extends Window | Document | HTMLElement | EventTarget>(
 ): void => {
   if (obj && obj.removeEventListener) {
     obj.removeEventListener(
-      ...(args as Parameters<HTMLElement["removeEventListener"]>)
+      ...(args as Parameters<HTMLElement["removeEventListener"]>),
     );
   }
 };
@@ -29,7 +29,7 @@ const defaultEvents = ["mousedown", "touchstart"];
 const useClickAway = <E extends Event = Event>(
   ref: RefObject<HTMLElement | null>,
   onClickAway: (event: E) => void,
-  events: string[] = defaultEvents
+  events: string[] = defaultEvents,
 ) => {
   const savedCallback = useRef(onClickAway);
   useEffect(() => {
