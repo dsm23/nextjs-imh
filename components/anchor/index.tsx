@@ -33,6 +33,8 @@ const Anchor: <E extends ElementType = typeof defaultElement>(
       {...props}
     />
   ),
-);
+) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
+  props: Props<E>,
+) => ReactElement);
 
 export default Anchor;
