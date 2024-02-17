@@ -85,6 +85,9 @@ devDependencies:
   cz-conventional-changelog:
     specifier: ^3.3.0
     version: 3.3.0(@types/node@20.11.19)(typescript@5.3.3)
+  dotenv:
+    specifier: ^16.4.4
+    version: 16.4.4
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -6225,7 +6228,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
 
   /jsonify@0.0.1:
     resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}

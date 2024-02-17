@@ -8,7 +8,7 @@
     "fmt.check": "prettier --check .",
     "setup": "node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN",
     "lint": "next lint",
-    "codegen": "gql-gen -r dotenv/config",
+    "codegen": "gql-gen",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -40,6 +40,7 @@
     "commitizen": "^4.3.0",
     "contentful-import": "^9.4.39",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.4.4",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.1.0",
     "graphql": "^16.8.1",
