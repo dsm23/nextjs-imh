@@ -1,10 +1,12 @@
+// TODO: move to app router
+// @ts-nocheck
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
 import Container from "../components/container";
 import PostBody from "../components/post-body";
 import Layout from "../components/layout";
-import { getAllPagesWithSlug, getPageAndMorePages } from "../lib/api";
+import { getAllPagesWithSlug, getPageAndMorePages } from "@/lib/api";
 import PostTitle from "../components/post-title";
 
 export default function Page({ page, morePages, preview }) {

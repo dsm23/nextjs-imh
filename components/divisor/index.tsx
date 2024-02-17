@@ -45,10 +45,10 @@ const Divisor: FunctionComponent<Props> = (props) => {
 
   useEffect(() => {
     if (autoplay) {
-      leftCurve.current.beginElement();
-      rightCurve.current.beginElement();
-      leftBall.current.beginElement();
-      rightBall.current.beginElement();
+      leftCurve.current?.beginElement();
+      rightCurve.current?.beginElement();
+      leftBall.current?.beginElement();
+      rightBall.current?.beginElement();
     }
   }, [autoplay]);
 

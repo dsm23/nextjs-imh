@@ -1,11 +1,17 @@
 import { Fragment, useState } from "react";
+import type { FunctionComponent, ReactNode } from "react";
 import cx from "clsx";
 import { Transition } from "@headlessui/react";
 import { ChevronDown } from "../svgs";
 
 import styles from "../navbar/styles.module.css";
 
-const NavDropdown = ({ children, label }) => {
+type Props = {
+  children: ReactNode;
+  label: string;
+};
+
+const NavDropdown: FunctionComponent<Props> = ({ children, label }) => {
   const [open, setOpen] = useState(false);
 
   const toggle = () => {
