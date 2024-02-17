@@ -1,3 +1,5 @@
+// TODO: move to app router
+// @ts-nocheck
 import Head from "next/head";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
@@ -6,7 +8,7 @@ import PostBody from "../components/post-body";
 import Divisor from "../components/divisor";
 
 import Layout from "../components/layout";
-import { getAsset, getWelcomeForHome } from "../lib/api";
+import { getAsset, getWelcomeForHome } from "@/lib/api";
 import ContentfulImage from "../components/contentful-image";
 
 const Home = ({ preview, welcome, cards, img }) => {

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import cx from "clsx";
+// TODO: extract ripple from package
+// @ts-ignore
 import Ripple from "material-ripple-effects";
 import { Transition } from "@headlessui/react";
 import { easing } from "ts-easing";
@@ -10,8 +12,8 @@ import tailwindConfig from "../../tailwind.config.js";
 import Hamburger from "../hamburger";
 import NavDropdown from "../nav-dropdown";
 import { ArrowLeft, ChevronRight } from "../svgs";
-import { Router } from "../../constants";
-import { useClickAway, useMedia, useTween } from "../../hooks";
+import { Router } from "@/constants";
+import { useClickAway, useMedia, useTween } from "@/hooks";
 
 import styles from "./styles.module.css";
 
@@ -53,7 +55,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (mobileOpen) {
-      setTransitionHeight(defaultTransition.current.offsetHeight);
+      setTransitionHeight(defaultTransition.current?.offsetHeight as number);
     } else {
       setTransitionHeight(0);
       setActive("default");
@@ -96,7 +98,9 @@ const Navbar = () => {
               { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
-              setTransitionHeight(defaultTransition.current.offsetHeight);
+              setTransitionHeight(
+                defaultTransition.current?.offsetHeight as number,
+              );
             }}
             enter="transition-transform ease-in-out duration-500"
             enterFrom="transform -translate-x-full"
@@ -248,7 +252,9 @@ const Navbar = () => {
               { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
-              setTransitionHeight(policiesTransition.current.offsetHeight);
+              setTransitionHeight(
+                policiesTransition.current?.offsetHeight as number,
+              );
             }}
             enter="transition-transform ease-in-out duration-500"
             enterFrom="transform translate-x-full"
@@ -284,7 +290,9 @@ const Navbar = () => {
               { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
-              setTransitionHeight(productsTransition.current.offsetHeight);
+              setTransitionHeight(
+                productsTransition.current?.offsetHeight as number,
+              );
             }}
             enter="transition-transform ease-in-out duration-500"
             enterFrom="transform translate-x-full"
@@ -341,7 +349,9 @@ const Navbar = () => {
               { hidden: !mobileOpen },
             )}
             beforeEnter={() => {
-              setTransitionHeight(servicesTransition.current.offsetHeight);
+              setTransitionHeight(
+                servicesTransition.current?.offsetHeight as number,
+              );
             }}
             enter="transition-transform ease-in-out duration-500"
             enterFrom="transform translate-x-full"

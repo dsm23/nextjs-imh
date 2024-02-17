@@ -1,11 +1,19 @@
+// TODO: sort out embedded asset
+// @ts-nocheck
 import { FunctionComponent } from "react";
 import Link from "next/link";
 import {
   documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
-import { Block, BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import { Page } from "../graphql-types";
+import {
+  Block,
+  BLOCKS,
+  Inline,
+  INLINES,
+  MARKS,
+} from "@contentful/rich-text-types";
+import { Page } from "@/graphql-types";
 import Anchor from "./anchor";
 import ContentfulImage from "./contentful-image";
 
@@ -34,7 +42,7 @@ const defaultOptions: Options = {
       <ul className="my-2 list-outside list-disc">{children}</ul>
     ),
     [BLOCKS.LIST_ITEM]: (_, children) => <li className="ml-8">{children}</li>,
-    [BLOCKS.EMBEDDED_ASSET]: (node: Block) => (
+    [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => (
       <ContentfulImage
         className="mx-auto max-w-full text-center shadow-lg lg:max-w-screen-md"
         src={node?.data?.url}
@@ -58,7 +66,7 @@ const PostBody: FunctionComponent<Props> = ({
 }) => {
   const { json, links } = content;
 
-  json.content = json.content.map(({ nodeType, data, ...rest }) => {
+  json.content = content?.json?.content?.map(({ nodeType, data, ...rest }) => {
     if (nodeType !== BLOCKS.EMBEDDED_ASSET) {
       return {
         nodeType,
@@ -67,30 +75,19 @@ const PostBody: FunctionComponent<Props> = ({
       };
     }
 
-    // console.log({
-    //   nodeType,
-    //   ...rest,
-    //   data: {
-    //     ...data,
-    //     ...links?.assets?.block?.find(
-    //       ({ sys }) => sys.id === data?.target?.sys?.id
-    //     ),
-    //   },
-    // });
-
     return {
       nodeType,
       ...rest,
       data: {
         ...data,
         ...links?.assets?.block?.find(
-          ({ sys }) => sys.id === data?.target?.sys?.id,
+          (block) => block?.sys?.id === data?.target?.sys?.id,
         ),
       },
     };
   });
 
-  return <>{documentToReactComponents(content.json, options)}</>;
+  return <>{documentToReactComponents(json, options)}</>;
 };
 
 export default PostBody;

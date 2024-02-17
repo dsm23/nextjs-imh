@@ -1,3 +1,5 @@
+// TODO: move to app router
+// @ts-nocheck
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";

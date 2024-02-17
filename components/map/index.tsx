@@ -1,16 +1,21 @@
 import { useEffect, useRef } from "react";
+import type { FunctionComponent } from "react";
 import mapboxgl from "mapbox-gl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const Map = ({ token }) => {
+type Props = {
+  token: string;
+};
+
+const Map: FunctionComponent<Props> = ({ token }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     mapboxgl.accessToken = token;
 
     const map = new mapboxgl.Map({
-      container: ref.current, // container ID
+      container: ref.current as HTMLDivElement, // container ID
       // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
       style: "mapbox://styles/mapbox/dark-v9", // style URL
       center: [0.719838, 51.577794],
