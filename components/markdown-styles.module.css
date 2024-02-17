@@ -1,18 +1,25 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  font-size: theme(fontSize.lg);
+  line-height: theme(lineHeight.relaxed);
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  margin-block: theme(margin.6);
 }
 
 .markdown h2 {
-  @apply mb-4 mt-12 text-3xl leading-snug;
+  margin-top: theme(margin.12);
+  margin-bottom: theme(margin.4);
+  font-size: theme(fontSize.3xl);
+  line-height: theme(lineHeight.snug);
 }
 
 .markdown h3 {
-  @apply mb-4 mt-8 text-2xl leading-snug;
+  margin-top: theme(margin.8);
+  margin-bottom: theme(margin.4);
+  font-size: theme(fontSize.2xl);
+  line-height: theme(lineHeight.snug);
 }
