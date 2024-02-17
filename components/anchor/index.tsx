@@ -26,7 +26,7 @@ const Anchor: <E extends ElementType = typeof defaultElement>(
   ) => (
     <Component
       className={clsx(
-        "-mx-1 rounded px-1 font-semibold text-purple-800 hover:bg-yellow-300",
+        "-mx-1 rounded px-1 font-semibold text-purple-800 underline underline-offset-2 hover:bg-yellow-300",
         className,
       )}
       ref={ref}
