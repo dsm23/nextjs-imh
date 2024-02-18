@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import type { FunctionComponent } from "react";
 import mapboxgl from "mapbox-gl";
