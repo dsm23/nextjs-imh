@@ -1,5 +1,6 @@
 // TODO: sort out embedded asset
 // @ts-nocheck
+
 import { FunctionComponent } from "react";
 import Link from "next/link";
 import {
