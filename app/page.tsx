@@ -1,6 +1,7 @@
 // TODO: move to app router
 // @ts-nocheck
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Container from "@/components/container";
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
 const Home = async () => {
   const data = (await getWelcomeForHome()) ?? {};
   const img = await getAsset("7sKYayeWgbxL0d549lviAc");
+
+  const nonce = headers().get("csp-nonce");
 
   const options: Options = {
     renderMark: {
@@ -137,6 +140,8 @@ const Home = async () => {
           evaluation, training and post-sales support that is second to none.
         </p>
       </article>
+      {/* HACK: Content-Security-Policy */}
+      <div className="hidden">{nonce}</div>
     </Container>
   );
 };
