@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getPageAndMorePages(params.slug);
 
   return {
-    title: `IMH | ${data?.page?.header}`,
+    title: `IMH | ${data?.page?.header ?? ""}`,
     openGraph: {
-      title: `IMH | ${data?.page?.header}`,
+      title: `IMH | ${data?.page?.header ?? ""}`,
     },
   };
 }
@@ -28,9 +28,9 @@ const Page: FunctionComponent<Props> = async ({ params }) => {
     <Container>
       <article>
         <h1 className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
-          {data.page.header}
+          {data?.page?.header ?? ""}
         </h1>
-        <PostBody content={data.page.content} />
+        {data?.page?.content && <PostBody content={data.page.content} />}
       </article>
     </Container>
   );

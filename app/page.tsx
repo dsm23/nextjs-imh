@@ -1,5 +1,3 @@
-// TODO: move to app router
-// @ts-nocheck
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Options } from "@contentful/rich-text-react-renderer";
@@ -17,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IMH",
     description: "A UK destributor to electrical equipment",
-    image: HOME_OG_IMAGE_URL,
+    images: HOME_OG_IMAGE_URL,
   },
 };
 
@@ -124,8 +122,8 @@ const Home = async () => {
           <h3 className="sr-only">Cards group</h3>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
             {data?.cards?.map((card) => (
-              <div className="elevation rounded p-3" key={card.entryUnused}>
-                <PostBody content={card.body} options={options} />
+              <div className="elevation rounded p-3" key={card?.entryUnused}>
+                <PostBody content={card?.body} options={options} />
               </div>
             ))}
           </div>
