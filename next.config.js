@@ -7,7 +7,12 @@ const withPWA = require("next-pwa")({
 // module.exports = withPWA({
 module.exports = {
   images: {
-    loader: "custom",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+      },
+    ],
   },
 };
 // })

@@ -1,10 +1,5 @@
-import {
-  ComponentProps,
-  ElementType,
-  forwardRef,
-  ReactElement,
-  Ref,
-} from "react";
+import { forwardRef } from "react";
+import type { ComponentProps, ElementType, ReactElement, Ref } from "react";
 import cn from "@/lib/class-names";
 
 export type PlymorphicProps<E extends ElementType = ElementType> = {
@@ -17,9 +12,7 @@ export type Props<E extends ElementType> = PlymorphicProps<E> &
 
 const defaultElement = "a";
 
-const Anchor: <E extends ElementType = typeof defaultElement>(
-  props: Props<E>,
-) => ReactElement | null = forwardRef(
+const Anchor = forwardRef(
   (
     { as: Component = defaultElement, className, ...props }: PlymorphicProps,
     ref: Ref<Element>,
@@ -36,5 +29,7 @@ const Anchor: <E extends ElementType = typeof defaultElement>(
 ) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
   props: Props<E>,
 ) => ReactElement);
+
+Anchor.displayName = "Anchor";
 
 export default Anchor;

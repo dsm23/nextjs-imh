@@ -43,7 +43,7 @@ const Map: FunctionComponent<Props> = ({ token }) => {
         showUserHeading: true,
       }),
     );
-  }, []);
+  }, [token]);
 
   return <div ref={ref} className="elevation h-96 w-full rounded-lg" />;
 };

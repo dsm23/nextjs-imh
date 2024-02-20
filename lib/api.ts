@@ -48,10 +48,6 @@ function extractAssetEntries(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.assetCollection?.items;
 }
 
-function extractCard(fetchResponse: Maybe<{ data?: Query }>) {
-  return fetchResponse?.data?.cardCollection?.items?.[0];
-}
-
 function extractCardEntries(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.cardCollection?.items;
 }

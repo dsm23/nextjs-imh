@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Options } from "@contentful/rich-text-react-renderer";
+import type { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Container from "@/components/container";
 import PostBody from "@/components/post-body";
@@ -70,11 +70,11 @@ const Home = async () => {
           </div>
 
           <ContentfulImage
-            src={data?.welcome?.welcomePic?.url}
+            src={data?.welcome?.welcomePic?.url as string}
             className="elevation rounded"
-            height={data?.welcome?.welcomePic?.height}
-            width={data?.welcome?.welcomePic?.width}
-            alt={data?.welcome?.welcomePic?.description}
+            height={data?.welcome?.welcomePic?.height as number}
+            width={data?.welcome?.welcomePic?.width as number}
+            alt={data?.welcome?.welcomePic?.description as string}
           />
         </div>
 
@@ -84,16 +84,16 @@ const Home = async () => {
           <h2 className="text-4xl">Partnered with Powerside</h2>
           <div className="md:flex md:items-center">
             <ContentfulImage
-              src={img?.url}
+              src={img?.url as string}
               className="block w-full md:w-1/2"
-              height={img?.height}
-              width={img?.width}
-              alt={img?.description}
+              height={img?.height as number}
+              width={img?.width as number}
+              alt={img?.description as string}
             />
             <div className="w-full md:w-1/2">
               <h2 className="mt-4 text-3xl">PQUBE 3</h2>
               <h3 className="mt-4 text-xl">
-                The World's best power quality recorder
+                The World{"'"}s best power quality recorder
               </h3>
               <p className="mt-3">
                 Real-time analysis of voltage and current connections with

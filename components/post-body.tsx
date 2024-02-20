@@ -1,22 +1,15 @@
 // TODO: sort out embedded asset
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import Link from "next/link";
-import {
-  documentToReactComponents,
-  Options,
-} from "@contentful/rich-text-react-renderer";
-import {
-  Block,
-  BLOCKS,
-  Inline,
-  INLINES,
-  MARKS,
-} from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Options } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import type { Block, Inline } from "@contentful/rich-text-types";
 import Anchor from "./anchor";
 import ContentfulImage from "./contentful-image";
-import { Scalars } from "@/graphql-types";
 
 interface Props {
   content?: unknown;

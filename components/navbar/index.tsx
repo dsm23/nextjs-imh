@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 // TODO: extract ripple from package
-// @ts-ignore
+// @ts-expect-error no third party declarations
 import Ripple from "material-ripple-effects";
 import { Transition } from "@headlessui/react";
 import Hamburger from "../hamburger";
