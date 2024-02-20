@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
 import type { FunctionComponent, ReactNode } from "react";
-import cx from "clsx";
 import { Transition } from "@headlessui/react";
 import { ChevronDown } from "../svgs";
+import cn from "@/lib/class-names";
 
 import styles from "../navbar/styles.module.css";
 
@@ -33,7 +33,7 @@ const NavDropdown: FunctionComponent<Props> = ({ children, label }) => {
       onMouseLeave={handleClose}
     >
       <button
-        className={cx(
+        className={cn(
           "hidden sm:inline-flex sm:justify-between sm:gap-x-2",
           styles.navLink,
         )}
