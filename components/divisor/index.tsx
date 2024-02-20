@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  FunctionComponent,
-  SVGAttributes,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useRef, useState } from "react";
+import type { FunctionComponent, SVGAttributes } from "react";
 
 type Props = SVGAttributes<SVGSVGElement>;
 
@@ -19,16 +14,7 @@ const Divisor: FunctionComponent<Props> = (props) => {
 
   const [autoplay, setAutoplay] = useState<boolean>(false);
 
-  const observerOptions = {
-    root: animationContainer.current,
-    rootMargin: "0px",
-    threshold: 1,
-  };
-
-  const callback = (
-    entries: IntersectionObserverEntry[],
-    observer: IntersectionObserver,
-  ) => {
+  const callback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         setAutoplay(true);
@@ -37,13 +23,19 @@ const Divisor: FunctionComponent<Props> = (props) => {
   };
 
   useEffect(() => {
+    const observerOptions = {
+      root: animationContainer.current,
+      rootMargin: "0px",
+      threshold: 1,
+    } as const;
+
     const observer = new IntersectionObserver(callback, observerOptions);
 
     observer.observe(animationContainer.current!);
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [animationContainer]);
 
   useEffect(() => {
     if (autoplay) {
