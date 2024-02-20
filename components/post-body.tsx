@@ -14,11 +14,12 @@ import {
   INLINES,
   MARKS,
 } from "@contentful/rich-text-types";
-import { Page } from "@/graphql-types";
 import Anchor from "./anchor";
 import ContentfulImage from "./contentful-image";
+import { Scalars } from "@/graphql-types";
 
-interface Props extends Pick<Page, "content"> {
+interface Props {
+  content?: unknown;
   options?: Options;
 }
 

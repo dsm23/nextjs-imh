@@ -1,3 +1,5 @@
+import type { Maybe, PageFilter, Query, QueryAssetArgs } from "@/graphql-types";
+
 const POST_GRAPHQL_FIELDS = `
   header
   content {
@@ -20,7 +22,7 @@ const POST_GRAPHQL_FIELDS = `
   slug
 `;
 
-async function fetchGraphQL(query, preview = false) {
+async function fetchGraphQL<T>(query: string, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
@@ -35,39 +37,39 @@ async function fetchGraphQL(query, preview = false) {
       },
       body: JSON.stringify({ query }),
     },
-  ).then((response) => response.json());
+  ).then((response) => response.json() as T);
 }
 
-function extractAsset(fetchResponse) {
+function extractAsset(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.asset;
 }
 
-function extractAssetEntries(fetchResponse) {
+function extractAssetEntries(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.assetCollection?.items;
 }
 
-function extractCard(fetchResponse) {
+function extractCard(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.cardCollection?.items?.[0];
 }
 
-function extractCardEntries(fetchResponse) {
+function extractCardEntries(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.cardCollection?.items;
 }
 
-function extractPage(fetchResponse) {
+function extractPage(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.pageCollection?.items?.[0];
 }
 
-function extractWelcome(fetchResponse) {
+function extractWelcome(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.welcomeCollection?.items?.[0];
 }
 
-function extractPageEntries(fetchResponse) {
+function extractPageEntries(fetchResponse: Maybe<{ data?: Query }>) {
   return fetchResponse?.data?.pageCollection?.items;
 }
 
 export async function getAllAssetsWithSlug() {
-  const entries = await fetchGraphQL(
+  const entries = await fetchGraphQL<{ data?: Query }>(
     `query {
       assetCollection(where: { slug_exists: true }, order: date_DESC) {
         items {
@@ -86,8 +88,8 @@ export async function getAllAssetsWithSlug() {
   return extractAssetEntries(entries);
 }
 
-export async function getAsset(assetId) {
-  const entry = await fetchGraphQL(
+export async function getAsset(assetId: QueryAssetArgs["id"]) {
+  const entry = await fetchGraphQL<{ data?: Query }>(
     `query {
       asset(id: "${assetId}") {
         title
@@ -104,8 +106,8 @@ export async function getAsset(assetId) {
   return extractAsset(entry);
 }
 
-export async function getPreviewPageBySlug(slug) {
-  const entry = await fetchGraphQL(
+export async function getPreviewPageBySlug(slug: PageFilter["slug"]) {
+  const entry = await fetchGraphQL<{ data?: Query }>(
     `query {
       pageCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
@@ -120,7 +122,7 @@ export async function getPreviewPageBySlug(slug) {
 // pageCollection(preview: $preview, limit: 10){
 // pageCollection(where: { slug_exists: true }, order: date_DESC) {
 export async function getAllPagesWithSlug() {
-  const entries = await fetchGraphQL(
+  const entries = await fetchGraphQL<{ data?: Query }>(
     `query {
       pageCollection(where: { slug_exists: true }, limit: 10) {
         items {
@@ -132,8 +134,8 @@ export async function getAllPagesWithSlug() {
   return extractPageEntries(entries);
 }
 
-export async function getWelcomeForHome(preview) {
-  const entries = await fetchGraphQL(
+export async function getWelcomeForHome(preview = false) {
+  const entries = await fetchGraphQL<{ data?: Query }>(
     `query {
       welcomeCollection(preview: ${preview ? "true" : "false"}) {
         items {
@@ -157,7 +159,7 @@ export async function getWelcomeForHome(preview) {
     preview,
   );
 
-  const cards = await fetchGraphQL(
+  const cards = await fetchGraphQL<{ data?: Query }>(
     `query {
       cardCollection(preview: ${preview ? "true" : "false"}, limit: 9) {
         items {
@@ -190,8 +192,11 @@ export async function getWelcomeForHome(preview) {
   };
 }
 
-export async function getPageAndMorePages(slug, preview = false) {
-  const entry = await fetchGraphQL(
+export async function getPageAndMorePages(
+  slug: PageFilter["slug"],
+  preview = false,
+) {
+  const entry = await fetchGraphQL<{ data?: Query }>(
     `query {
       pageCollection(where: { slug: "${slug}" }, preview: ${
         preview ? "true" : "false"
@@ -203,7 +208,7 @@ export async function getPageAndMorePages(slug, preview = false) {
     }`,
     preview,
   );
-  const entries = await fetchGraphQL(
+  const entries = await fetchGraphQL<{ data?: Query }>(
     `query {
       pageCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
         preview ? "true" : "false"
