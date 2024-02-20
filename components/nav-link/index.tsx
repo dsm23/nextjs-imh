@@ -5,8 +5,8 @@ import React, {
   ReactElement,
   Ref,
 } from "react";
-import cx from "clsx";
 import Link from "next/link";
+import cn from "@/lib/class-names";
 
 import styles from "./styles.module.css";
 
@@ -27,7 +27,7 @@ const NavLink: <E extends ElementType = typeof defaultElement>(
     { as: Component = defaultElement, className, ...props }: PlymorphicProps,
     ref: Ref<Element>,
   ) => (
-    <Component className={cx(styles.navLink, className)} ref={ref} {...props} />
+    <Component className={cn(styles.navLink, className)} ref={ref} {...props} />
   ),
 ) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
   props: Props<E>,

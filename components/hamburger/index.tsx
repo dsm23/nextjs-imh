@@ -1,5 +1,5 @@
 import type { FunctionComponent, HTMLAttributes } from "react";
-import cx from "clsx";
+import cn from "@/lib/class-names";
 
 import styles from "./styles.module.css";
 
@@ -12,7 +12,7 @@ const Hamburger: FunctionComponent<Props> = ({ open, className, ...props }) => (
     {...props}
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
-    className={cx(styles.hamburger, { [styles.open]: open }, className)}
+    className={cn(styles.hamburger, { [styles.open]: open }, className)}
     viewBox="0 0 100 100"
   >
     <rect

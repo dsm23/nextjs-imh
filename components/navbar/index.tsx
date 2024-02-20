@@ -2,7 +2,6 @@
 
 import { useId, useState } from "react";
 import Link from "next/link";
-import cx from "clsx";
 // TODO: extract ripple from package
 // @ts-ignore
 import Ripple from "material-ripple-effects";
@@ -12,6 +11,7 @@ import Nav from "../nav";
 import NavDropdown from "../nav-dropdown";
 import { ArrowLeft, ChevronRight } from "../svgs";
 import { Router } from "@/constants";
+import cn from "@/lib/class-names";
 
 import styles from "./styles.module.css";
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <Nav onClose={handleClose}>
-      <Link href={Router.Home} className={cx(styles.navLink, styles.navHome)}>
+      <Link href={Router.Home} className={cn(styles.navLink, styles.navHome)}>
         IMH
       </Link>
 
@@ -47,21 +47,21 @@ const Navbar = () => {
       <div className="hidden md:flex">
         <Link
           href={Router.About}
-          className={cx("block", styles.navLink)}
+          className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
           About
         </Link>
         <Link
           href={Router.Contact}
-          className={cx("block", styles.navLink)}
+          className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
           Contact
         </Link>
         <Link
           href={Router.TechnicalHelp}
-          className={cx("block", styles.navLink)}
+          className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
           Technical Help
@@ -69,33 +69,33 @@ const Navbar = () => {
         <NavDropdown label="Policies">
           <Link
             href={Router.InclusionPolicy}
-            className={cx("block", styles.navLink)}
+            className={cn("block", styles.navLink)}
           >
             Inclusion Policy
           </Link>
         </NavDropdown>
         <NavDropdown label="Products and Services">
-          <span className={cx("block", styles.navLink)}>Products</span>
-          <Link href={Router.Dent} className={cx("block", styles.navLink)}>
+          <span className={cn("block", styles.navLink)}>Products</span>
+          <Link href={Router.Dent} className={cn("block", styles.navLink)}>
             Dent Instruments
           </Link>
-          <Link href={Router.Dranetz} className={cx("block", styles.navLink)}>
+          <Link href={Router.Dranetz} className={cn("block", styles.navLink)}>
             Dranetz
           </Link>
           <Link
             href={Router.Electrotek}
-            className={cx("block", styles.navLink)}
+            className={cn("block", styles.navLink)}
           >
             Electrotek Systems
           </Link>
-          <Link href={Router.Powerside} className={cx("block", styles.navLink)}>
+          <Link href={Router.Powerside} className={cn("block", styles.navLink)}>
             Powerside
           </Link>
           <div className="mx-3 border-b-2 border-gray-200" />
-          <span className={cx("block", styles.navLink)}>Services</span>
+          <span className={cn("block", styles.navLink)}>Services</span>
           <Link
             href={Router.Consultancy}
-            className={cx("block", styles.navLink)}
+            className={cn("block", styles.navLink)}
           >
             Consultancy from IMH
           </Link>
@@ -116,18 +116,18 @@ const Navbar = () => {
         >
           <div
             id={id}
-            className={cx(styles.transitionsContainer, "overflow-hidden")}
+            className={cn(styles.transitionsContainer, "overflow-hidden")}
           >
             <Transition
               show={active === "default"}
               className="grid w-full"
-              enter={cx(
+              enter={cn(
                 styles.defaultTransition,
                 "motion-reduce:transition-none motion-reduce:duration-0",
               )}
               enterFrom="transform -translate-x-full grid-rows-[0fr]"
               enterTo="transform translate-x-0 grid-rows-[1fr]"
-              leave={cx(
+              leave={cn(
                 styles.defaultTransition,
                 "motion-reduce:transition-none motion-reduce:duration-0",
               )}
@@ -137,21 +137,21 @@ const Navbar = () => {
               <div className="overflow-hidden">
                 <Link
                   href={Router.About}
-                  className={cx("block", styles.navLink)}
+                  className={cn("block", styles.navLink)}
                   onClick={handleClose}
                 >
                   About
                 </Link>
                 <Link
                   href={Router.Contact}
-                  className={cx("block", styles.navLink)}
+                  className={cn("block", styles.navLink)}
                   onClick={handleClose}
                 >
                   Contact
                 </Link>
                 <Link
                   href={Router.TechnicalHelp}
-                  className={cx("block", styles.navLink)}
+                  className={cn("block", styles.navLink)}
                   onClick={handleClose}
                 >
                   Technical Help
@@ -160,49 +160,49 @@ const Navbar = () => {
                 <NavDropdown label="Policies">
                   <Link
                     href={Router.InclusionPolicy}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Inclusion Policy
                   </Link>
                 </NavDropdown>
                 <NavDropdown label="Products and Services">
-                  <span className={cx("block", styles.navLink)}>Products</span>
+                  <span className={cn("block", styles.navLink)}>Products</span>
                   <Link
                     href={Router.Dent}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Dent Instruments
                   </Link>
                   <Link
                     href={Router.Dranetz}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Dranetz
                   </Link>
                   <Link
                     href={Router.Electrotek}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Electrotek Systems
                   </Link>
                   <Link
                     href={Router.Powerside}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Powerside
                   </Link>
                   <div className="mx-3 border-b-2 border-gray-200" />
-                  <span className={cx("block", styles.navLink)}>Services</span>
+                  <span className={cn("block", styles.navLink)}>Services</span>
                   <Link
                     href={Router.Consultancy}
-                    className={cx("block", styles.navLink)}
+                    className={cn("block", styles.navLink)}
                   >
                     Consultancy from IMH
                   </Link>
                 </NavDropdown>
 
                 <button
-                  className={cx(
+                  className={cn(
                     "flex items-center gap-x-2 text-left",
                     styles.navLink,
                   )}
@@ -214,7 +214,7 @@ const Navbar = () => {
                   <ChevronRight className="h-6 w-6" />
                 </button>
                 <button
-                  className={cx(
+                  className={cn(
                     "flex items-center gap-x-2 text-left",
                     styles.navLink,
                   )}
@@ -226,7 +226,7 @@ const Navbar = () => {
                   <ChevronRight className="h-6 w-6" />
                 </button>
                 <button
-                  className={cx(
+                  className={cn(
                     "flex items-center gap-x-2 text-left",
                     styles.navLink,
                   )}
@@ -251,7 +251,7 @@ const Navbar = () => {
               leaveTo="transform translate-x-full"
             >
               <button
-                className={cx("flex items-center gap-x-2", styles.navLink)}
+                className={cn("flex items-center gap-x-2", styles.navLink)}
                 onClick={() => {
                   setActive("default");
                 }}
@@ -261,7 +261,7 @@ const Navbar = () => {
               </button>
               <Link
                 href={Router.InclusionPolicy}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Inclusion Policy
@@ -278,7 +278,7 @@ const Navbar = () => {
               leaveTo="transform translate-x-full"
             >
               <button
-                className={cx("flex items-center gap-x-2", styles.navLink)}
+                className={cn("flex items-center gap-x-2", styles.navLink)}
                 onClick={() => {
                   setActive("default");
                 }}
@@ -288,28 +288,28 @@ const Navbar = () => {
               </button>
               <Link
                 href={Router.Dent}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Dent Instruments
               </Link>
               <Link
                 href={Router.Dranetz}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Dranetz
               </Link>
               <Link
                 href={Router.Electrotek}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Electrotek Systems
               </Link>
               <Link
                 href={Router.Powerside}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Powerside
@@ -327,7 +327,7 @@ const Navbar = () => {
               leaveTo="transform translate-x-full"
             >
               <button
-                className={cx("flex items-center gap-x-2", styles.navLink)}
+                className={cn("flex items-center gap-x-2", styles.navLink)}
                 onClick={() => {
                   setActive("default");
                 }}
@@ -337,7 +337,7 @@ const Navbar = () => {
               </button>
               <Link
                 href={Router.Consultancy}
-                className={cx("block", styles.navLink)}
+                className={cn("block", styles.navLink)}
                 onClick={handleClose}
               >
                 Consultancy from IMH

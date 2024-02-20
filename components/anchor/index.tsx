@@ -5,7 +5,7 @@ import {
   ReactElement,
   Ref,
 } from "react";
-import clsx from "clsx";
+import cn from "@/lib/class-names";
 
 export type PlymorphicProps<E extends ElementType = ElementType> = {
   as?: E;
@@ -25,7 +25,7 @@ const Anchor: <E extends ElementType = typeof defaultElement>(
     ref: Ref<Element>,
   ) => (
     <Component
-      className={clsx(
+      className={cn(
         "-mx-1 rounded px-1 font-semibold text-purple-800 underline underline-offset-2 hover:bg-yellow-300",
         className,
       )}
