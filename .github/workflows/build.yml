@@ -30,6 +30,8 @@ jobs:
       #   run: pnpm run lint
       # - name: Unit tests
       #   run: pnpm run test.unit
+      - name: generate sw
+        run: pnpm run generate.sw
       - name: build check
         run: pnpm run build
         env:
