@@ -1,11 +1,6 @@
 import type { FunctionComponent, ReactNode } from "react";
-import type { Viewport } from "next";
 import Alert from "./alert";
 import Navbar from "./navbar";
-
-export const viewport: Viewport = {
-  themeColor: "black",
-};
 
 type Props = {
   preview: boolean;
