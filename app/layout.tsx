@@ -1,5 +1,5 @@
 import type { FunctionComponent, ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import "@/styles/index.css";
@@ -7,6 +7,10 @@ import Layout from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "IMH",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FFF",
 };
 
 type Props = {
