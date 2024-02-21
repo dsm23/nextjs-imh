@@ -32,3 +32,10 @@
 .hamburger.open .bottom {
   rotate: -45deg;
 }
+
+@media (prefers-reduced-motion) {
+  .hamburger .line,
+  .hamburger.open .line {
+    transition: none;
+  }
+}
