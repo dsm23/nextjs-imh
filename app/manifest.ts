@@ -12,25 +12,10 @@ const manifest = () =>
     orientation: "portrait",
     icons: [
       {
-        src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
-      },
-      {
-        src: "/icons/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: "/icons/android-chrome-384x384.png",
-        sizes: "384x384",
-        type: "image/png",
-      },
-      {
-        src: "/icons/icon-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
+        src: "/wifi.svg",
+        sizes: "48x48 72x72 96x96 128x128 256x256 512x512",
+        type: "image/svg+xml",
+        purpose: "any",
       },
     ],
   }) satisfies MetadataRoute.Manifest;
