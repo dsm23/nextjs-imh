@@ -1,7 +1,7 @@
 "use client";
 
 const RegisterServiceWorker = () => {
-  if ("serviceWorker" in navigator) {
+  if ("serviceWorker" in globalThis.navigator) {
     navigator.serviceWorker.register("/sw.js").then(
       (registration) => {
         if (process.env.NODE_ENV === "development") {
