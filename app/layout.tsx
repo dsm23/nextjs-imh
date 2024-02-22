@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import "@/styles/index.css";
 import Layout from "@/components/layout";
+import RegisterServiceWorker from "@/components/register-sw";
 
 export const metadata: Metadata = {
   title: "IMH",
@@ -25,6 +26,7 @@ const inter = Inter({
 const RootLayout: FunctionComponent<Props> = ({ children }) => (
   <html lang="en">
     <body className={`${inter.variable} font-sans`}>
+      <RegisterServiceWorker />
       <Layout preview={false}>{children}</Layout>
     </body>
   </html>
