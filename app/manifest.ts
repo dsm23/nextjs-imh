@@ -17,6 +17,12 @@ const manifest = () =>
         type: "image/svg+xml",
         purpose: "any",
       },
+      {
+        src: "/wifi.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
+      },
     ],
   }) satisfies MetadataRoute.Manifest;
 
