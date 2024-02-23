@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "@/styles/index.css";
 import Layout from "@/components/layout";
 import RegisterServiceWorker from "@/components/register-sw";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "IMH",
@@ -23,13 +24,19 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const RootLayout: FunctionComponent<Props> = ({ children }) => (
-  <html lang="en">
-    <body className={`${inter.variable} font-sans`}>
-      <RegisterServiceWorker />
-      <Layout preview={false}>{children}</Layout>
-    </body>
-  </html>
-);
+const RootLayout: FunctionComponent<Props> = ({ children }) => {
+  const nonce = headers().get("csp-nonce");
+
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} font-sans`}>
+        <RegisterServiceWorker />
+        <Layout preview={false}>{children}</Layout>
+        {/* HACK: Content-Security-Policy */}
+        <div className="hidden">{nonce}</div>
+      </body>
+    </html>
+  );
+};
 
 export default RootLayout;
