@@ -1,15 +1,20 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 const imgCdn = `https://images.ctfassets.net/${process.env.CONTENTFUL_SPACE_ID}/`;
 
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+
+  // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
   const cspHeader = `
     default-src 'none';
     script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
     img-src 'self' blob: data: ${imgCdn};
     font-src 'self';
+    worker-src 'self' blob:;
+    child-src blob:;
     connect-src 'self' https://graphql.contentful.com/content/v1/spaces/ https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com;
     manifest-src 'self';
     base-uri 'self';
