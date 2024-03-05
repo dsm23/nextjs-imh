@@ -22,20 +22,21 @@ const Divisor: FunctionComponent<Props> = (props) => {
     });
   };
 
-  useEffect(() => {
-    const observerOptions = {
-      root: animationContainer.current,
-      rootMargin: "0px",
-      threshold: 1,
-    } as const;
+  const observerOptions = {
+    root: animationContainer.current,
+    rootMargin: "0px",
+    threshold: 1,
+  } as const;
 
+  useEffect(() => {
     const observer = new IntersectionObserver(callback, observerOptions);
 
     observer.observe(animationContainer.current!);
     return () => {
       observer.disconnect();
     };
-  }, [animationContainer]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (autoplay) {
