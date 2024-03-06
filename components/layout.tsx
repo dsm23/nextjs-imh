@@ -13,7 +13,7 @@ const Layout: FunctionComponent<Props> = ({ preview, children }) => (
     <header className="contents">
       <Navbar />
     </header>
-    <main>{children}</main>
+    <main className="mb-10">{children}</main>
   </>
 );
 

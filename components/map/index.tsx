@@ -45,7 +45,9 @@ const Map: FunctionComponent<Props> = ({ token }) => {
     );
   }, [token]);
 
-  return <div ref={ref} className="elevation h-96 w-full rounded-lg" />;
+  return (
+    <div ref={ref} className="elevation mt-4 h-96 w-full rounded-lg md:mt-0" />
+  );
 };
 
 export default Map;

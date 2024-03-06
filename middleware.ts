@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
     font-src 'self';
     worker-src 'self' blob:;
     child-src blob:;
-    connect-src 'self' https://graphql.contentful.com/content/v1/spaces/ https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com;
+    connect-src 'self' https://graphql.contentful.com/content/v1/spaces/ https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com;
     manifest-src 'self';
     base-uri 'self';
     form-action 'self';

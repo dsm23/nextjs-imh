@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "./form";
 import Container from "@/components/container";
 import Map from "@/components/map";
 
@@ -35,8 +36,10 @@ const Contact = () => (
           <br />
           Telephone: <a href="tel:+441702545429">01702 545429</a>
         </address>
+
         <Map token={process.env.MAPBOX_API_TOKEN as string} />
       </div>
+      <ContactForm className="mx-auto mt-10 max-w-[1000px] md:mt-20" />
     </article>
   </Container>
 );
