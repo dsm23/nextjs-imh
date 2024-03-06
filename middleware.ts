@@ -11,6 +11,7 @@ export function middleware(request: NextRequest) {
     default-src 'none';
     script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic';
     style-src 'self' 'nonce-${nonce}';
+    style-src-attr 'self' 'unsafe-inline';
     img-src 'self' blob: data: ${imgCdn};
     font-src 'self';
     worker-src 'self' blob:;
