@@ -1,10 +1,9 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   darkMode: ["class"],
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  // darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -57,7 +56,7 @@ module.exports = {
         tighter: "-.04em",
       },
       lineHeight: {
-        tight: 1.2,
+        tight: "1.2",
       },
       fontSize: {
         "5xl": "2.5rem",
@@ -75,4 +74,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+} satisfies Config;
+
+export default config;

@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -11,7 +12,7 @@
     "lint": "next lint",
     "codegen": "gql-gen",
     "type-check": "tsc",
-    "generate.sw": "node build-sw.mjs"
+    "generate.sw": "node build-sw.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
@@ -63,11 +64,5 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^7.1.1",
     "workbox-build": "^7.3.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.0.1",
-      "@types/react-dom": "19.0.2"
-    }
   }
 }
