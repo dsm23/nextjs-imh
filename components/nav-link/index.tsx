@@ -24,7 +24,7 @@ const NavLink = forwardRef(
   ),
 ) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
   props: Props<E>,
-) => ReactElement);
+) => ReactElement<unknown>);
 
 NavLink.displayName = "NavLink";
 

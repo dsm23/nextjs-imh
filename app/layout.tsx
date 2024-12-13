@@ -24,8 +24,8 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const RootLayout: FunctionComponent<Props> = ({ children }) => {
-  const nonce = headers().get("csp-nonce");
+const RootLayout: FunctionComponent<Props> = async ({ children }) => {
+  const nonce = (await headers()).get("csp-nonce");
 
   return (
     <html lang="en">

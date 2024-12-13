@@ -28,7 +28,7 @@ const Anchor = forwardRef(
   ),
 ) as { displayName: string } & (<E extends ElementType = typeof defaultElement>(
   props: Props<E>,
-) => ReactElement);
+) => ReactElement<unknown>);
 
 Anchor.displayName = "Anchor";
 
