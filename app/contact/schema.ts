@@ -1,13 +1,10 @@
-import { email, minLength, nonOptional, object, string } from "valibot";
-import type { Output } from "valibot";
+import { email, minLength, strictObject, pipe, string } from "valibot";
+import type { InferOutput } from "valibot";
 
-export const schema = object({
-  name: nonOptional(
-    string("Not a name", [minLength(1, "Field is required")]),
-    "Field is required",
-  ),
-  email: nonOptional(string([email()]), "Field is required"),
-  message: nonOptional(string([minLength(8)]), "Field is required"),
+export const schema = strictObject({
+  name: pipe(string("Field is required"), minLength(1)),
+  email: pipe(string("Field is required"), email()),
+  message: pipe(string("Field is required"), minLength(8)),
 });
 
-export type Values = Output<typeof schema>;
+export type Values = InferOutput<typeof schema>;

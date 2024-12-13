@@ -73,10 +73,7 @@
   transform-origin: top right;
   border-radius: theme(borderRadius.md);
   background-color: theme(backgroundColor.white);
-  @apply shadow-lg
-      ring-1
-      ring-black
-      ring-opacity-5;
+  @apply shadow-lg ring-1 ring-black ring-opacity-5;
 }
 
 .dropdown:focus {

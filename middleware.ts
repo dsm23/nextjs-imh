@@ -9,9 +9,8 @@ export function middleware(request: NextRequest) {
   // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
   const cspHeader = `
     default-src 'none';
-    script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    style-src-attr 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-eval' 'nonce-${nonce}';
+    style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: ${imgCdn};
     font-src 'self';
     worker-src 'self' blob:;

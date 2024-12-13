@@ -61,7 +61,7 @@ const Home = async () => {
     <Container>
       <article id="main-content" className="mb-16">
         <h1 className="sr-only">IMH technologies</h1>
-        <div className="mt-6 grid items-center gap-x-5 gap-y-4 md:grid-cols-2 lg:grid-cols-[3fr_2fr] ">
+        <div className="mt-6 grid items-center gap-x-5 gap-y-4 md:grid-cols-2 lg:grid-cols-[3fr_2fr]">
           <div>
             <PostBody content={data?.welcome?.body} />
           </div>
