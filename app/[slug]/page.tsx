@@ -5,12 +5,13 @@ import PostBody from "@/components/post-body";
 import { getPageAndMorePages } from "@/lib/api";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const data = await getPageAndMorePages(params.slug);
 
   return {
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const Page: FunctionComponent<Props> = async ({ params }) => {
+const Page: FunctionComponent<Props> = async (props) => {
+  const params = await props.params;
   const data = await getPageAndMorePages(params.slug);
 
   return (
