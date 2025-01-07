@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import type { FunctionComponent, ReactNode } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronDown } from "../svgs";
@@ -42,17 +42,20 @@ const NavDropdown: FunctionComponent<Props> = ({ children, label }) => {
         {label} <ChevronDown className="h-6 w-6" />
       </button>
 
-      <Transition
-        as={Fragment}
-        show={open}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <div className={styles.dropdown}>{children}</div>
+      <Transition show={open}>
+        <div
+          className={cn([
+            "data-transition:transition transform",
+
+            "data-[enter]:duration-100 data-[enter]:ease-out",
+            "data-[leave]:duration-75 data-[leave]:ease-in",
+
+            "data-[enter]:data-[closed]:scale-90 data-[enter]:scale-100 data-[enter]:data-[closed]:opacity-0 data-[enter]:opacity-100",
+            "data-[leave]:data-[closed]:scale-90 data-[leave]:scale-100 data-[leave]:data-[closed]:opacity-0 data-[leave]:opacity-100",
+          ])}
+        >
+          <div className={styles.dropdown}>{children}</div>
+        </div>
       </Transition>
     </div>
   );

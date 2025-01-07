@@ -103,246 +103,244 @@ const Navbar = () => {
       </div>
 
       <div className="w-full md:hidden">
-        <Transition
-          show={open}
-          className="grid md:hidden"
-          enter="transition-[grid-template-rows] motion-reduce:transition-none duration-150"
-          enterFrom="grid-rows-[0fr]"
-          enterTo="grid-rows-[1fr]"
-          leave="transition-[grid-template-rows] motion-reduce:transition-none duration-150"
-          leaveFrom="grid-rows-[1fr]"
-          leaveTo="grid-rows-[0fr]"
-          afterLeave={() => setActive("default")}
-        >
+        <Transition show={open} afterLeave={() => setActive("default")}>
           <div
-            id={id}
-            className={cn(styles.transitionsContainer, "overflow-hidden")}
+            className={cn(
+              "grid transform motion-reduce:transition-none motion-reduce:duration-0",
+              "data:[transition]:duration-150 data-[transition]:transition-[grid-template-rows]",
+              "data-[enter]:data-[closed]:grid-rows-[0fr] data-[enter]:grid-rows-[1fr]",
+              "data-[leave]:data-[closed]:grid-rows-[0fr] data-[leave]:grid-rows-[1fr]",
+            )}
           >
-            <Transition
-              show={active === "default"}
-              className="grid w-full"
-              enter={cn(
-                styles.defaultTransition,
-                "motion-reduce:transition-none motion-reduce:duration-0",
-              )}
-              enterFrom="transform -translate-x-full grid-rows-[0fr]"
-              enterTo="transform translate-x-0 grid-rows-[1fr]"
-              leave={cn(
-                styles.defaultTransition,
-                "motion-reduce:transition-none motion-reduce:duration-0",
-              )}
-              leaveFrom="transform translate-x-0 grid-rows-[1fr]"
-              leaveTo="transform -translate-x-full grid-rows-[0fr]"
+            <div
+              id={id}
+              className={cn(styles.transitionsContainer, "overflow-hidden")}
             >
-              <div className="overflow-hidden">
-                <Link
-                  href={Router.About}
-                  className={cn("block", styles.navLink)}
-                  onClick={handleClose}
-                >
-                  About
-                </Link>
-                <Link
-                  href={Router.Contact}
-                  className={cn("block", styles.navLink)}
-                  onClick={handleClose}
-                >
-                  Contact
-                </Link>
-                <Link
-                  href={Router.TechnicalHelp}
-                  className={cn("block", styles.navLink)}
-                  onClick={handleClose}
-                >
-                  Technical Help
-                </Link>
+              <Transition show={active === "default"}>
+                <div
+                  className={cn(
+                    styles.defaultTransition,
 
-                <NavDropdown label="Policies">
+                    "transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
+                    "data-[transition]:duration-500",
+                    "data-[enter]:data-[closed]:-translate-x-full data-[enter]:translate-x-0",
+                    "data-[leave]:data-[closed]:-translate-x-full data-[leave]:translate-x-0",
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <Link
+                      href={Router.About}
+                      className={cn("block", styles.navLink)}
+                      onClick={handleClose}
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href={Router.Contact}
+                      className={cn("block", styles.navLink)}
+                      onClick={handleClose}
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      href={Router.TechnicalHelp}
+                      className={cn("block", styles.navLink)}
+                      onClick={handleClose}
+                    >
+                      Technical Help
+                    </Link>
+
+                    <NavDropdown label="Policies">
+                      <Link
+                        href={Router.InclusionPolicy}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Inclusion Policy
+                      </Link>
+                    </NavDropdown>
+                    <NavDropdown label="Products and Services">
+                      <span className={cn("block", styles.navLink)}>
+                        Products
+                      </span>
+                      <Link
+                        href={Router.Dent}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Dent Instruments
+                      </Link>
+                      <Link
+                        href={Router.Dranetz}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Dranetz
+                      </Link>
+                      <Link
+                        href={Router.Electrotek}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Electrotek Systems
+                      </Link>
+                      <Link
+                        href={Router.Powerside}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Powerside
+                      </Link>
+                      <div className="mx-3 border-b-2 border-gray-200" />
+                      <span className={cn("block", styles.navLink)}>
+                        Services
+                      </span>
+                      <Link
+                        href={Router.Consultancy}
+                        className={cn("block", styles.navLink)}
+                      >
+                        Consultancy from IMH
+                      </Link>
+                    </NavDropdown>
+
+                    <button
+                      className={cn(
+                        "flex items-center gap-x-2 text-left",
+                        styles.navLink,
+                      )}
+                      onClick={() => {
+                        setActive("policies");
+                      }}
+                    >
+                      Policies
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                    <button
+                      className={cn(
+                        "flex items-center gap-x-2 text-left",
+                        styles.navLink,
+                      )}
+                      onClick={() => {
+                        setActive("products");
+                      }}
+                    >
+                      Products
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                    <button
+                      className={cn(
+                        "flex items-center gap-x-2 text-left",
+                        styles.navLink,
+                      )}
+                      onClick={() => {
+                        setActive("services");
+                      }}
+                    >
+                      Services
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  </div>
+                </div>
+              </Transition>
+
+              <Transition show={active === "policies"} appear>
+                <div
+                  className={cn(
+                    "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
+                    "data-[transition]:duration-500",
+                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
+                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                  )}
+                >
+                  <button
+                    className={cn("flex items-center gap-x-2", styles.navLink)}
+                    onClick={() => {
+                      setActive("default");
+                    }}
+                  >
+                    <ArrowLeft className="h-6 w-6" />
+                    Go Back
+                  </button>
                   <Link
                     href={Router.InclusionPolicy}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Inclusion Policy
                   </Link>
-                </NavDropdown>
-                <NavDropdown label="Products and Services">
-                  <span className={cn("block", styles.navLink)}>Products</span>
+                </div>
+              </Transition>
+              <Transition show={active === "products"}>
+                <div
+                  className={cn(
+                    "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
+                    "data-[transition]:duration-500",
+                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
+                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                  )}
+                >
+                  <button
+                    className={cn("flex items-center gap-x-2", styles.navLink)}
+                    onClick={() => {
+                      setActive("default");
+                    }}
+                  >
+                    <ArrowLeft className="h-6 w-6" />
+                    Go Back
+                  </button>
                   <Link
                     href={Router.Dent}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Dent Instruments
                   </Link>
                   <Link
                     href={Router.Dranetz}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Dranetz
                   </Link>
                   <Link
                     href={Router.Electrotek}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Electrotek Systems
                   </Link>
                   <Link
                     href={Router.Powerside}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Powerside
                   </Link>
-                  <div className="mx-3 border-b-2 border-gray-200" />
-                  <span className={cn("block", styles.navLink)}>Services</span>
+                </div>
+              </Transition>
+              <Transition show={active === "services"} appear>
+                <div
+                  className={cn(
+                    "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
+                    "data-[transition]:duration-500",
+                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
+                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                  )}
+                >
+                  <button
+                    className={cn("flex items-center gap-x-2", styles.navLink)}
+                    onClick={() => {
+                      setActive("default");
+                    }}
+                  >
+                    <ArrowLeft className="h-6 w-6" />
+                    Go Back
+                  </button>
                   <Link
                     href={Router.Consultancy}
                     className={cn("block", styles.navLink)}
+                    onClick={handleClose}
                   >
                     Consultancy from IMH
                   </Link>
-                </NavDropdown>
-
-                <button
-                  className={cn(
-                    "flex items-center gap-x-2 text-left",
-                    styles.navLink,
-                  )}
-                  onClick={() => {
-                    setActive("policies");
-                  }}
-                >
-                  Policies
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-                <button
-                  className={cn(
-                    "flex items-center gap-x-2 text-left",
-                    styles.navLink,
-                  )}
-                  onClick={() => {
-                    setActive("products");
-                  }}
-                >
-                  Products
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-                <button
-                  className={cn(
-                    "flex items-center gap-x-2 text-left",
-                    styles.navLink,
-                  )}
-                  onClick={() => {
-                    setActive("services");
-                  }}
-                >
-                  Services
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </div>
-            </Transition>
-
-            <Transition
-              show={active === "policies"}
-              appear
-              enter="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              enterFrom="transform translate-x-full"
-              enterTo="transform translate-x-0"
-              leave="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              leaveFrom="transform translate-x-0"
-              leaveTo="transform translate-x-full"
-            >
-              <button
-                className={cn("flex items-center gap-x-2", styles.navLink)}
-                onClick={() => {
-                  setActive("default");
-                }}
-              >
-                <ArrowLeft className="h-6 w-6" />
-                Go Back
-              </button>
-              <Link
-                href={Router.InclusionPolicy}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Inclusion Policy
-              </Link>
-            </Transition>
-            <Transition
-              show={active === "products"}
-              className="w-full"
-              enter="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              enterFrom="transform translate-x-full"
-              enterTo="transform translate-x-0"
-              leave="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              leaveFrom="transform translate-x-0"
-              leaveTo="transform translate-x-full"
-            >
-              <button
-                className={cn("flex items-center gap-x-2", styles.navLink)}
-                onClick={() => {
-                  setActive("default");
-                }}
-              >
-                <ArrowLeft className="h-6 w-6" />
-                Go Back
-              </button>
-              <Link
-                href={Router.Dent}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Dent Instruments
-              </Link>
-              <Link
-                href={Router.Dranetz}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Dranetz
-              </Link>
-              <Link
-                href={Router.Electrotek}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Electrotek Systems
-              </Link>
-              <Link
-                href={Router.Powerside}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Powerside
-              </Link>
-            </Transition>
-            <Transition
-              show={active === "services"}
-              appear
-              className="w-full"
-              enter="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              enterFrom="transform translate-x-full"
-              enterTo="transform translate-x-0"
-              leave="transition-transform motion-reduce:transition-none ease-in-out duration-500 motion-reduce:duration-0"
-              leaveFrom="transform translate-x-0"
-              leaveTo="transform translate-x-full"
-            >
-              <button
-                className={cn("flex items-center gap-x-2", styles.navLink)}
-                onClick={() => {
-                  setActive("default");
-                }}
-              >
-                <ArrowLeft className="h-6 w-6" />
-                Go Back
-              </button>
-              <Link
-                href={Router.Consultancy}
-                className={cn("block", styles.navLink)}
-                onClick={handleClose}
-              >
-                Consultancy from IMH
-              </Link>
-            </Transition>
+                </div>
+              </Transition>
+            </div>
           </div>
         </Transition>
       </div>
