@@ -66,7 +66,7 @@ const config: CodegenConfig = {
   },
   require: ["ts-node/register"],
   generates: {
-    "./graphql-types/index.ts": {
+    "./src/graphql-types/index.ts": {
       plugins: ["typescript", "typescript-operations"],
     },
   },
