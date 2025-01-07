@@ -4,18 +4,18 @@ import type { FormHTMLAttributes, FunctionComponent } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { valibotResolver } from "@hookform/resolvers/valibot";
-import Button from "@/components/button";
-import Input from "@/components/input";
-import Textarea from "@/components/textarea";
+import Button from "~/components/button";
+import Input from "~/components/input";
+import Textarea from "~/components/textarea";
 import {
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/form";
-import { Toaster, useToast } from "@/components/toaster";
-import cn from "@/lib/class-names";
+} from "~/components/form";
+import { Toaster, useToast } from "~/components/toaster";
+import cn from "~/lib/class-names";
 import sendEmail from "./action";
 import { schema } from "./schema";
 import type { Values } from "./schema";

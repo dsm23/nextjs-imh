@@ -1,4 +1,4 @@
-import type { Maybe, PageFilter, Query, QueryAssetArgs } from "@/graphql-types";
+import type { Maybe, PageFilter, Query, QueryAssetArgs } from "~/graphql-types";
 
 const POST_GRAPHQL_FIELDS = `
   header

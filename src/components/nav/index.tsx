@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import type { FunctionComponent, ReactNode } from "react";
-import { useClickAway } from "@/hooks";
+import { useClickAway } from "~/hooks";
 
 import styles from "./styles.module.css";
 

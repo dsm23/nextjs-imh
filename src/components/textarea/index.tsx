@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import type { TextareaHTMLAttributes } from "react";
 
-import cn from "@/lib/class-names";
+import cn from "~/lib/class-names";
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
