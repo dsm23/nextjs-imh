@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import type { ComponentProps, ElementType, ReactElement, Ref } from "react";
-import cn from "@/lib/class-names";
+import cn from "~/lib/class-names";
 
 export type PlymorphicProps<E extends ElementType = ElementType> = {
   as?: E;

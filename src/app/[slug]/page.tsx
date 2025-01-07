@@ -1,8 +1,8 @@
 import type { FunctionComponent } from "react";
 import type { Metadata } from "next";
-import Container from "@/components/container";
-import PostBody from "@/components/post-body";
-import { getPageAndMorePages } from "@/lib/api";
+import Container from "~/components/container";
+import PostBody from "~/components/post-body";
+import { getPageAndMorePages } from "~/lib/api";
 
 type Props = {
   params: Promise<{

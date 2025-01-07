@@ -10,8 +10,8 @@ import Hamburger from "../hamburger";
 import Nav from "../nav";
 import NavDropdown from "../nav-dropdown";
 import { ArrowLeft, ChevronRight } from "../svgs";
-import { Router } from "@/constants";
-import cn from "@/lib/class-names";
+import { Router } from "~/constants";
+import cn from "~/lib/class-names";
 
 import styles from "./styles.module.css";
 

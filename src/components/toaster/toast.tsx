@@ -7,7 +7,7 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { Cross } from "../svgs";
 
-import cn from "@/lib/class-names";
+import cn from "~/lib/class-names";
 
 const ToastProvider = ToastPrimitives.Provider;
 

@@ -1,5 +1,5 @@
 import type { FunctionComponent, HTMLAttributes } from "react";
-import cn from "@/lib/class-names";
+import cn from "~/lib/class-names";
 
 type Props = HTMLAttributes<SVGSVGElement>;
 
