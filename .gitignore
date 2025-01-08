@@ -31,6 +31,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Cache Files
+.eslintcache
+.eslintmdcache
+.stylelintcache
+.prettiercache
+
 # local env files
 .env*.local
 

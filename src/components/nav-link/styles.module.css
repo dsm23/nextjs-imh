@@ -22,8 +22,9 @@
   font-weight: theme(fontWeight.medium);
   font-size: theme(fontSize.sm);
 
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -39,10 +40,10 @@
 
 .navLink {
   display: block;
-  whitespace: nowrap;
   padding: theme(padding.2) theme(padding.4);
   border-radius: theme(borderRadius.lg);
   color: theme(colors.slate.300);
+  white-space: nowrap;
   transition-duration: theme(transitionDuration.100);
   transition-property: color, background-color;
   transition-timing-function: theme(transitionTimingFunction.in-out);
@@ -73,6 +74,7 @@
   transform-origin: top right;
   border-radius: theme(borderRadius.md);
   background-color: theme(backgroundColor.white);
+
   @apply shadow-lg ring-1 ring-black ring-opacity-5;
 }
 
@@ -88,31 +90,7 @@
 
 .hyperlink:focus,
 .hyperlink:hover {
-  margin: -theme(margin.1);
+  margin: calc(-1 * theme(margin.1));
   padding: theme(padding.1);
   background-color: theme(backgroundColor.amber.400);
-}
-
-@media screen(sm) {
-  .nav {
-    display: flex;
-  }
-
-  .dropdown {
-    display: block;
-  }
-
-  .dropdown .navLink {
-    color: theme(colors.gray.900);
-  }
-}
-
-@screen (sm) {
-  .hamburger {
-    display: none;
-  }
-
-  .navLink:not(.navHome) {
-    width: auto;
-  }
 }
