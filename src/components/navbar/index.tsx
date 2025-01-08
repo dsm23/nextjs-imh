@@ -3,8 +3,6 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
-// TODO: extract ripple from package
-// @ts-expect-error no third party declarations
 import Ripple from "material-ripple-effects";
 import { Router } from "~/constants";
 import cn from "~/lib/class-names";
@@ -41,7 +39,7 @@ const Navbar = () => {
         aria-controls={id}
         aria-expanded={open}
       >
-        <Hamburger className="h-6 w-6" open={open} />
+        <Hamburger className="size-6" open={open} />
       </button>
       <div className="hidden md:flex">
         <Link
@@ -207,7 +205,7 @@ const Navbar = () => {
                       }}
                     >
                       Policies
-                      <ChevronRight className="h-6 w-6" />
+                      <ChevronRight className="size-6" />
                     </button>
                     <button
                       className={cn(
@@ -219,7 +217,7 @@ const Navbar = () => {
                       }}
                     >
                       Products
-                      <ChevronRight className="h-6 w-6" />
+                      <ChevronRight className="size-6" />
                     </button>
                     <button
                       className={cn(
@@ -231,7 +229,7 @@ const Navbar = () => {
                       }}
                     >
                       Services
-                      <ChevronRight className="h-6 w-6" />
+                      <ChevronRight className="size-6" />
                     </button>
                   </div>
                 </div>
@@ -252,7 +250,7 @@ const Navbar = () => {
                       setActive("default");
                     }}
                   >
-                    <ArrowLeft className="h-6 w-6" />
+                    <ArrowLeft className="size-6" />
                     Go Back
                   </button>
                   <Link
@@ -279,7 +277,7 @@ const Navbar = () => {
                       setActive("default");
                     }}
                   >
-                    <ArrowLeft className="h-6 w-6" />
+                    <ArrowLeft className="size-6" />
                     Go Back
                   </button>
                   <Link
@@ -327,7 +325,7 @@ const Navbar = () => {
                       setActive("default");
                     }}
                   >
-                    <ArrowLeft className="h-6 w-6" />
+                    <ArrowLeft className="size-6" />
                     Go Back
                   </button>
                   <Link

@@ -12,8 +12,10 @@ const RegisterServiceWorker = () => {
             );
           }
         },
-        (error) => {
-          console.error(`Service worker registration failed: ${error}`);
+        (error: unknown) => {
+          console.error(
+            `Service worker registration failed: ${error?.toString()}`,
+          );
         },
       );
     }

@@ -1,5 +1,5 @@
-// TODO: sort out embedded asset
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// switching to payload, this file will no longer be necesary
+/* eslint-disable */
 // @ts-nocheck
 
 import type { FunctionComponent } from "react";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import type { Options } from "@contentful/rich-text-react-renderer";
-import type { Block, Inline } from "@contentful/rich-text-types";
+import type { Node } from "@contentful/rich-text-types";
 import Anchor from "./anchor";
 import ContentfulImage from "./contentful-image";
 
@@ -37,18 +37,18 @@ const defaultOptions: Options = {
       <ul className="my-2 list-outside list-disc">{children}</ul>
     ),
     [BLOCKS.LIST_ITEM]: (_, children) => <li className="ml-8">{children}</li>,
-    [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => (
+    [BLOCKS.EMBEDDED_ASSET]: (node: Node) => (
       <ContentfulImage
         className="mx-auto max-w-full text-center shadow-lg lg:max-w-screen-md"
-        src={node?.data?.url}
-        height={node?.data?.height}
-        width={node?.data?.width}
-        alt={node?.data?.description}
+        src={node.data.url as string}
+        height={node.data.height as string}
+        width={node.data.width as string}
+        alt={node.data.description as string}
       />
     ),
     [INLINES.HYPERLINK]: (node, children) => (
-      <Anchor href={node.data.uri} as={Link}>
-        {children}
+      <Anchor asChild>
+        <Link href={node.data.uri as string}>{children}</Link>
       </Anchor>
     ),
   },

@@ -1,55 +1,50 @@
 import { useEffect, useRef } from "react";
 import type { RefObject } from "react";
 
-const on = <T extends Window | Document | HTMLElement | EventTarget>(
-  obj: T | null,
-  ...args: Parameters<T["addEventListener"]> | [string, Function | null, ...any]
+const addEvent = (
+  obj: EventTarget | null,
+  type: string,
+  listener: globalThis.EventListener,
+  options?: boolean | globalThis.AddEventListenerOptions,
 ): void => {
-  if (obj && obj.addEventListener) {
-    obj.addEventListener(
-      ...(args as Parameters<HTMLElement["addEventListener"]>),
-    );
-  }
+  obj?.addEventListener(type, listener, options);
 };
 
-const off = <T extends Window | Document | HTMLElement | EventTarget>(
-  obj: T | null,
-  ...args:
-    | Parameters<T["removeEventListener"]>
-    | [string, Function | null, ...any]
+const removeEvent = (
+  obj: EventTarget | null,
+  type: string,
+  listener: globalThis.EventListener,
+  options?: boolean | globalThis.EventListenerOptions,
 ): void => {
-  if (obj && obj.removeEventListener) {
-    obj.removeEventListener(
-      ...(args as Parameters<HTMLElement["removeEventListener"]>),
-    );
-  }
+  obj?.removeEventListener(type, listener, options);
 };
 
-const defaultEvents = ["mousedown", "touchstart"];
+const defaultEvents = ["mousedown", "touchstart"] as const;
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 const useClickAway = <E extends Event = Event>(
   ref: RefObject<HTMLElement | null>,
   onClickAway: (event: E) => void,
-  events: string[] = defaultEvents,
+  events: readonly string[] = defaultEvents,
 ) => {
   const savedCallback = useRef(onClickAway);
+
   useEffect(() => {
     savedCallback.current = onClickAway;
   }, [onClickAway]);
+
   useEffect(() => {
-    const handler = (event: E) => {
+    const handler: globalThis.EventListener = (event) => {
       const { current: el } = ref;
-      el &&
-        !el.contains(event.target as Node | null) &&
-        savedCallback.current(event);
-    };
-    for (const eventName of events) {
-      on(document, eventName, handler);
-    }
-    return () => {
-      for (const eventName of events) {
-        off(document, eventName, handler);
+      if (el && !el.contains(event.target as Node)) {
+        savedCallback.current(event as E);
       }
+    };
+
+    events.forEach((eventName) => addEvent(document, eventName, handler));
+
+    return () => {
+      events.forEach((eventName) => removeEvent(document, eventName, handler));
     };
   }, [events, ref]);
 };
