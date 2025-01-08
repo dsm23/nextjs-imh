@@ -52,8 +52,8 @@ jobs:
       - name: Lint check
         run: pnpm lint
 
-      # - name: Unit & Integration tests
-      #   run: pnpm test -- --coverage
+      - name: Unit & Integration tests
+        run: pnpm coverage
 
       - name: generate sw
         run: pnpm run generate.sw
