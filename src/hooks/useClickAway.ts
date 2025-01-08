@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import type { RefObject } from "react";
 
 const on = <T extends Window | Document | HTMLElement | EventTarget>(
   obj: T | null,
