@@ -64,5 +64,9 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^7.1.1",
     "workbox-build": "^7.3.0"
-  }
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@9.15.3"
 }
