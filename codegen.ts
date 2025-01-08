@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { CodegenConfig } from "@graphql-codegen/cli";
 import { parse } from "dotenv";
+import type { CodegenConfig } from "@graphql-codegen/cli";
 
 /**
  * Functions copied from vite https://github.com/vitejs/vite/blob/4215e22696dfec4e030749a1ad001777bf4dc2bb/packages/vite/src/node/env.ts
