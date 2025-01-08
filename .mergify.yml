@@ -3,8 +3,8 @@ pull_request_rules:
   - name: automatic approval
     conditions:
       - author=dsm23
+      - check-success=check
       - check-success~=codeql \([a-z]*\)
-      - check-success=build
       - check-success=dependency-review
       - check-success=gitleaks
       # - check-success~=playwright-tests \(\d, \d\)
@@ -17,8 +17,8 @@ pull_request_rules:
   - name: automatic approval for Dependabot pull requests
     conditions:
       - author=dependabot[bot]
+      - check-success=check
       - check-success~=codeql \([a-z]*\)
-      - check-success=build
       - check-success=dependency-review
       - check-success=gitleaks
       # - check-success~=playwright-tests \(\d, \d\)
@@ -31,8 +31,8 @@ pull_request_rules:
   # merge
   - name: Automatically merge when GitHub Actions jobs succeed
     conditions:
+      - check-success=check
       - check-success~=codeql \([a-z]*\)
-      - check-success=build
       - check-success=dependency-review
       - check-success=gitleaks
       # - check-success~=playwright-tests \(\d, \d\)
