@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import ContactForm from "./form";
 import Container from "~/components/container";
 import Map from "~/components/map";
+import ContactForm from "./form";
 
 export const metadata: Metadata = {
   title: "IMH | Contact",

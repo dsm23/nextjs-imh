@@ -1,6 +1,7 @@
 import type { FunctionComponent } from "react";
 import Img from "next/image";
 import type { ImageProps } from "next/image";
+
 // import { useStaticQuery, graphql } from 'gatsby';
 // import Img, { GatsbyImageProps, FluidObject } from 'gatsby-image';
 

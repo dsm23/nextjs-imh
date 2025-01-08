@@ -2,7 +2,6 @@ import { forwardRef } from "react";
 import type { ComponentProps, ElementType, ReactElement, Ref } from "react";
 import Link from "next/link";
 import cn from "~/lib/class-names";
-
 import styles from "./styles.module.css";
 
 export type PlymorphicProps<E extends ElementType = ElementType> = {

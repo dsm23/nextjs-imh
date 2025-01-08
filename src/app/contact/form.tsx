@@ -1,12 +1,10 @@
 "use client";
 
 import type { FormHTMLAttributes, FunctionComponent } from "react";
-import { FormProvider, useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { valibotResolver } from "@hookform/resolvers/valibot";
+import { FormProvider, useForm } from "react-hook-form";
 import Button from "~/components/button";
-import Input from "~/components/input";
-import Textarea from "~/components/textarea";
 import {
   FormControl,
   FormField,
@@ -14,6 +12,8 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/form";
+import Input from "~/components/input";
+import Textarea from "~/components/textarea";
 import { Toaster, useToast } from "~/components/toaster";
 import cn from "~/lib/class-names";
 import sendEmail from "./action";

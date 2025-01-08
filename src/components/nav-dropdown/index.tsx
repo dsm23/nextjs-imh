@@ -1,10 +1,9 @@
 import { useState } from "react";
 import type { FunctionComponent, ReactNode } from "react";
 import { Transition } from "@headlessui/react";
-import { ChevronDown } from "../svgs";
 import cn from "~/lib/class-names";
-
 import styles from "../navbar/styles.module.css";
+import { ChevronDown } from "../svgs";
 
 type Props = {
   children: ReactNode;
