@@ -53,11 +53,11 @@ function extractCardEntries(fetchResponse: Maybe<{ data?: Query }>) {
 }
 
 function extractPage(fetchResponse: Maybe<{ data?: Query }>) {
-  return fetchResponse?.data?.pageCollection?.items?.[0];
+  return fetchResponse?.data?.pageCollection?.items[0];
 }
 
 function extractWelcome(fetchResponse: Maybe<{ data?: Query }>) {
-  return fetchResponse?.data?.welcomeCollection?.items?.[0];
+  return fetchResponse?.data?.welcomeCollection?.items[0];
 }
 
 function extractPageEntries(fetchResponse: Maybe<{ data?: Query }>) {

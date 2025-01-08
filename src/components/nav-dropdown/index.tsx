@@ -38,7 +38,7 @@ const NavDropdown: FunctionComponent<Props> = ({ children, label }) => {
         )}
         onClick={toggle}
       >
-        {label} <ChevronDown className="h-6 w-6" />
+        {label} <ChevronDown className="size-6" />
       </button>
 
       <Transition show={open}>

@@ -9,7 +9,7 @@ interface ContentfulImageProps extends ImageProps {
 }
 
 const contentfulLoader: ImageLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
+  return `${src}?w=${width}&q=${quality ?? 75}`;
 };
 
 const ContentfulImage: FunctionComponent<ContentfulImageProps> = (props) => (

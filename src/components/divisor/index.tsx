@@ -31,7 +31,7 @@ const Divisor: FunctionComponent<Props> = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(callback, observerOptions);
 
-    observer.observe(animationContainer.current!);
+    observer.observe(animationContainer.current as SVGSVGElement);
     return () => {
       observer.disconnect();
     };
