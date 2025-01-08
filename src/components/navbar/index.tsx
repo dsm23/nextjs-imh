@@ -2,17 +2,16 @@
 
 import { useId, useState } from "react";
 import Link from "next/link";
+import { Transition } from "@headlessui/react";
 // TODO: extract ripple from package
 // @ts-expect-error no third party declarations
 import Ripple from "material-ripple-effects";
-import { Transition } from "@headlessui/react";
+import { Router } from "~/constants";
+import cn from "~/lib/class-names";
 import Hamburger from "../hamburger";
 import Nav from "../nav";
 import NavDropdown from "../nav-dropdown";
 import { ArrowLeft, ChevronRight } from "../svgs";
-import { Router } from "~/constants";
-import cn from "~/lib/class-names";
-
 import styles from "./styles.module.css";
 
 type State = "default" | "products" | "services" | "policies";

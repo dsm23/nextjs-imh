@@ -1,11 +1,12 @@
 import type { FunctionComponent, ReactNode } from "react";
-import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 
 import "~/styles/index.css";
+
+import { headers } from "next/headers";
 import Layout from "~/components/layout";
 import RegisterServiceWorker from "~/components/register-sw";
-import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "IMH",

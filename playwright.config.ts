@@ -1,7 +1,7 @@
+import fs from "node:fs";
+import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
-import path from "node:path";
-import fs from "node:fs";
 
 const PORT = process.env.PORT || 3000;
 

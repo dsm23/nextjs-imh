@@ -1,4 +1,4 @@
-import { email, minLength, strictObject, pipe, string } from "valibot";
+import { email, minLength, pipe, strictObject, string } from "valibot";
 import type { InferOutput } from "valibot";
 
 export const schema = strictObject({

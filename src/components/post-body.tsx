@@ -5,8 +5,8 @@
 import type { FunctionComponent } from "react";
 import Link from "next/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import type { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import type { Options } from "@contentful/rich-text-react-renderer";
 import type { Block, Inline } from "@contentful/rich-text-types";
 import Anchor from "./anchor";
 import ContentfulImage from "./contentful-image";

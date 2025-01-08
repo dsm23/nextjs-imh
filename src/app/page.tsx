@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import type { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import type { Options } from "@contentful/rich-text-react-renderer";
 import Container from "~/components/container";
-import PostBody from "~/components/post-body";
-import Divisor from "~/components/divisor";
-import { getAsset, getWelcomeForHome } from "~/lib/api";
 import ContentfulImage from "~/components/contentful-image";
+import Divisor from "~/components/divisor";
+import PostBody from "~/components/post-body";
+import { getAsset, getWelcomeForHome } from "~/lib/api";
 import { HOME_OG_IMAGE_URL } from "~/lib/constants";
 
 export const metadata: Metadata = {

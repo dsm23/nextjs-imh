@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
-import Container from "./container";
 import Link from "next/link";
+import Container from "./container";
 
 type Props = {
   preview: boolean;
