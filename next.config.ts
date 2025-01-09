@@ -1,6 +1,7 @@
-import { type NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import type { NextConfig } from "next";
 
-const config: NextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   eslint: {
     // Warning: This allows production builds to successfully complete even if
@@ -26,4 +27,12 @@ const config: NextConfig = {
   },
 };
 
-export default config;
+export default () => {
+  const plugins = [withBundleAnalyzer({ enabled: process.env.ANALYZE })];
+
+  const config = plugins.reduce((acc, next) => next(acc), {
+    ...nextConfig,
+  });
+
+  return config;
+};
