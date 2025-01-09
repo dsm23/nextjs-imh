@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: "standalone",
   productionBrowserSourceMaps: true,
   async rewrites() {
     return await [
