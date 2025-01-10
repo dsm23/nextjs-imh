@@ -1,5 +1,6 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -29,7 +30,10 @@ const nextConfig: NextConfig = {
 };
 
 export default () => {
-  const plugins = [withBundleAnalyzer({ enabled: process.env.ANALYZE })];
+  const plugins = [
+    withPayload,
+    withBundleAnalyzer({ enabled: process.env.ANALYZE }),
+  ];
 
   const config = plugins.reduce((acc, next) => next(acc), {
     ...nextConfig,
