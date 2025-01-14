@@ -1,4 +1,4 @@
-name: Check
+name: Unit testing
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
   HUSKY: 0
 
 jobs:
-  check:
+  unit-testing:
     runs-on: ubuntu-24.04
     steps:
       - name: Harden Runner
@@ -49,24 +49,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Format check
-        run: pnpm fmt.check
-
-      - name: Lint check
-        run: pnpm lint
-
       - name: Unit & Integration tests
         run: pnpm coverage
-
-      - name: generate sw
-        run: pnpm run generate.sw
-
-      - name: Build
-        run: pnpm build
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-          CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
-          # temporary
-          MAPBOX_API_TOKEN: ""
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
