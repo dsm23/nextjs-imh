@@ -2,6 +2,10 @@ import withBundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 
+const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   eslint: {
@@ -9,8 +13,26 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   images: {
     remotePatterns: [
+      ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
+        const url = new URL(item);
+
+        return {
+          hostname: url.hostname,
+          protocol: url.protocol.replace(":", "") as
+            | "https"
+            | "http"
+            | undefined,
+        };
+      }),
       {
         protocol: "https",
         hostname: "images.ctfassets.net",

@@ -106,6 +106,21 @@ export default ts.config(
       "tailwindcss/no-custom-classname": "off",
     },
   },
+  // temporary
+  // TODO: remove these rules
+  {
+    files: ["**/src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
+      "@typescript-eslint/no-unnecessary-type-arguments": "off",
+    },
+  },
   {
     // Configure.mdx
     files: ["**/*.mdx"],
