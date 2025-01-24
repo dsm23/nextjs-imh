@@ -173,7 +173,7 @@ importers:
         version: 4.3.1(@types/node@22.10.10)(typescript@5.7.3)
       contentful-import:
         specifier: ^9.4.78
-        version: 9.4.82(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.18.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.18.0(jiti@2.4.2)))
+        version: 9.4.83(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.18.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.18.0(jiti@2.4.2)))
       cz-conventional-changelog:
         specifier: ^3.3.0
         version: 3.3.0(@types/node@22.10.10)(typescript@5.7.3)
@@ -3036,8 +3036,8 @@ packages:
     resolution: {integrity: sha512-BkLMNpdV6prozk8LlyK/SOoWLmUFi+ZD+pcqti9ILCbVvHGk1ui1g4jJOc2WDLaeExz2qWwojxlPce5PljcT3w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ungap/structured-clone@1.2.1':
-    resolution: {integrity: sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==}
+  '@ungap/structured-clone@1.3.0':
+    resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
 
   '@whatwg-node/disposablestack@0.0.5':
     resolution: {integrity: sha512-9lXugdknoIequO4OYvIjhygvfSEgnO8oASLqLelnDhkRjgBZhc39shC3QSlZuyDO9bgYSIVa2cHAiN+St3ty4w==}
@@ -3699,13 +3699,13 @@ packages:
     resolution: {integrity: sha512-nNAycOJIvo2arHbXIgsF1I8xXXJtnTooGJaHwfamFeuXbyp1q5NlNbHYGqWVR5vQjLJsuk48VExLbpa26T9C9g==}
     engines: {node: '>=18'}
 
-  contentful-import@9.4.82:
-    resolution: {integrity: sha512-/Hqu+oIaHspY/UkkIZVKSWHBBcVIUi7TKUjqbIU/8KEGsjus3uLK/bwe2f08CmUv6BBYxp08cptThHza1CWf9A==}
+  contentful-import@9.4.83:
+    resolution: {integrity: sha512-R2fnwxSSr5PzWzP6umkZjVI9KYHa5AzL1OdMmFw+0XbdeAbl62YdUZbNWmyQXJLJsvpku5YpjuV19dQuzVQKiw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  contentful-management@11.43.0:
-    resolution: {integrity: sha512-8K8njQIH9c+cpjYVWBEVBHolzmmnmIb0IzMyKueqWq5CmEoUgm+Pcd/ojSfigvGXXw+MBFcJ6e22dSW6tiGdvQ==}
+  contentful-management@11.43.2:
+    resolution: {integrity: sha512-l+yhTH/Fctp7v2uwWlALvht4EyA3eZbzPVN4WZBwBXPPqvP56xEZtJ6D1FOl6BnjJgnszlSpKoGw0piFrnI1LA==}
     engines: {node: '>=18'}
 
   contentful-sdk-core@9.0.1:
@@ -11640,7 +11640,7 @@ snapshots:
       '@typescript-eslint/types': 8.21.0
       eslint-visitor-keys: 4.2.0
 
-  '@ungap/structured-clone@1.2.1': {}
+  '@ungap/structured-clone@1.3.0': {}
 
   '@whatwg-node/disposablestack@0.0.5':
     dependencies:
@@ -12403,13 +12403,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  contentful-import@9.4.82(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.18.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.18.0(jiti@2.4.2))):
+  contentful-import@9.4.83(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.18.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.18.0(jiti@2.4.2))):
     dependencies:
       '@discoveryjs/json-ext': 0.6.3
       bluebird: 3.7.2
       cli-table3: 0.6.5
       contentful-batch-libs: 9.7.0
-      contentful-management: 11.43.0
+      contentful-management: 11.43.2
       date-fns: 2.30.0
       eslint: 8.57.1
       eslint-config-standard: 17.1.0(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.18.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.18.0(jiti@2.4.2)))(eslint@8.57.1)
@@ -12429,7 +12429,7 @@ snapshots:
       - zen-observable
       - zenObservable
 
-  contentful-management@11.43.0:
+  contentful-management@11.43.2:
     dependencies:
       '@contentful/rich-text-types': 16.8.5
       axios: 1.7.9
@@ -13256,7 +13256,7 @@ snapshots:
       '@humanwhocodes/config-array': 0.13.0
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
-      '@ungap/structured-clone': 1.2.1
+      '@ungap/structured-clone': 1.3.0
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.6
