@@ -236,16 +236,16 @@ importers:
         version: 0.6.11(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.4.2))(prettier-plugin-css-order@2.1.2(postcss@8.5.1)(prettier@3.4.2))(prettier@3.4.2)
       stylelint:
         specifier: ^16.11.0
-        version: 16.13.2(typescript@5.7.3)
+        version: 16.14.0(typescript@5.7.3)
       stylelint-config-standard:
         specifier: ^36.0.1
-        version: 36.0.1(stylelint@16.13.2(typescript@5.7.3))
+        version: 36.0.1(stylelint@16.14.0(typescript@5.7.3))
       stylelint-order:
         specifier: ^6.0.4
-        version: 6.0.4(stylelint@16.13.2(typescript@5.7.3))
+        version: 6.0.4(stylelint@16.14.0(typescript@5.7.3))
       stylelint-selector-bem-pattern:
         specifier: ^4.0.1
-        version: 4.0.1(stylelint@16.13.2(typescript@5.7.3))
+        version: 4.0.1(stylelint@16.14.0(typescript@5.7.3))
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -3402,8 +3402,8 @@ packages:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
     engines: {node: '>=10.16.0'}
 
-  cacheable@1.8.7:
-    resolution: {integrity: sha512-AbfG7dAuYNjYxFUtL1lAqmlWdxczCJ47w7cFjhGcnGnUdwSo6VgmSojfoW3tUI12HUkgTJ5kqj78yyq6TsFtlg==}
+  cacheable@1.8.8:
+    resolution: {integrity: sha512-OE1/jlarWxROUIpd0qGBSKFLkNsotY8pt4GeiVErUYh/NUeTNrT+SBksUgllQv4m6a0W/VZsLuiHb88maavqEw==}
 
   cachedir@2.3.0:
     resolution: {integrity: sha512-A+Fezp4zxnit6FanDmv9EqXNAi3vt9DWp51/71UEhXukb7QUuvtv9344h91dyAxuTLoSYJFU299qzR3tzwPAhw==}
@@ -4874,8 +4874,8 @@ packages:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
     engines: {node: '>=0.10.0'}
 
-  hookified@1.6.0:
-    resolution: {integrity: sha512-se7cpwTA+iA/eY548Bu03JJqBiEZAqU2jnyKdj5B5qurtBg64CZGHTgqCv4Yh7NWu6FGI09W61MCq+NoPj9GXA==}
+  hookified@1.7.0:
+    resolution: {integrity: sha512-XQdMjqC1AyeOzfs+17cnIk7Wdfu1hh2JtcyNfBf5u9jHrT3iZUlGHxLTntFBuk5lwkqJ6l3+daeQdHK5yByHVA==}
 
   hosted-git-info@7.0.2:
     resolution: {integrity: sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==}
@@ -7516,8 +7516,8 @@ packages:
     peerDependencies:
       stylelint: ^16.2.1
 
-  stylelint@16.13.2:
-    resolution: {integrity: sha512-wDlgh0mRO9RtSa3TdidqHd0nOG8MmUyVKl+dxA6C1j8aZRzpNeEgdhFmU5y4sZx4Fc6r46p0fI7p1vR5O2DZqA==}
+  stylelint@16.14.0:
+    resolution: {integrity: sha512-orePw2dKxzXC0hd1VmxrDBqgf1KUV9DYsZY4guKLE9XcQD7m0BxVnWMaoQqMNsQIG14MyyTHf6zoajvOnDra8g==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -12033,9 +12033,9 @@ snapshots:
     dependencies:
       streamsearch: 1.1.0
 
-  cacheable@1.8.7:
+  cacheable@1.8.8:
     dependencies:
-      hookified: 1.6.0
+      hookified: 1.7.0
       keyv: 5.2.3
 
   cachedir@2.3.0: {}
@@ -13520,9 +13520,9 @@ snapshots:
 
   flat-cache@6.1.5:
     dependencies:
-      cacheable: 1.8.7
+      cacheable: 1.8.8
       flatted: 3.3.2
-      hookified: 1.6.0
+      hookified: 1.7.0
 
   flatted@3.3.2: {}
 
@@ -13836,7 +13836,7 @@ snapshots:
     dependencies:
       parse-passwd: 1.0.0
 
-  hookified@1.6.0: {}
+  hookified@1.7.0: {}
 
   hosted-git-info@7.0.2:
     dependencies:
@@ -16980,29 +16980,29 @@ snapshots:
       '@babel/core': 7.24.5
       babel-plugin-macros: 3.1.0
 
-  stylelint-config-recommended@14.0.1(stylelint@16.13.2(typescript@5.7.3)):
+  stylelint-config-recommended@14.0.1(stylelint@16.14.0(typescript@5.7.3)):
     dependencies:
-      stylelint: 16.13.2(typescript@5.7.3)
+      stylelint: 16.14.0(typescript@5.7.3)
 
-  stylelint-config-standard@36.0.1(stylelint@16.13.2(typescript@5.7.3)):
+  stylelint-config-standard@36.0.1(stylelint@16.14.0(typescript@5.7.3)):
     dependencies:
-      stylelint: 16.13.2(typescript@5.7.3)
-      stylelint-config-recommended: 14.0.1(stylelint@16.13.2(typescript@5.7.3))
+      stylelint: 16.14.0(typescript@5.7.3)
+      stylelint-config-recommended: 14.0.1(stylelint@16.14.0(typescript@5.7.3))
 
-  stylelint-order@6.0.4(stylelint@16.13.2(typescript@5.7.3)):
+  stylelint-order@6.0.4(stylelint@16.14.0(typescript@5.7.3)):
     dependencies:
       postcss: 8.5.1
       postcss-sorting: 8.0.2(postcss@8.5.1)
-      stylelint: 16.13.2(typescript@5.7.3)
+      stylelint: 16.14.0(typescript@5.7.3)
 
-  stylelint-selector-bem-pattern@4.0.1(stylelint@16.13.2(typescript@5.7.3)):
+  stylelint-selector-bem-pattern@4.0.1(stylelint@16.14.0(typescript@5.7.3)):
     dependencies:
       lodash: 4.17.21
       postcss: 8.5.1
       postcss-bem-linter: 4.0.1(postcss@8.5.1)
-      stylelint: 16.13.2(typescript@5.7.3)
+      stylelint: 16.14.0(typescript@5.7.3)
 
-  stylelint@16.13.2(typescript@5.7.3):
+  stylelint@16.14.0(typescript@5.7.3):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-tokenizer': 3.0.3
