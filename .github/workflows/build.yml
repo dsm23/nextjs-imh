@@ -15,6 +15,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    services:
+      mongo:
+        image: mongo:8
+        ports:
+          - 27017:27017
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@cb605e52c26070c328afc4562f0b4ada7618a84e # v2
@@ -61,3 +66,6 @@ jobs:
           # temporary
           MAPBOX_API_TOKEN: ""
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+          DATABASE_URI: ${{ vars.DATABASE_URI }}
+          NEXT_PUBLIC_SERVER_URL: ${{ vars.NEXT_PUBLIC_SERVER_URL }}

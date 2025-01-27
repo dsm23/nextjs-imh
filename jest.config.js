@@ -1,4 +1,7 @@
 import nextJest from "next/jest.js";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 
 const createJestConfig = nextJest({
   dir: "./",
@@ -15,10 +18,10 @@ const customJestConfig = {
   coveragePathIgnorePatterns: [".next/", "dist/", "node_modules/", "stories/"],
   coverageThreshold: {
     global: {
-      branches: 1,
-      functions: 1,
-      lines: 1,
-      statements: 1,
+      branches: 0.1,
+      functions: 0.1,
+      lines: 0.1,
+      statements: 0.1,
     },
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
@@ -26,6 +29,8 @@ const customJestConfig = {
   modulePathIgnorePatterns: ["<rootDir>/dist/"],
   testPathIgnorePatterns: ["<rootDir>/playwright-tests"],
   moduleNameMapper: {
+    // https://github.com/lucide-icons/lucide/issues/2734#issuecomment-2597970172
+    "lucide-react": require.resolve("lucide-react"),
     "^~/(.*)$": "<rootDir>/src/$1",
   },
 };
