@@ -93,8 +93,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0
       valibot:
-        specifier: 1.0.0-beta.12
-        version: 1.0.0-beta.12(typescript@5.7.3)
+        specifier: 1.0.0-beta.14
+        version: 1.0.0-beta.14(typescript@5.7.3)
     devDependencies:
       '@axe-core/playwright':
         specifier: 4.10.1
@@ -7933,8 +7933,8 @@ packages:
     resolution: {integrity: sha512-kiGUalWN+rgBJ/1OHZsBtU4rXZOfj/7rKQxULKlIzwzQSvMJUUNgPwJEEh7gU6xEVxC0ahoOBvN2YI8GH6FNgA==}
     engines: {node: '>=10.12.0'}
 
-  valibot@1.0.0-beta.12:
-    resolution: {integrity: sha512-j3WIxJ0pmUFMfdfUECn3YnZPYOiG0yHYcFEa/+RVgo0I+MXE3ToLt7gNRLtY5pwGfgNmsmhenGZfU5suu9ijUA==}
+  valibot@1.0.0-beta.14:
+    resolution: {integrity: sha512-tLyV2rE5QL6U29MFy3xt4AqMrn+/HErcp2ZThASnQvPMwfSozjV1uBGKIGiegtZIGjinJqn0SlBdannf18wENA==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -17495,7 +17495,7 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
 
-  valibot@1.0.0-beta.12(typescript@5.7.3):
+  valibot@1.0.0-beta.14(typescript@5.7.3):
     optionalDependencies:
       typescript: 5.7.3
 
