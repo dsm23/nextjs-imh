@@ -30,7 +30,7 @@
     "@payloadcms/next": "3.21.0",
     "@payloadcms/plugin-form-builder": "3.21.0",
     "@payloadcms/plugin-redirects": "3.20.0",
-    "@payloadcms/plugin-seo": "3.20.0",
+    "@payloadcms/plugin-seo": "3.21.0",
     "@payloadcms/richtext-lexical": "3.20.0",
     "@payloadcms/ui": "3.20.0",
     "@radix-ui/react-checkbox": "1.1.4",
