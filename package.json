@@ -72,7 +72,7 @@
     "@jest/globals": "29.7.0",
     "@jest/types": "29.6.3",
     "@next/bundle-analyzer": "15.1.6",
-    "@playwright/test": "1.50.0",
+    "@playwright/test": "1.50.1",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.2.0",
