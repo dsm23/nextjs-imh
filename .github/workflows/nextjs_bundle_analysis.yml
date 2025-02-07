@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-24.04
     services:
       mongo:
-        image: mongo:8@sha256:59bec91fb7535b41e17790e3a79fdb14e82d58f39d355e1d1c3fbdf741e598aa
+        image: mongo:8@sha256:b5725ac74a0d00d2bb48af997535f4eb4e87df61a2054306ae06f258b6c6b337
         ports:
           - 27017:27017
     permissions:
@@ -115,7 +115,7 @@ jobs:
       - name: Get comment body
         id: get-comment-body
         if: success() && github.event.number
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           result-encoding: string
           script: |
