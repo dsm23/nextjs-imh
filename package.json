@@ -80,8 +80,8 @@
     "@types/node": "22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
-    "@typescript-eslint/eslint-plugin": "8.22.0",
-    "@typescript-eslint/parser": "8.22.0",
+    "@typescript-eslint/eslint-plugin": "8.23.0",
+    "@typescript-eslint/parser": "8.23.0",
     "autoprefixer": "10.4.20",
     "commitizen": "4.3.1",
     "contentful-import": "9.4.88",
@@ -111,7 +111,7 @@
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "3.4.17",
     "typescript": "5.7.3",
-    "typescript-eslint": "8.22.0",
+    "typescript-eslint": "8.23.0",
     "workbox-build": "7.3.0"
   },
   "resolutions": {
