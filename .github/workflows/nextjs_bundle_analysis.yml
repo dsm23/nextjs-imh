@@ -115,7 +115,7 @@ jobs:
       - name: Get comment body
         id: get-comment-body
         if: success() && github.event.number
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           result-encoding: string
           script: |
