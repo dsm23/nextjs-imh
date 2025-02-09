@@ -29,7 +29,7 @@
     "@payloadcms/live-preview-react": "3.22.0",
     "@payloadcms/next": "3.22.0",
     "@payloadcms/plugin-form-builder": "3.22.0",
-    "@payloadcms/plugin-redirects": "3.21.0",
+    "@payloadcms/plugin-redirects": "3.22.0",
     "@payloadcms/plugin-seo": "3.22.0",
     "@payloadcms/richtext-lexical": "3.22.0",
     "@payloadcms/ui": "3.21.0",
