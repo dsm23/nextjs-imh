@@ -155,7 +155,7 @@ importers:
         version: 4.4.1(graphql@16.10.0)
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 4.4.1
-        version: 4.4.1(prettier@3.4.2)
+        version: 4.4.1(prettier@3.5.1)
       '@jest/globals':
         specifier: 29.7.0
         version: 29.7.0
@@ -259,14 +259,14 @@ importers:
         specifier: 8.5.2
         version: 8.5.2
       prettier:
-        specifier: 3.4.2
-        version: 3.4.2
+        specifier: 3.5.1
+        version: 3.5.1
       prettier-plugin-css-order:
         specifier: 2.1.2
-        version: 2.1.2(postcss@8.5.2)(prettier@3.4.2)
+        version: 2.1.2(postcss@8.5.2)(prettier@3.5.1)
       prettier-plugin-tailwindcss:
         specifier: 0.6.11
-        version: 0.6.11(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.4.2))(prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.4.2))(prettier@3.4.2)
+        version: 0.6.11(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.5.1))(prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.5.1))(prettier@3.5.1)
       stylelint:
         specifier: 16.14.1
         version: 16.14.1(typescript@5.7.3)
@@ -6937,6 +6937,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.5.1:
+    resolution: {integrity: sha512-hPpFQvHwL3Qv5AdRvBFMhnKo4tYxp0ReXiPn2bxkiohEX6mBeBwEpBSQTkD458RaaDKQMYSp4hX4UtfUTA5wDw==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-bytes@5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
@@ -10359,13 +10364,13 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.4.2)':
+  '@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.5.1)':
     dependencies:
       '@babel/generator': 7.26.5
       '@babel/parser': 7.26.5
       '@babel/traverse': 7.26.5
       '@babel/types': 7.26.5
-      prettier: 3.4.2
+      prettier: 3.5.1
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
@@ -15112,7 +15117,7 @@ snapshots:
       js-yaml: 4.1.0
       lodash: 4.17.21
       minimist: 1.2.8
-      prettier: 3.4.2
+      prettier: 3.5.1
       tinyglobby: 0.2.10
 
   json-schema-traverse@0.4.1: {}
@@ -16490,23 +16495,25 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.4.2):
+  prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.5.1):
     dependencies:
       css-declaration-sorter: 7.2.0(postcss@8.5.2)
       postcss-less: 6.0.0(postcss@8.5.2)
       postcss-scss: 4.0.9(postcss@8.5.2)
-      prettier: 3.4.2
+      prettier: 3.5.1
     transitivePeerDependencies:
       - postcss
 
-  prettier-plugin-tailwindcss@0.6.11(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.4.2))(prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.4.2))(prettier@3.4.2):
+  prettier-plugin-tailwindcss@0.6.11(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.5.1))(prettier-plugin-css-order@2.1.2(postcss@8.5.2)(prettier@3.5.1))(prettier@3.5.1):
     dependencies:
-      prettier: 3.4.2
+      prettier: 3.5.1
     optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.4.1(prettier@3.4.2)
-      prettier-plugin-css-order: 2.1.2(postcss@8.5.2)(prettier@3.4.2)
+      '@ianvs/prettier-plugin-sort-imports': 4.4.1(prettier@3.5.1)
+      prettier-plugin-css-order: 2.1.2(postcss@8.5.2)(prettier@3.5.1)
 
   prettier@3.4.2: {}
+
+  prettier@3.5.1: {}
 
   pretty-bytes@5.6.0: {}
 
