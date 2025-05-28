@@ -70,7 +70,7 @@
     "@graphql-codegen/core": "4.0.2",
     "@graphql-codegen/typescript": "4.1.6",
     "@graphql-codegen/typescript-operations": "4.6.1",
-    "@ianvs/prettier-plugin-sort-imports": "4.4.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.4.2",
     "@jest/globals": "29.7.0",
     "@jest/types": "29.6.3",
     "@next/bundle-analyzer": "15.3.2",
