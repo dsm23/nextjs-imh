@@ -5,7 +5,9 @@ pull_request_rules:
       - author=dsm23
       - check-success=analyze-bundle
       - check-success=build
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (actions)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=format
       - check-success=gitleaks
@@ -23,7 +25,9 @@ pull_request_rules:
       - author=renovate[bot]
       - check-success=analyze-bundle
       - check-success=build
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (actions)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=format
       - check-success=gitleaks
@@ -41,7 +45,9 @@ pull_request_rules:
     conditions:
       - check-success=analyze-bundle
       - check-success=build
-      - check-success~=codeql \([a-z]*\)
+      - check-success=codeql (actions)
+      - check-success=codeql (javascript)
+      - check-success=codeql (typescript)
       - check-success=dependency-review
       - check-success=format
       - check-success=gitleaks
