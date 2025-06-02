@@ -1,4 +1,5 @@
 {
+  "name": "nextjs-imh",
   "private": true,
   "type": "module",
   "scripts": {
