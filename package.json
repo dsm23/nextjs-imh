@@ -25,7 +25,7 @@
     "@contentful/rich-text-react-renderer": "16.0.1",
     "@contentful/rich-text-types": "17.0.0",
     "@headlessui/react": "2.2.4",
-    "@hookform/resolvers": "5.1.0",
+    "@hookform/resolvers": "5.1.1",
     "@payloadcms/db-mongodb": "3.42.0",
     "@payloadcms/live-preview-react": "3.42.0",
     "@payloadcms/next": "3.42.0",
