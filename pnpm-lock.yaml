@@ -105,8 +105,8 @@ importers:
         specifier: 7.57.0
         version: 7.57.0(react@19.1.0)
       resend:
-        specifier: 4.5.2
-        version: 4.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 4.6.0
+        version: 4.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       sharp:
         specifier: 0.34.2
         version: 0.34.2
@@ -7413,8 +7413,8 @@ packages:
   require-main-filename@2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
 
-  resend@4.5.2:
-    resolution: {integrity: sha512-Uu11/254nkDFgVXQp18rzuz+9kRy5Ud4qr7FW98Yg4I4jkDKX1cr/8JKdrcJI753oknEq69/i3VTLbtrveQUGw==}
+  resend@4.6.0:
+    resolution: {integrity: sha512-D5T2I82FvEUYFlrHzaDvVtr5ADHdhuoLaXgLFGABKyNtQgPWIuz0Vp2L2Evx779qjK37aF4kcw1yXJDHhA2JnQ==}
     engines: {node: '>=18'}
 
   resolve-cwd@3.0.0:
@@ -17376,7 +17376,7 @@ snapshots:
 
   require-main-filename@2.0.0: {}
 
-  resend@4.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  resend@4.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@react-email/render': 1.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     transitivePeerDependencies:
