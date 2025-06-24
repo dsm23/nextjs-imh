@@ -51,7 +51,7 @@
     "prism-react-renderer": "2.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-email": "4.0.16",
+    "react-email": "4.0.17",
     "react-hook-form": "7.58.1",
     "resend": "4.6.0",
     "sharp": "0.34.2",
