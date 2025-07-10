@@ -18,7 +18,7 @@
 }
 
 .hamburger.open :is(.top, .bottom) {
-  y: 45;
+  y: 45px;
 }
 
 .hamburger.open .top {

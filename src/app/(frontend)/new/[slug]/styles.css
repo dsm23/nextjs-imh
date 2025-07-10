@@ -1,21 +1,49 @@
+@reference "../../../styles/index.css";
+
 .rich-text {
   h1 {
-    @apply my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter;
+    margin-block: --spacing(8);
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
   }
 
   a {
-    @apply -mx-1 rounded px-1 font-semibold text-purple-800 underline underline-offset-2 hover:bg-yellow-300;
+    margin-inline: calc(-1 * var(--spacing));
+    padding-inline: --spacing(1);
+    border-radius: var(--radius-sm);
+    color: var(--color-purple-800);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    :hover {
+      background-color: var(--color-yellow-300);
+    }
   }
 
   p {
-    @apply mt-2 text-gray-900;
+    margin-top: --spacing(2);
+    color: var(--color-gray-900);
   }
 
   ul {
-    @apply my-2 list-outside list-disc;
+    margin-block: --spacing(2);
+    list-style-position: outside;
+    list-style-type: disc;
   }
 
   li {
-    @apply ml-8;
+    margin-left: --spacing(8);
+  }
+}
+
+@variant md {
+  .rich-text {
+    h1 {
+      font-size: var(--font-size-4xl);
+      letter-spacing: var(--tracking-tighter);
+    }
   }
 }
