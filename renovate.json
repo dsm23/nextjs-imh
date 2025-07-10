@@ -11,6 +11,17 @@
     ":enableVulnerabilityAlerts",
     ":pinAllExceptPeerDependencies"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)prettier.config.js$/"],
+      "depNameTemplate": "typescript",
+      "datasourceTemplate": "npm",
+      "matchStrings": [
+        "\\/\\/ renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (?:lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+importOrderTypeScriptVersion\\s*\\:\\s*[\"']?(?<currentValue>.+?)[\"']"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "extends": ["packages:eslint"],
@@ -28,16 +39,19 @@
       "extends": ["packages:stylelint"],
       "groupName": "stylelint packages"
     },
+    // only matchPackageNames can be OR'd https://github.com/renovatebot/renovate/discussions/13644#discussioncomment-1996887
     {
       "groupName": "playwright monorepo",
       "matchPackageNames": [
         "playwright",
         "@playwright/test",
         "mcr.microsoft.com/playwright"
-      ],
-      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
+      ]
     }
   ],
+  "patch": {
+    "rebaseWhen": "behind-base-branch"
+  },
   "rebaseWhen": "conflicted",
   "osvVulnerabilityAlerts": true
 }
