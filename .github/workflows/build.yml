@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-24.04
     services:
       mongo:
-        image: mongo:8@sha256:5941949d3887e40be5175787aade07dc052f2cddb8ce21b740c3948eba6a3ed0
+        image: mongo:8@sha256:f331890607b5cdce091da9823f91ab1e4c54d31fd572282037880b2eaafff454
         ports:
           - 27017:27017
     steps:
