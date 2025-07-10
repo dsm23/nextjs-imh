@@ -104,9 +104,9 @@ const Navbar = () => {
           <div
             className={cn(
               "grid transform motion-reduce:transition-none motion-reduce:duration-0",
-              "data:[transition]:duration-150 data-[transition]:transition-[grid-template-rows]",
-              "data-[enter]:data-[closed]:grid-rows-[0fr] data-[enter]:grid-rows-[1fr]",
-              "data-[leave]:data-[closed]:grid-rows-[0fr] data-[leave]:grid-rows-[1fr]",
+              "data:[transition]:duration-150 data-transition:transition-[grid-template-rows]",
+              "data-enter:grid-rows-[1fr] data-enter:data-closed:grid-rows-[0fr]",
+              "data-leave:grid-rows-[1fr] data-leave:data-closed:grid-rows-[0fr]",
             )}
           >
             <div
@@ -119,9 +119,9 @@ const Navbar = () => {
                     styles.defaultTransition,
 
                     "transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
-                    "data-[transition]:duration-500",
-                    "data-[enter]:data-[closed]:-translate-x-full data-[enter]:translate-x-0",
-                    "data-[leave]:data-[closed]:-translate-x-full data-[leave]:translate-x-0",
+                    "data-transition:duration-500",
+                    "data-enter:translate-x-0 data-enter:data-closed:-translate-x-full",
+                    "data-leave:translate-x-0 data-leave:data-closed:-translate-x-full",
                   )}
                 >
                   <div className="overflow-hidden">
@@ -239,9 +239,9 @@ const Navbar = () => {
                 <div
                   className={cn(
                     "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
-                    "data-[transition]:duration-500",
-                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
-                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                    "data-transition:duration-500",
+                    "data-enter:translate-x-0 data-enter:data-closed:translate-x-full",
+                    "data-leave:translate-x-0 data-leave:data-closed:translate-x-full",
                   )}
                 >
                   <button
@@ -266,9 +266,9 @@ const Navbar = () => {
                 <div
                   className={cn(
                     "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
-                    "data-[transition]:duration-500",
-                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
-                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                    "data-transition:duration-500",
+                    "data-enter:translate-x-0 data-enter:data-closed:translate-x-full",
+                    "data-leave:translate-x-0 data-leave:data-closed:translate-x-full",
                   )}
                 >
                   <button
@@ -314,9 +314,9 @@ const Navbar = () => {
                 <div
                   className={cn(
                     "w-full transform overflow-hidden motion-reduce:transition-none motion-reduce:duration-0",
-                    "data-[transition]:duration-500",
-                    "data-[enter]:data-[closed]:translate-x-full data-[enter]:translate-x-0",
-                    "data-[leave]:data-[closed]:translate-x-full data-[leave]:translate-x-0",
+                    "data-transition:duration-500",
+                    "data-enter:translate-x-0 data-enter:data-closed:translate-x-full",
+                    "data-leave:translate-x-0 data-leave:data-closed:translate-x-full",
                   )}
                 >
                   <button

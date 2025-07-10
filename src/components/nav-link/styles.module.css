@@ -3,11 +3,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  padding: theme(padding.4);
+  padding: --spacing(4);
   background-image: linear-gradient(
     45deg,
-    theme("colors.amber.700") 0%,
-    theme("colors.violet.700") 5%
+    var(--color-amber-700) 0%,
+    var(--color-violet-700) 5%
   );
 }
 
@@ -15,12 +15,12 @@
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-  padding: theme(padding.2) theme(padding.4);
+  padding: --spacing(2) --spacing(4);
   border: 1px solid transparent;
-  border-radius: theme(borderRadius.md);
-  color: theme(colors.white);
-  font-weight: theme(fontWeight.medium);
-  font-size: theme(fontSize.sm);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: var(--text-sm);
 
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -31,34 +31,34 @@
 }
 
 .hamburger:hover {
-  background-color: theme(backgroundColor.indigo.800);
+  background-color: var(--color-indigo-800);
 }
 
 .hamburger:focus {
-  outline: 1px solid theme(outlineColor.amber.500);
-  outline-offset: theme(outlineOffset.2);
+  outline: 1px solid var(--color-amber-500);
+  outline-offset: 2px;
 }
 
 .navLink {
   display: block;
-  padding: theme(padding.2) theme(padding.4);
-  border-radius: theme(borderRadius.lg);
-  color: theme(colors.slate.300);
+  padding: --spacing(2) --spacing(4);
+  border-radius: var(--radius-lg);
+  color: var(--color-slate-300);
   white-space: nowrap;
-  transition-duration: theme(transitionDuration.100);
+  transition-duration: 100ms;
   transition-property: color, background-color;
-  transition-timing-function: theme(transitionTimingFunction.in-out);
+  transition-timing-function: var(--ease-in-out);
 }
 
 .navLink:focus {
-  outline: 2px solid theme(outlineColor.amber.500);
-  outline-offset: theme(outlineOffset.2);
-  background-color: theme(backgroundColor.violet.800);
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 2px;
+  background-color: var(--color-violet-800);
 }
 
 .navLink:hover {
-  background-color: theme(backgroundColor.violet.800);
-  color: theme(colors.white);
+  background-color: var(--color-violet-800);
+  color: var(--color-white);
 }
 
 .navLink:not(.navHome) {
@@ -70,13 +70,12 @@
   position: absolute;
   top: 100%;
   right: 0;
-  width: theme(width.56);
-  margin-top: theme(margin.2);
+  width: --spacing(56);
+  margin-top: --spacing(2);
   transform-origin: top right;
-  border-radius: theme(borderRadius.md);
-  background-color: theme(backgroundColor.white);
-
-  @apply shadow-lg ring-1 ring-black ring-opacity-5;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
 }
 
 .dropdown:focus {
@@ -84,14 +83,14 @@
 }
 
 .hyperlink {
-  border-radius: theme(borderRadius.DEFAULT);
-  color: theme(colors.violet.700);
-  font-weight: theme(fontWeight.semibold);
+  border-radius: var(--radius-sm);
+  color: var(--color-violet-700);
+  font-weight: 600;
 }
 
 .hyperlink:focus,
 .hyperlink:hover {
-  margin: calc(-1 * theme(margin.1));
-  padding: theme(padding.1);
-  background-color: theme(backgroundColor.amber.400);
+  margin: calc(-1 * var(--spacing));
+  padding: --spacing(1);
+  background-color: var(--color-amber-400);
 }

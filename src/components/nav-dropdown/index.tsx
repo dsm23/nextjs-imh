@@ -44,13 +44,13 @@ const NavDropdown: FunctionComponent<Props> = ({ children, label }) => {
       <Transition show={open}>
         <div
           className={cn([
-            "data-transition:transition transform",
+            "transform data-transition:transition",
 
-            "data-[enter]:duration-100 data-[enter]:ease-out",
-            "data-[leave]:duration-75 data-[leave]:ease-in",
+            "data-enter:duration-100 data-enter:ease-out",
+            "data-leave:duration-75 data-leave:ease-in",
 
-            "data-[enter]:data-[closed]:scale-90 data-[enter]:scale-100 data-[enter]:data-[closed]:opacity-0 data-[enter]:opacity-100",
-            "data-[leave]:data-[closed]:scale-90 data-[leave]:scale-100 data-[leave]:data-[closed]:opacity-0 data-[leave]:opacity-100",
+            "data-enter:scale-100 data-enter:opacity-100 data-enter:data-closed:scale-90 data-enter:data-closed:opacity-0",
+            "data-leave:scale-100 data-leave:opacity-100 data-leave:data-closed:scale-90 data-leave:data-closed:opacity-0",
           ])}
         >
           <div className={styles.dropdown}>{children}</div>

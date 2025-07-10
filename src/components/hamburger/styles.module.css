@@ -1,5 +1,5 @@
 .hamburger {
-  color: theme(colors.white);
+  color: var(--color-white);
 }
 
 .hamburger .line {

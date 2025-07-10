@@ -57,9 +57,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({
       mediaBlock: ({ node }) => (
         <MediaBlock
           className="col-span-3 col-start-1"
-          imgClassName="mx-auto max-w-full text-center shadow-lg lg:max-w-screen-md"
+          imgClassName="mx-auto max-w-full text-center shadow-lg lg:max-w-(--breakpoint-md)"
           {...node.fields}
-          captionClassName="mx-auto max-w-[48rem]"
+          captionClassName="mx-auto max-w-3xl"
           enableGutter={false}
           disableInnerContainer={true}
         />

@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .nav {
   display: flex;
   z-index: 3;
@@ -8,13 +10,13 @@
   width: 100%;
   background-image: linear-gradient(
     45deg,
-    theme("colors.amber.700") 0%,
-    theme("colors.violet.700") 5%
+    var(--color-amber-700) 0%,
+    var(--color-violet-700) 5%
   );
 }
 
-@screen lg {
+@variant lg {
   .nav {
-    padding-inline: theme(padding.4);
+    padding-inline: --spacing(4);
   }
 }

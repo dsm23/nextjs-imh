@@ -1,46 +1,54 @@
+@reference "../../styles/index.css";
+
 .hamburger {
   display: inline-flex;
   align-items: center;
-  margin: theme(margin.4);
+  margin: --spacing(4);
   margin-left: auto;
-  padding: theme(padding.2) theme(padding.4);
+  padding: --spacing(2) --spacing(4);
   border: 1px solid transparent;
-  border-radius: theme(borderRadius.md);
+  border-radius: var(--radius-md);
   background-color: transparent;
-  color: theme(colors.white);
-  font-weight: theme(fontWeight.medium);
-  font-size: theme(fontSize.sm);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: var(--text-sm);
+}
 
-  @apply shadow-sm hover:bg-violet-900 focus:outline focus:outline-offset-2 focus:outline-amber-500 md:hidden;
+.hamburger:hover {
+  background-color: var(--color-violet-900);
+}
+
+.hamburger:focus {
+  outline: 1px solid var(--color-amber-500);
+  outline-offset: 2px;
 }
 
 *:not(.dropdown) .navLink {
-  margin: theme(margin.4) theme(margin.1);
-  padding: theme(padding.2) theme(padding.4);
-  border-radius: theme(borderRadius.lg);
-  color: theme(colors.slate.300);
+  margin: --spacing(4) --spacing(1);
+  padding: --spacing(2) --spacing(4);
+  border-radius: var(--radius-lg);
+  color: var(--color-slate-300);
   white-space: nowrap;
-  transition-duration: theme(transitionDuration.100);
+  transition-duration: 100ms;
   transition-property: color, background-color;
-  transition-timing-function: theme(transitionTimingFunction.in-out);
-
-  @apply lg:px-4;
+  transition-timing-function: var(--ease-in-out);
 }
 
 *:not(.dropdown) .navLink:focus {
-  outline: 2px solid theme(outlineColor.amber.500);
-  outline-offset: theme(outlineOffset.2);
-  background-color: theme(backgroundColor.violet.800);
-  color: theme(colors.white);
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 2px;
+  background-color: var(--color-violet-800);
+  color: var(--color-white);
 }
 
-*:not(.dropdown) :not(span).navLink {
-  @apply hover:bg-violet-800 hover:text-white;
+*:not(.dropdown) :not(span).navLink:hover {
+  background-color: var(--color-violet-800);
+  color: var(--color-white);
 }
 
 .navLink:not(.navHome) {
   width: 100%;
-  padding-inline: theme(padding.2);
+  padding-inline: --spacing(2);
 }
 
 .dropdown {
@@ -48,23 +56,12 @@
   position: absolute;
   top: 100%;
   right: 0;
-  width: theme(width.56);
-  margin-top: calc(-1 * theme(margin[0.5]));
+  width: --spacing(56);
+  margin-top: calc(-0.5 * var(--spacing));
   transform-origin: top right;
-  border-radius: theme(borderRadius.md);
-  background-color: theme(backgroundColor.white);
-
-  --tw-shadow:
-    0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
-  --tw-shadow-colored:
-    0 10px 15px -3px var(--tw-shadow-color),
-    0 4px 6px -4px var(--tw-shadow-color);
-
-  box-shadow:
-    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
-    var(--tw-shadow);
-
-  @apply ring-1 ring-black ring-opacity-5;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
 }
 
 .dropdown:focus {
@@ -77,22 +74,22 @@
 
 .dropdown span.navLink {
   margin: auto;
-  margin-top: theme(margin.4);
-  color: theme(colors.yellow.500);
-  font-weight: theme(fontWeight.semibold);
+  margin-top: --spacing(4);
+  color: var(--color-yellow-500);
+  font-weight: 600;
 }
 
 .hyperlink {
-  border-radius: theme(borderRadius.DEFAULT);
-  color: theme(colors.violet.700);
-  font-weight: theme(fontWeight.semibold);
+  border-radius: var(--radius-sm);
+  color: var(--color-violet-700);
+  font-weight: 600;
 }
 
 .hyperlink:focus,
 .hyperlink:hover {
-  margin: calc(-1 * theme(margin.1));
-  padding: theme(padding.1);
-  background-color: theme(backgroundColor.amber.400);
+  margin: calc(-1 * var(--spacing));
+  padding: --spacing(1);
+  background-color: var(--color-amber-400);
 }
 
 .transitionsContainer {
@@ -107,10 +104,10 @@
   transition:
     grid-template-rows 300ms,
     transform 500ms;
-  transition-timing-function: theme(transitionTimingFunction.linear);
+  transition-timing-function: linear;
 }
 
-@screen sm {
+@variant sm {
   .navLink:not(.navHome) {
     width: auto;
   }
@@ -120,16 +117,22 @@
   }
 
   .dropdown .navLink {
-    color: theme(colors.gray.900);
+    color: var(--color-gray-900);
   }
 }
 
-@screen lg {
+@variant md {
+  .hamburger {
+    display: none;
+  }
+}
+
+@variant lg {
   *:not(.dropdown) .navLink {
-    padding-inline: theme(padding.4);
+    padding-inline: --spacing(4);
   }
 
   .navLink:not(.navHome) {
-    padding-inline: theme(padding.4);
+    padding-inline: --spacing(4);
   }
 }

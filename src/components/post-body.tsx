@@ -39,7 +39,7 @@ const defaultOptions: Options = {
     [BLOCKS.LIST_ITEM]: (_, children) => <li className="ml-8">{children}</li>,
     [BLOCKS.EMBEDDED_ASSET]: (node: Node) => (
       <ContentfulImage
-        className="mx-auto max-w-full text-center shadow-lg lg:max-w-screen-md"
+        className="mx-auto max-w-full text-center shadow-lg lg:max-w-(--breakpoint-md)"
         src={node.data.url as string}
         height={node.data.height as string}
         width={node.data.width as string}

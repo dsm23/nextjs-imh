@@ -2,11 +2,17 @@
 const CUSTOM_AT_RULES = [
   // Tailwind-specific at-rules
   "apply",
+  "config",
+  "custom-variant",
   "layer",
+  "plugin",
+  "reference",
   "responsive",
   "screen",
   "tailwind",
-  "variants",
+  "theme",
+  "utility",
+  "variant",
   // PostCSS-specific at-rules
   "define-mixin",
   "mixin",
@@ -44,6 +50,7 @@ export default {
       true,
       { ignorePseudoClasses: ["global"] },
     ],
+    "media-query-no-invalid": [true, { ignoreFunctions: ["theme"] }],
     // cssDeclarationSorterOrder: smacss
     "order/properties-order": [
       {

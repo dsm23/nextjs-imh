@@ -78,11 +78,7 @@ export const SlugComponent: FunctionComponent<SlugComponentProps> = ({
       <div className="flex items-center justify-between">
         <FieldLabel htmlFor={`field-${path}`} label={label} />
 
-        <Button
-          className="m-0 pb-[0.3125rem]"
-          buttonStyle="none"
-          onClick={handleLock}
-        >
+        <Button className="m-0 pb-1.25" buttonStyle="none" onClick={handleLock}>
           {checkboxValue ? "Unlock" : "Lock"}
         </Button>
       </div>
