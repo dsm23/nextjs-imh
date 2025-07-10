@@ -8,7 +8,6 @@ const CUSTOM_AT_RULES = [
   "plugin",
   "reference",
   "responsive",
-  "screen",
   "tailwind",
   "theme",
   "utility",
@@ -41,10 +40,18 @@ export default {
     "selector-id-pattern": ONLY_ALLOW_KEBAB_CASE_SELECTORS,
     // Allow Tailwind-based CSS Rules
     "at-rule-no-unknown": [true, { ignoreAtRules: CUSTOM_AT_RULES }],
-    // Ignore Tailwind's theme and screen functions
-    "function-no-unknown": [true, { ignoreFunctions: ["theme", "screen"] }],
-    "unit-no-unknown": [true, { ignoreFunctions: ["theme", "screen"] }],
-    "value-keyword-case": ["lower", { ignoreFunctions: ["theme", "screen"] }],
+    "declaration-property-value-no-unknown": [
+      true,
+      {
+        ignoreProperties: {
+          "/.+/": ["/^--spacing/"],
+        },
+      },
+    ],
+    // Ignore Tailwind's theme function
+    "function-no-unknown": [true, { ignoreFunctions: ["theme"] }],
+    "unit-no-unknown": [true, { ignoreFunctions: ["theme"] }],
+    "value-keyword-case": ["lower", { ignoreFunctions: ["theme"] }],
     // Allow the Global CSS Selector
     "selector-pseudo-class-no-unknown": [
       true,
