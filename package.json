@@ -75,7 +75,7 @@
     "@jest/globals": "30.0.4",
     "@jest/types": "30.0.1",
     "@next/bundle-analyzer": "15.3.5",
-    "@playwright/test": "1.53.2",
+    "@playwright/test": "1.54.0",
     "@tailwindcss/postcss": "4.1.8",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
