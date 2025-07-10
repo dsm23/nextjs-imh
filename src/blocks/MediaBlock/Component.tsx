@@ -33,7 +33,7 @@ export const MediaBlock: FunctionComponent<Props> = (props) => {
       {(media || staticImage) && (
         <Media
           imgClassName={cn(
-            "rounded-[0.8rem] border border-border",
+            "border-border rounded-[0.8rem] border",
             imgClassName,
           )}
           resource={media}

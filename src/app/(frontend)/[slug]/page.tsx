@@ -29,7 +29,7 @@ const Page: FunctionComponent<Props> = async (props) => {
   return (
     <Container>
       <article>
-        <h1 className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+        <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
           {data.page?.header ?? ""}
         </h1>
         {data.page?.content && <PostBody content={data.page.content} />}

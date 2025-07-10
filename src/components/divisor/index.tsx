@@ -54,7 +54,7 @@ const Divisor: FunctionComponent<Props> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 260 50"
-      className="w-100 text-sky-200"
+      className="w-full text-sky-200"
       stroke="currentColor"
     >
       <path

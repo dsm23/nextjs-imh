@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const Contact = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         Contact Us
       </h1>
       <div className="gap-x-2 lg:flex">

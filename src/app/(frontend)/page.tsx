@@ -68,7 +68,7 @@ const Home = async () => {
 
           <ContentfulImage
             src={data.welcome?.welcomePic?.url as string}
-            className="elevation rounded"
+            className="elevation rounded-sm"
             height={data.welcome?.welcomePic?.height as number}
             width={data.welcome?.welcomePic?.width as number}
             alt={data.welcome?.welcomePic?.description as string}
@@ -118,7 +118,7 @@ const Home = async () => {
           <h3 className="sr-only">Cards group</h3>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
             {data.cards?.map((card) => (
-              <div className="elevation rounded p-3" key={card?.entryUnused}>
+              <div className="elevation rounded-sm p-3" key={card?.entryUnused}>
                 <PostBody content={card?.body} options={options} />
               </div>
             ))}
