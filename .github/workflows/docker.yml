@@ -1,10 +1,14 @@
-# For more details, read this: https://coolify.io/docs/knowledge-base/git/github/github-actions/
+# For more details, read this: https://coolify.io/docs/github-actions
 name: Build Docker Image
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
@@ -15,9 +19,14 @@ permissions:
 
 jobs:
   amd64:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       packages: write
+    services:
+      mongo:
+        image: mongo:8@sha256:f331890607b5cdce091da9823f91ab1e4c54d31fd572282037880b2eaafff454
+        ports:
+          - 27017:27017
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
@@ -31,6 +40,7 @@ jobs:
 
       - name: Login to ghcr.io
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -42,9 +52,10 @@ jobs:
           context: .
           file: Dockerfile
           platforms: linux/amd64
-          push: true
+          push: ${{ github.ref_name == github.event.repository.default_branch }}
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Deploy to Coolify
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: |
           curl --request GET '${{ secrets.COOLIFY_WEBHOOK }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'
