@@ -89,7 +89,7 @@
     "commitizen": "4.3.1",
     "contentful-import": "9.4.107",
     "cz-conventional-changelog": "3.3.0",
-    "dotenv": "17.2.0",
+    "dotenv": "17.2.1",
     "eslint": "9.31.0",
     "eslint-config-next": "15.4.4",
     "eslint-config-prettier": "10.1.8",
