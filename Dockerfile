@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:9857836c9ee4268391bb5b09f9f157f3c91bb15821bb77969642813b0d00518d
 
-FROM node:24.5.0-alpine3.22@sha256:419fd6acfd3ae73338c1c34f06879eef992ca8cbc586858a84f7ba6fb50cf649 AS base
+FROM node:24.5.0-alpine3.22@sha256:ea7733a05cebf835b6362bfe5208e55efd8764743928d6262557577e2c368541 AS base
 
 # Install dependencies only when needed
 FROM base AS deps
