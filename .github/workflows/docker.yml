@@ -12,7 +12,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "dsm23/nextjs-imh"
+  IMAGE_NAME: ${{ github.repository }}
 
 permissions:
   contents: read
