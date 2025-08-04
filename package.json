@@ -87,7 +87,7 @@
     "@typescript-eslint/eslint-plugin": "8.38.0",
     "@typescript-eslint/parser": "8.38.0",
     "commitizen": "4.3.1",
-    "contentful-import": "9.4.108",
+    "contentful-import": "9.4.109",
     "cz-conventional-changelog": "3.3.0",
     "dotenv": "17.2.1",
     "eslint": "9.32.0",
