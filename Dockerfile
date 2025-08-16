@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:38387523653efa0039f8e1c89bb74a30504e76ee9f565e25c9a09841f9427b05
 
-FROM node:24.6.0-alpine3.22@sha256:1c4562a706f784ad6ada8d21917442e8b50b3ed3ffbfb208b3ab51518741f479 AS base
+FROM node:24.6.0-alpine3.22@sha256:51dbfc749ec3018c7d4bf8b9ee65299ff9a908e38918ce163b0acfcd5dd931d9 AS base
 
 # renovate: datasource=repology depName=alpine_3_22/gcompat versioning=loose
 ARG GCOMPAT_VERSION="1.1.0-r4"
