@@ -2,10 +2,13 @@
 
 FROM node:24.6.0-alpine3.22@sha256:1c4562a706f784ad6ada8d21917442e8b50b3ed3ffbfb208b3ab51518741f479 AS base
 
+# renovate: datasource=repology depName=alpine_3_22/gcompat versioning=loose
+ARG GCOMPAT_VERSION="1.1.0-r4"
+
 # Install dependencies only when needed
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+# Check https://github.com/nodejs/docker-node/tree/4adafb930bf239b610fa37c4f691bbf98dd65578#nodealpine to understand why gcompat might be needed.
+RUN apk add --no-cache "gcompat=${GCOMPAT_VERSION}"
 WORKDIR /app
 
 ENV HUSKY=0
