@@ -117,7 +117,7 @@
     "workbox-build": "7.3.0"
   },
   "resolutions": {
-    "path-to-regexp": "8.2.0"
+    "path-to-regexp": "8.3.0"
   },
   "engines": {
     "node": ">=22.0.0"
