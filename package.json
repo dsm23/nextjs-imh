@@ -22,8 +22,8 @@
     "coverage": "jest --passWithNoTests --coverage"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "16.1.0",
-    "@contentful/rich-text-types": "17.1.0",
+    "@contentful/rich-text-react-renderer": "16.1.2",
+    "@contentful/rich-text-types": "17.2.1",
     "@headlessui/react": "2.2.7",
     "@hookform/resolvers": "5.2.1",
     "@payloadcms/db-mongodb": "3.54.0",

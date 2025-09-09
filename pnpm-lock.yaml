@@ -12,11 +12,11 @@ importers:
   .:
     dependencies:
       '@contentful/rich-text-react-renderer':
-        specifier: 16.1.0
-        version: 16.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 16.1.2
+        version: 16.1.2(babel-plugin-macros@3.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@contentful/rich-text-types':
-        specifier: 17.1.0
-        version: 17.1.0
+        specifier: 17.2.1
+        version: 17.2.1(babel-plugin-macros@3.1.0)
       '@headlessui/react':
         specifier: 2.2.7
         version: 2.2.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1049,8 +1049,8 @@ packages:
     resolution: {integrity: sha512-/yCrWGCoA1SVKOks25EGadP9Pnj0oAIHGpl2wH2M2Y46dPM2ueb8wyCVOD7O3WCTkaJ0IkKvzhl1JY7+uCT2Dw==}
     engines: {node: '>=v18'}
 
-  '@contentful/rich-text-react-renderer@16.1.0':
-    resolution: {integrity: sha512-tMhSq6227GJ/bgYYsWyd+KWTPTYD7ZrQVVwzL2ormEYRRfV6NeiGKLo1YOA2zC0U0EBNSJfXrERhH1BA88QOvA==}
+  '@contentful/rich-text-react-renderer@16.1.2':
+    resolution: {integrity: sha512-t8kTqeAeputpIFLluyG50ImulQ5W54e+SWCgVGk0zbZJ4UQDFRbYXdtMGHc1Kt51HumC8Bu6I862mL6zFkGncQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -1060,8 +1060,8 @@ packages:
     resolution: {integrity: sha512-q18RJuJCOuYveGiCIjE5xLCQc5lZ3L2Qgxrlg/H2YEobDFqdtmklazRi1XwEWaK3tMg6yVXBzKKkQfLB4qW14A==}
     engines: {node: '>=6.0.0'}
 
-  '@contentful/rich-text-types@17.1.0':
-    resolution: {integrity: sha512-L0rok1VoMUbtQPJefR0Oxr5z1ow9/ZDIvuNWu16VT4IVVOKkeL4sVsjNj08cCT3ON+HUUzbPWVzyTuyvee2TSg==}
+  '@contentful/rich-text-types@17.2.1':
+    resolution: {integrity: sha512-EukLfBQBsLTx8+6gPjmWwzBS3vIZkRZUw3r/qNiWQ+6xtdcsDE4nnWm166S0Nnteq6DNf1T+9XDLs8JPjtingg==}
     engines: {node: '>=6.0.0'}
 
   '@csstools/color-helpers@5.0.2':
@@ -2276,6 +2276,22 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
+  '@lingui/core@5.4.1':
+    resolution: {integrity: sha512-4FeIh56PH5vziPg2BYo4XYWWOHE4XaY/XR8Jakwn0/qwtLpydWMNVpZOpGWi7nfPZtcLaJLmZKup6UNxEl1Pfw==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      '@lingui/babel-plugin-lingui-macro': 5.4.1
+      babel-plugin-macros: 2 || 3
+    peerDependenciesMeta:
+      '@lingui/babel-plugin-lingui-macro':
+        optional: true
+      babel-plugin-macros:
+        optional: true
+
+  '@lingui/message-utils@5.4.1':
+    resolution: {integrity: sha512-hXfL90fFBoKp5YgLaWo3HbJS/7q+WlWs7VwVbUxl4pa+YladqNZf08JoDeBUDtlEVx5a3bNUSACXHs2FZo12aw==}
+    engines: {node: '>=20.0.0'}
+
   '@mapbox/jsonlint-lines-primitives@2.0.2':
     resolution: {integrity: sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==}
     engines: {node: '>= 0.6'}
@@ -2298,6 +2314,9 @@ packages:
   '@mapbox/whoots-js@3.1.0':
     resolution: {integrity: sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==}
     engines: {node: '>=6.0.0'}
+
+  '@messageformat/parser@5.1.1':
+    resolution: {integrity: sha512-3p0YRGCcTUCYvBKLIxtDDyrJ0YijGIwrTRu1DT8gIviIDZru8H23+FkY6MJBzM1n9n20CiM4VeDYuBsrrwnLjg==}
 
   '@monaco-editor/loader@1.5.0':
     resolution: {integrity: sha512-hKoGSM+7aAc7eRTRjpqAZucPmoNOC4UUbknb/VNoTkEIkCPhqV8LfbsgM1webRM7S/z21eHEx9Fkwx8Z/C/+Xw==}
@@ -5850,6 +5869,9 @@ packages:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
 
+  js-sha256@0.10.1:
+    resolution: {integrity: sha512-5obBtsz9301ULlsgggLg542s/jqtddfOpV5KJc4hajc9JV8GeY2gZHSVpYBn4nWqAUTJ9v+xwtbJ1mIBgIH5Vw==}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -6530,6 +6552,9 @@ packages:
   mongoose@8.15.1:
     resolution: {integrity: sha512-RhQ4DzmBi5BNGcS0w4u1vdMRIKcteXTCNzDt1j7XRcdWYBz1MjMjulBhPaeC5jBCHOD1yinuOFTTSOWLLGexWw==}
     engines: {node: '>=16.20.1'}
+
+  moo@0.5.2:
+    resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
 
   mpath@0.9.0:
     resolution: {integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==}
@@ -9819,17 +9844,24 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@contentful/rich-text-react-renderer@16.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@contentful/rich-text-react-renderer@16.1.2(babel-plugin-macros@3.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@contentful/rich-text-types': 17.1.0
+      '@contentful/rich-text-types': 17.2.1(babel-plugin-macros@3.1.0)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
+    transitivePeerDependencies:
+      - '@lingui/babel-plugin-lingui-macro'
+      - babel-plugin-macros
 
   '@contentful/rich-text-types@16.8.5': {}
 
-  '@contentful/rich-text-types@17.1.0':
+  '@contentful/rich-text-types@17.2.1(babel-plugin-macros@3.1.0)':
     dependencies:
+      '@lingui/core': 5.4.1(babel-plugin-macros@3.1.0)
       is-plain-obj: 3.0.0
+    transitivePeerDependencies:
+      - '@lingui/babel-plugin-lingui-macro'
+      - babel-plugin-macros
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -11270,6 +11302,18 @@ snapshots:
       lexical: 0.28.0
       yjs: 13.6.22
 
+  '@lingui/core@5.4.1(babel-plugin-macros@3.1.0)':
+    dependencies:
+      '@babel/runtime': 7.26.7
+      '@lingui/message-utils': 5.4.1
+    optionalDependencies:
+      babel-plugin-macros: 3.1.0
+
+  '@lingui/message-utils@5.4.1':
+    dependencies:
+      '@messageformat/parser': 5.1.1
+      js-sha256: 0.10.1
+
   '@mapbox/jsonlint-lines-primitives@2.0.2': {}
 
   '@mapbox/mapbox-gl-supported@3.0.0': {}
@@ -11287,6 +11331,10 @@ snapshots:
       pbf: 4.0.1
 
   '@mapbox/whoots-js@3.1.0': {}
+
+  '@messageformat/parser@5.1.1':
+    dependencies:
+      moo: 0.5.2
 
   '@monaco-editor/loader@1.5.0':
     dependencies:
@@ -15410,6 +15458,8 @@ snapshots:
 
   joycon@3.1.1: {}
 
+  js-sha256@0.10.1: {}
+
   js-tokens@4.0.0: {}
 
   js-yaml@3.14.1:
@@ -16284,6 +16334,8 @@ snapshots:
       - snappy
       - socks
       - supports-color
+
+  moo@0.5.2: {}
 
   mpath@0.9.0: {}
 
