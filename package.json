@@ -54,7 +54,7 @@
     "react-email": "4.2.11",
     "react-hook-form": "7.62.0",
     "resend": "6.0.3",
-    "sharp": "0.34.3",
+    "sharp": "0.34.4",
     "tailwind-merge": "3.3.1",
     "ts-easing": "0.2.0",
     "valibot": "1.1.0"
