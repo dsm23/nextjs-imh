@@ -64,7 +64,7 @@
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@commitlint/types": "19.8.1",
-    "@eslint/compat": "1.3.2",
+    "@eslint/compat": "1.4.0",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.36.0",
     "@graphql-codegen/cli": "6.0.0",
@@ -84,8 +84,8 @@
     "@types/node": "22.18.6",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
-    "@typescript-eslint/eslint-plugin": "8.44.0",
-    "@typescript-eslint/parser": "8.44.0",
+    "@typescript-eslint/eslint-plugin": "8.44.1",
+    "@typescript-eslint/parser": "8.44.1",
     "contentful-import": "9.4.118",
     "dotenv": "17.2.2",
     "eslint": "9.36.0",
@@ -113,7 +113,7 @@
     "tailwindcss": "4.1.13",
     "tw-animate-css": "1.3.8",
     "typescript": "5.9.2",
-    "typescript-eslint": "8.44.0",
+    "typescript-eslint": "8.44.1",
     "workbox-build": "7.3.0"
   },
   "resolutions": {
