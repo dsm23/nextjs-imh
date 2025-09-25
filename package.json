@@ -24,7 +24,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "16.1.5",
     "@contentful/rich-text-types": "17.2.4",
-    "@headlessui/react": "2.2.8",
+    "@headlessui/react": "2.2.9",
     "@hookform/resolvers": "5.2.2",
     "@payloadcms/db-mongodb": "3.56.0",
     "@payloadcms/live-preview-react": "3.56.0",
