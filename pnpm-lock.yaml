@@ -199,8 +199,8 @@ importers:
         specifier: 8.45.0
         version: 8.45.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.3)
       contentful-import:
-        specifier: 9.4.121
-        version: 9.4.121(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.36.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.36.0(jiti@2.6.1)))
+        specifier: 9.4.122
+        version: 9.4.122(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.36.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.36.0(jiti@2.6.1)))
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -4202,13 +4202,13 @@ packages:
     resolution: {integrity: sha512-nNAycOJIvo2arHbXIgsF1I8xXXJtnTooGJaHwfamFeuXbyp1q5NlNbHYGqWVR5vQjLJsuk48VExLbpa26T9C9g==}
     engines: {node: '>=18'}
 
-  contentful-import@9.4.121:
-    resolution: {integrity: sha512-IO5OiKMz5lWWwU1vLQj0brcH8WLcECSQHi9tQrF14P4d/VhHzxLtXv6Fh78MKl+3C5g3pCm/h1y1yQ44KExf/Q==}
+  contentful-import@9.4.122:
+    resolution: {integrity: sha512-IH4x3286e6IS2grnI4+YbZ4V5mmZ95ngX58PaeiY7xrd7Nfptfb46tG/jXrb/ICvc+6WxT9UHmJlgveGx7pB6g==}
     engines: {node: '>=18'}
     hasBin: true
 
-  contentful-management@11.60.3:
-    resolution: {integrity: sha512-MRE/8m/A5yu1Gb1eCre1xrLlbUfj/ERUf+hFmFCMTzGUQOD9g7JKgdkioFZXJusTU57U6WLf+rNh7sloDlQnhA==}
+  contentful-management@11.60.4:
+    resolution: {integrity: sha512-sfdth9Tg6v/yH6o2NwctTXilyn6dN5ITGm4REk2FIiYgK06BqcUYvqT9KljPoL+aHjB6mE9qzarzxZHISnOXaA==}
     engines: {node: '>=18'}
 
   contentful-sdk-core@9.0.1:
@@ -13341,13 +13341,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  contentful-import@9.4.121(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.36.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.36.0(jiti@2.6.1))):
+  contentful-import@9.4.122(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.36.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.36.0(jiti@2.6.1))):
     dependencies:
       '@discoveryjs/json-ext': 0.6.3
       bluebird: 3.7.2
       cli-table3: 0.6.5
       contentful-batch-libs: 9.7.0
-      contentful-management: 11.60.3
+      contentful-management: 11.60.4
       date-fns: 2.30.0
       eslint: 8.57.1
       eslint-config-standard: 17.1.0(eslint-plugin-import@2.31.0)(eslint-plugin-n@16.6.2(eslint@9.36.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.36.0(jiti@2.6.1)))(eslint@8.57.1)
@@ -13367,7 +13367,7 @@ snapshots:
       - zen-observable
       - zenObservable
 
-  contentful-management@11.60.3:
+  contentful-management@11.60.4:
     dependencies:
       '@contentful/rich-text-types': 16.8.5
       axios: 1.12.2
