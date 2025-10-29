@@ -199,8 +199,8 @@ importers:
         specifier: 8.46.2
         version: 8.46.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)
       contentful-import:
-        specifier: 9.4.123
-        version: 9.4.123(eslint-plugin-import@2.32.0)(eslint-plugin-n@16.6.2(eslint@9.38.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.38.0(jiti@2.6.1)))
+        specifier: 9.4.124
+        version: 9.4.124(eslint-plugin-import@2.32.0)(eslint-plugin-n@16.6.2(eslint@9.38.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.38.0(jiti@2.6.1)))
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
@@ -4218,8 +4218,8 @@ packages:
     resolution: {integrity: sha512-nNAycOJIvo2arHbXIgsF1I8xXXJtnTooGJaHwfamFeuXbyp1q5NlNbHYGqWVR5vQjLJsuk48VExLbpa26T9C9g==}
     engines: {node: '>=18'}
 
-  contentful-import@9.4.123:
-    resolution: {integrity: sha512-j/1jAhrhsF8tAvFu+YjYAnkKSFnxzy+PSUSIwAlpFY8wiN7nq8Yf4y9FoW7B9KoIuAwDxwRQpHSPne80Ayo49g==}
+  contentful-import@9.4.124:
+    resolution: {integrity: sha512-i3BLFMZHQC0CTmRgLxGuBZZLB+vRHId+TQjvmMYdvo6nh/hQnoEyXWkZ2IDCAMQJKX60nBzF4JJ8DgboDh9Vsw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -13491,7 +13491,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  contentful-import@9.4.123(eslint-plugin-import@2.32.0)(eslint-plugin-n@16.6.2(eslint@9.38.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.38.0(jiti@2.6.1))):
+  contentful-import@9.4.124(eslint-plugin-import@2.32.0)(eslint-plugin-n@16.6.2(eslint@9.38.0(jiti@2.6.1)))(eslint-plugin-promise@6.6.0(eslint@9.38.0(jiti@2.6.1))):
     dependencies:
       '@discoveryjs/json-ext': 0.6.3
       bluebird: 3.7.2
