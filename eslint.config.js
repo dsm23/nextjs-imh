@@ -28,7 +28,7 @@ const compatConfig = compat.config({
 export default ts.config(
   includeIgnoreFile(gitignorePath),
   {
-    ignores: ["public", "graphql-types"],
+    ignores: ["public"],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,md,mdx,jsx,tsx}"],
