@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const imgCdn = `https://images.ctfassets.net/${process.env.CONTENTFUL_SPACE_ID}/`;
-
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
 
@@ -11,11 +9,11 @@ export function middleware(request: NextRequest) {
     default-src 'none';
     script-src 'self' 'unsafe-eval' 'nonce-${nonce}';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: ${imgCdn};
+    img-src 'self' blob: data:;
     font-src 'self';
     worker-src 'self' blob:;
     child-src blob:;
-    connect-src 'self' https://graphql.contentful.com/content/v1/spaces/ https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com;
+    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com;
     manifest-src 'self';
     base-uri 'self';
     form-action 'self';
