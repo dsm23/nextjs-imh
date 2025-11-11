@@ -1,13 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "docker:pinDigests",
+    "config:best-practices",
     "group:jsUnitTest",
     "group:vite",
     "helpers:pinGitHubActionDigestsToSemver",
     ":approveMajorUpdates",
-    ":configMigration",
     ":enableVulnerabilityAlerts",
     ":pinAllExceptPeerDependencies"
   ],
