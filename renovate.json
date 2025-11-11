@@ -5,6 +5,8 @@
     "group:jsUnitTest",
     "group:vite",
     "helpers:pinGitHubActionDigestsToSemver",
+    "security:minimumReleaseAgeNpm",
+    "security:openssf-scorecard",
     ":approveMajorUpdates",
     ":enableVulnerabilityAlerts",
     ":pinAllExceptPeerDependencies"
