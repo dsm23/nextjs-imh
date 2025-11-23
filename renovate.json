@@ -51,6 +51,11 @@
   "patch": {
     "rebaseWhen": "behind-base-branch"
   },
+  "dockerfile": {
+    "digest": {
+      "rebaseWhen": "behind-base-branch"
+    }
+  },
   "rebaseWhen": "conflicted",
   "osvVulnerabilityAlerts": true
 }
