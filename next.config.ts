@@ -1,4 +1,3 @@
-import withBundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 
@@ -8,11 +7,6 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -52,10 +46,7 @@ const nextConfig: NextConfig = {
 };
 
 export default () => {
-  const plugins = [
-    withPayload,
-    withBundleAnalyzer({ enabled: process.env.ANALYZE }),
-  ];
+  const plugins = [withPayload];
 
   const config = plugins.reduce((acc, next) => next(acc), {
     ...nextConfig,
