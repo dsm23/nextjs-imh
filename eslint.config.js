@@ -1,11 +1,13 @@
+import next from "@next/eslint-plugin-next";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { includeIgnoreFile } from "@eslint/compat";
-import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import prettier from "eslint-config-prettier";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 import ts from "typescript-eslint";
 
@@ -13,19 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
 
-const compat = new FlatCompat();
-
-const compatConfig = compat.config({
-  extends: [
-    // https://github.com/vercel/next.js/discussions/49337
-    "plugin:@next/eslint-plugin-next/core-web-vitals",
-
-    // https://github.com/facebook/react/issues/28313
-    "plugin:react-hooks/recommended",
-  ],
-});
-
-export default ts.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   {
     ignores: ["public"],
@@ -44,8 +34,18 @@ export default ts.config(
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   react.configs.flat["jsx-runtime"],
+  next.configs["core-web-vitals"],
+
   prettier,
-  ...compatConfig,
+  // ...compatConfig,
+  {
+    files: ["src/**/*.{js,jsx,ts,tsx}"],
+    plugins: {
+      "react-hooks": reactHooks,
+    },
+    extends: ["react-hooks/recommended"],
+  },
+
   {
     files: ["**/*.{js,md,mdx,mjs,ts,tsx}"],
 
