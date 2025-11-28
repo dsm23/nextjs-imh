@@ -15,7 +15,7 @@ type CMSLinkType = {
     relationTo: "pages" | "posts";
     value: Page | Post | string | number;
   } | null;
-  size?: ButtonProps["size"] | null;
+  size?: ButtonProps["size"];
   type?: "custom" | "reference" | null;
   url?: string | null;
 };
