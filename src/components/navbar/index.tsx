@@ -39,6 +39,7 @@ const Navbar = () => {
         aria-controls={id}
         aria-expanded={open}
       >
+        <span className="sr-only">Menu</span>
         <Hamburger className="size-6" open={open} />
       </button>
       <div className="hidden md:flex">
