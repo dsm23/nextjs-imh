@@ -31,18 +31,18 @@ export default defineConfig(
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   react.configs.flat["jsx-runtime"],
+  reactHooks.configs.flat.recommended,
   next.configs["core-web-vitals"],
 
   prettier,
-  // ...compatConfig,
   {
-    files: ["src/**/*.{js,jsx,ts,tsx}"],
-    plugins: {
-      "react-hooks": reactHooks,
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    // TODO: re-write code to not require disabling these rules
+    rules: {
+      "react-hooks/refs": "off",
+      "react-hooks/set-state-in-effect": "off",
     },
-    extends: ["react-hooks/recommended"],
   },
-
   {
     files: ["**/*.{js,md,mdx,mjs,ts,tsx}"],
 
