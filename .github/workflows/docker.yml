@@ -24,7 +24,7 @@ jobs:
       packages: write
     services:
       mongo:
-        image: mongo:8@sha256:bf5995bcccb65725aa81fd92e68449323c94b96bf1c1fa9f7acbc2a8ad518114
+        image: mongo:8@sha256:dd3a42df9cbd418dde510d21f72f6f425f3427eea6ac49db097c53ae0106e0d3
         ports:
           - 27017:27017
     steps:
