@@ -48,14 +48,10 @@
       ]
     },
     {
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["digest", "pin"],
+      "matchUpdateTypes": ["digest", "patch"],
       "rebaseWhen": "behind-base-branch"
     }
   ],
-  "patch": {
-    "rebaseWhen": "behind-base-branch"
-  },
   "rebaseWhen": "conflicted",
   "osvVulnerabilityAlerts": true
 }
