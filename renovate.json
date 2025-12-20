@@ -48,7 +48,7 @@
       ]
     },
     {
-      "matchManagers": ["dockerfile"],
+      "matchManagers": ["docker"],
       "matchUpdateTypes": ["digest"],
       "rebaseWhen": "behind-base-branch"
     }
