@@ -11,12 +11,10 @@ FROM base AS deps
 RUN apk add --no-cache "gcompat=${GCOMPAT_VERSION}"
 WORKDIR /app
 
-ENV HUSKY=0
+ENV LEFTHOOK=0
 
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml ./
-# for the sake of the prepare script
-COPY .husky/ ./.husky/
 
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
