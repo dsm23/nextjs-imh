@@ -1,4 +1,5 @@
 import type { FunctionComponent, ReactNode } from "react";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 
@@ -32,6 +33,7 @@ const RootLayout: FunctionComponent<Props> = async ({ children }) => {
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
         <RegisterServiceWorker />
+        <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID} />
         <Layout preview={false}>{children}</Layout>
         {/* HACK: Content-Security-Policy */}
         <div className="hidden">{nonce}</div>
