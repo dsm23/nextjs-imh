@@ -27,9 +27,7 @@
     "noUnusedParameters": true
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src",
     "jest.setup.js",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
