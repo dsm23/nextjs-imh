@@ -7,7 +7,7 @@ export function proxy(request: NextRequest) {
   // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
   const cspHeader = `
     default-src 'none';
-    script-src 'self' 'unsafe-eval' 'nonce-${nonce}' https://*.googletagmanager.com;
+    script-src 'self' 'nonce-${nonce}';
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://*.google-analytics.com https://*.googletagmanager.com;
     font-src 'self';
