@@ -7,13 +7,13 @@ export function proxy(request: NextRequest) {
   // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
   const cspHeader = `
     default-src 'none';
-    script-src 'self' 'nonce-${nonce}';
+    script-src 'strict-dynamic' 'nonce-${nonce}' https://www.googletagmanager.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://*.google-analytics.com https://*.googletagmanager.com;
     font-src 'self';
     worker-src 'self' blob:;
     child-src blob:;
-    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com 	https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
     manifest-src 'self';
     base-uri 'self';
     form-action 'self';
