@@ -33,7 +33,10 @@ const RootLayout: FunctionComponent<Props> = async ({ children }) => {
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
         <RegisterServiceWorker />
-        <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID} />
+        <GoogleTagManager
+          gtmId={process.env.GOOGLE_TAG_MANAGER_ID}
+          nonce={nonce ?? undefined}
+        />
         <Layout preview={false}>{children}</Layout>
         {/* HACK: Content-Security-Policy */}
         <div className="hidden">{nonce}</div>
