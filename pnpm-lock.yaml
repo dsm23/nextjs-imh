@@ -92,9 +92,6 @@ importers:
       react-dom:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
-      react-email:
-        specifier: 5.2.5
-        version: 5.2.5
       react-hook-form:
         specifier: 7.71.1
         version: 7.71.1(react@19.2.4)
@@ -222,6 +219,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: 0.7.2
         version: 0.7.2(@ianvs/prettier-plugin-sort-imports@4.7.0(prettier@3.8.1))(prettier-plugin-css-order@2.2.0(postcss@8.5.6)(prettier@3.8.1))(prettier@3.8.1)
+      react-email:
+        specifier: 5.2.5
+        version: 5.2.5
       stylelint:
         specifier: 17.1.0
         version: 17.1.0(typescript@5.9.3)
