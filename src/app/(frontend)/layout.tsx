@@ -1,13 +1,13 @@
 import type { FunctionComponent, ReactNode } from "react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-import type { Metadata, Viewport } from "next";
-
-import "~/styles/index.css";
-
 import { headers } from "next/headers";
+import type { Metadata, Viewport } from "next";
 import Layout from "~/components/layout";
 import RegisterServiceWorker from "~/components/register-sw";
+import { Toaster } from "~/components/ui/sonner";
+
+import "~/styles/index.css";
 
 export const metadata: Metadata = {
   title: "IMH",
@@ -37,6 +37,7 @@ const RootLayout: FunctionComponent<Props> = async ({ children }) => {
           gtmId={process.env.GOOGLE_TAG_MANAGER_ID}
           nonce={nonce ?? undefined}
         />
+        <Toaster />
         <Layout preview={false}>{children}</Layout>
         {/* HACK: Content-Security-Policy */}
         <div className="hidden">{nonce}</div>
