@@ -9,7 +9,9 @@ const sendEmail = async ({ name, email, message }: Values) => {
 
   await resend.emails.send({
     from: "IMH site contact page <contact@resend.davidmurdoch.site>",
-    to: ["ian@imh.co.uk", "sales@imh.co.uk"],
+    // to: ["ian@imh.co.uk", "sales@imh.co.uk"],
+    // to: ["dsmurdoch357@gmail.com"],
+    to: [],
     subject: "New contact form submission",
     react: <Email name={name} email={email} message={message} />,
   });

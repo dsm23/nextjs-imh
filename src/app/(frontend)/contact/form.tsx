@@ -2,8 +2,10 @@
 
 import type { FormHTMLAttributes, FunctionComponent } from "react";
 import type { SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { FormProvider, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import Button from "~/components/button";
 import {
   FormControl,
@@ -14,7 +16,6 @@ import {
 } from "~/components/form";
 import Input from "~/components/input";
 import Textarea from "~/components/textarea";
-import { Toaster, useToast } from "~/components/toaster";
 import cn from "~/lib/class-names";
 import sendEmail from "./action";
 import { schema } from "./schema";
@@ -23,13 +24,13 @@ import type { Values } from "./schema";
 type Props = FormHTMLAttributes<HTMLFormElement>;
 
 const Form: FunctionComponent<Props> = ({ className, ...props }) => {
-  const { toast } = useToast();
+  const router = useRouter();
 
   const form = useForm<Values>({
     defaultValues: {
-      name: undefined,
-      email: undefined,
-      message: undefined,
+      name: "",
+      email: "",
+      message: "",
     },
     mode: "onChange",
     resolver: valibotResolver(schema),
@@ -40,12 +41,19 @@ const Form: FunctionComponent<Props> = ({ className, ...props }) => {
   const { isSubmitting } = formState;
 
   const onSubmit: SubmitHandler<Values> = async (values) => {
-    await sendEmail(values);
+    try {
+      await sendEmail(values);
 
-    toast({
-      title: "Email sent successful",
-      description: new Date().toUTCString(),
-    });
+      toast.success("Email sent successful", {
+        description: new Date().toUTCString(),
+      });
+
+      router.push("/contact/success");
+    } catch {
+      toast.error("Error sending email", {
+        description: "Please try again later",
+      });
+    }
   };
 
   return (
@@ -103,7 +111,6 @@ const Form: FunctionComponent<Props> = ({ className, ...props }) => {
           </Button>
         </div>
       </form>
-      <Toaster />
     </FormProvider>
   );
 };
