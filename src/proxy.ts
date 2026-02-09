@@ -5,43 +5,43 @@ export function proxy(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
 
   // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
-  const cspHeader = `
-    default-src 'none';
-    script-src 'strict-dynamic' 'nonce-${nonce}' https://www.googletagmanager.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https://*.google-analytics.com https://*.googletagmanager.com;
-    font-src 'self';
-    worker-src 'self' blob:;
-    child-src blob:;
-    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
-    manifest-src 'self';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-`;
+  //   const cspHeader = `
+  //     default-src 'none';
+  //     script-src 'strict-dynamic' 'nonce-${nonce}' https://www.googletagmanager.com;
+  //     style-src 'self' 'unsafe-inline';
+  //     img-src 'self' blob: data: https://*.google-analytics.com https://*.googletagmanager.com;
+  //     font-src 'self';
+  //     worker-src 'self' blob:;
+  //     child-src blob:;
+  //     connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+  //     manifest-src 'self';
+  //     base-uri 'self';
+  //     form-action 'self';
+  //     frame-ancestors 'none';
+  //     upgrade-insecure-requests;
+  // `;
   // Replace newline characters and spaces
-  const contentSecurityPolicyHeaderValue = cspHeader
-    .replace(/\s{2,}/g, " ")
-    .trim();
+  // const contentSecurityPolicyHeaderValue = cspHeader
+  //   .replace(/\s{2,}/g, " ")
+  //   .trim();
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
 
-  requestHeaders.set(
-    "Content-Security-Policy",
-    contentSecurityPolicyHeaderValue,
-  );
+  // requestHeaders.set(
+  //   "Content-Security-Policy",
+  //   contentSecurityPolicyHeaderValue,
+  // );
 
   const response = NextResponse.next({
     request: {
       headers: requestHeaders,
     },
   });
-  response.headers.set(
-    "Content-Security-Policy",
-    contentSecurityPolicyHeaderValue,
-  );
+  // response.headers.set(
+  //   "Content-Security-Policy",
+  //   contentSecurityPolicyHeaderValue,
+  // );
 
   return response;
 }
