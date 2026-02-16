@@ -13,7 +13,7 @@ export function proxy(request: NextRequest) {
     font-src 'self';
     worker-src 'self' blob:;
     child-src blob:;
-    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://www.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
     manifest-src 'self';
     base-uri 'self';
     form-action 'self';
