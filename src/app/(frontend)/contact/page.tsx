@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Anchor from "~/components/anchor";
 import Container from "~/components/container";
 import Map from "~/components/map";
 import ContactForm from "./form";
@@ -32,9 +33,9 @@ const Contact = () => (
           <br />
           SS4 1LB
           <br />
-          Email: <a href="mailto:sales@imh.co.uk">sales@imh.co.uk</a>
+          Email: <Anchor href="mailto:sales@imh.co.uk">sales@imh.co.uk</Anchor>
           <br />
-          Telephone: <a href="tel:+441702545429">01702 545429</a>
+          Telephone: <Anchor href="tel:+441702545429">01702 545429</Anchor>
         </address>
 
         <Map token={process.env.MAPBOX_API_TOKEN as string} />
