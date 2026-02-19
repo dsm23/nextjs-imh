@@ -13,14 +13,12 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   dependency-review:
     runs-on: ubuntu-24.04
     permissions:
-      # Required for the `comment-summary-in-pr` option to work
       pull-requests: write
     steps:
       - name: Harden Runner

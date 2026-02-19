@@ -12,8 +12,7 @@ on:
 env:
   LEFTHOOK: 0
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   unit-testing:
@@ -31,9 +30,6 @@ jobs:
 
       - name: Node setup
         uses: ./.github/actions/setup
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       - name: Unit & Integration tests
         run: pnpm coverage
