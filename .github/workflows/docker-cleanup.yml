@@ -8,8 +8,7 @@ on:
 env:
   LEFTHOOK: 0
 
-permissions:
-  packages: read
+permissions: {}
 
 jobs:
   cleanup:
