@@ -159,9 +159,6 @@ importers:
       '@testing-library/react':
         specifier: 16.3.2
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@types/mapbox-gl':
-        specifier: 3.5.0
-        version: 3.5.0
       '@types/node':
         specifier: 25.3.0
         version: 25.3.0
@@ -3077,10 +3074,6 @@ packages:
 
   '@types/lodash@4.17.23':
     resolution: {integrity: sha512-RDvF6wTulMPjrNdCoYRC8gNR880JNGT8uB+REUpC2Ns4pRqQJhGz90wh7rgdXDPpCczF3VGktDuFGVnz8zP7HA==}
-
-  '@types/mapbox-gl@3.5.0':
-    resolution: {integrity: sha512-3wVAUTC6q1UKatLP9YxFBnGJWi3neJUF9OKeyRdUf/BsYjZAP35xmZkL4zogVJbO3vdExuSVYCAkzUXjpjdhOg==}
-    deprecated: This is a stub types definition. mapbox-gl provides its own type definitions, so you do not need this installed.
 
   '@types/mapbox__point-geometry@0.1.4':
     resolution: {integrity: sha512-mUWlSxAmYLfwnRBmgYV86tgYmMIICX4kza8YnE/eIlywGe2XoOxlpVnXWwir92xRLjwyarqwpu2EJKD2pk0IUA==}
@@ -10418,10 +10411,6 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/lodash@4.17.23': {}
-
-  '@types/mapbox-gl@3.5.0':
-    dependencies:
-      mapbox-gl: 3.18.1
 
   '@types/mapbox__point-geometry@0.1.4': {}
 
