@@ -64,10 +64,6 @@
         "@playwright/test",
         "mcr.microsoft.com/playwright"
       ]
-    },
-    {
-      "matchUpdateTypes": ["digest", "patch"],
-      "rebaseWhen": "behind-base-branch"
     }
   ],
   "rebaseWhen": "conflicted",
