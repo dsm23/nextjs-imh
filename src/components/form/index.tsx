@@ -5,9 +5,9 @@ import type {
   HTMLAttributes,
 } from "react";
 import type { ControllerProps, FieldPath, FieldValues } from "react-hook-form";
-import { Slot } from "@radix-ui/react-slot";
 import { Controller, FormProvider, useFormContext } from "react-hook-form";
 import type * as LabelPrimitive from "@radix-ui/react-label";
+import { Slot } from "@radix-ui/react-slot";
 import Label from "~/components/label";
 import cn from "~/lib/class-names";
 

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Anchor from "~/components/anchor";
 import Container from "~/components/container";
 

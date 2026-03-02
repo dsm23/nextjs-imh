@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 import refImage from "~/assets/Dranetz_HDPQ_G5-5_Voltage_Harmonics_Page_1.jpg";
 import Anchor from "~/components/anchor";
 import Container from "~/components/container";

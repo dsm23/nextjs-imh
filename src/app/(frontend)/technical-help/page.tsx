@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 import refImage from "~/assets/techpic.png";
 import Container from "~/components/container";
 import Paragraph from "~/components/paragraph";
