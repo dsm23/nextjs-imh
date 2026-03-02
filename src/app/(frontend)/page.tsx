@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 import refConfRoom from "~/assets/confRoom.jpeg";
 import refPQube3 from "~/assets/PQube3.png";
 import refPQube3e from "~/assets/PQube3e.png";

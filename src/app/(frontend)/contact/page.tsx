@@ -22,8 +22,7 @@ const Contact = () => (
       <div className="gap-x-2 lg:flex">
         <address className="whitespace-nowrap">
           IMH Technologies Ltd
-          <br />
-          8 Roach View
+          <br />8 Roach View
           <br />
           Purdeys Industrial Estate
           <br />

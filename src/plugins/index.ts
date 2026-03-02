@@ -1,16 +1,16 @@
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { redirectsPlugin } from "@payloadcms/plugin-redirects";
 import { seoPlugin } from "@payloadcms/plugin-seo";
+import type { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import {
   FixedToolbarFeature,
   HeadingFeature,
   lexicalEditor,
 } from "@payloadcms/richtext-lexical";
-import type { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import type { Plugin } from "payload";
 import { revalidateRedirects } from "~/hooks/revalidateRedirects";
-import { getServerSideURL } from "~/utilities/getURL";
 import type { Page, Post } from "~/payload-types";
+import { getServerSideURL } from "~/utilities/getURL";
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc.title

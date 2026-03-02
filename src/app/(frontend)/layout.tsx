@@ -1,8 +1,8 @@
 import type { FunctionComponent, ReactNode } from "react";
-import { GoogleTagManager } from "@next/third-parties/google";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
-import type { Metadata, Viewport } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Layout from "~/components/layout";
 import RegisterServiceWorker from "~/components/register-sw";
 import { Toaster } from "~/components/ui/sonner";

@@ -2,8 +2,8 @@
 
 import { createContext, useCallback, useContext, useState } from "react";
 import type { ReactNode } from "react";
-import canUseDOM from "~/utilities/canUseDOM";
 import type { Theme } from "~/providers/Theme/types";
+import canUseDOM from "~/utilities/canUseDOM";
 
 export interface ContextType {
   headerTheme?: Theme | null;

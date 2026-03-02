@@ -44,7 +44,6 @@ docker-compose.override.yml
 .eslintcache
 .eslintmdcache
 .stylelintcache
-.prettiercache
 
 # local env files
 .env*.local

@@ -5,11 +5,10 @@ import type { FunctionComponent } from "react";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 import { PayloadAdminBar } from "payload-admin-bar";
 import type { PayloadAdminBarProps, PayloadMeUser } from "payload-admin-bar";
-import { cn } from "~/utilities/ui";
+import { getClientSideURL } from "~/utilities/getURL";
 
 import "./index.scss";
-
-import { getClientSideURL } from "~/utilities/getURL";
+import { cn } from "~/utilities/ui";
 
 const baseClass = "admin-bar";
 
