@@ -6,7 +6,7 @@ const Card: FunctionComponent<
 > = ({ className, ref, ...props }) => (
   <div
     className={cn(
-      "bg-card text-card-foreground rounded-lg border shadow-xs",
+      "rounded-lg border bg-card text-card-foreground shadow-xs",
       className,
     )}
     ref={ref}
@@ -45,7 +45,7 @@ const CardDescription: FunctionComponent<
   } & HTMLAttributes<HTMLParagraphElement>
 > = ({ className, ref, ...props }) => (
   <p
-    className={cn("text-muted-foreground text-sm", className)}
+    className={cn("text-sm text-muted-foreground", className)}
     ref={ref}
     {...props}
   />
