@@ -15,8 +15,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2(react-hook-form@7.71.2(react@19.2.4))
       '@next/third-parties':
-        specifier: 16.1.6
-        version: 16.1.6(next@16.1.7(@babel/core@7.29.0)(@playwright/test@1.58.2)(babel-plugin-macros@3.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4))(react@19.2.4)
+        specifier: 16.1.7
+        version: 16.1.7(next@16.1.7(@babel/core@7.29.0)(@playwright/test@1.58.2)(babel-plugin-macros@3.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4))(react@19.2.4)
       '@payloadcms/db-mongodb':
         specifier: 3.79.1
         version: 3.79.1(payload@3.79.1(graphql@16.13.1)(typescript@5.9.3))
@@ -136,8 +136,8 @@ importers:
         specifier: 30.3.0
         version: 30.3.0
       '@next/eslint-plugin-next':
-        specifier: 16.1.6
-        version: 16.1.6
+        specifier: 16.1.7
+        version: 16.1.7
       '@playwright/test':
         specifier: 1.58.2
         version: 1.58.2
@@ -2089,8 +2089,8 @@ packages:
   '@next/env@16.1.7':
     resolution: {integrity: sha512-rJJbIdJB/RQr2F1nylZr/PJzamvNNhfr3brdKP6s/GW850jbtR70QlSfFselvIBbcPUOlQwBakexjFzqLzF6pg==}
 
-  '@next/eslint-plugin-next@16.1.6':
-    resolution: {integrity: sha512-/Qq3PTagA6+nYVfryAtQ7/9FEr/6YVyvOtl6rZnGsbReGLf0jZU6gkpr1FuChAQpvV46a78p4cmHOVP8mbfSMQ==}
+  '@next/eslint-plugin-next@16.1.7':
+    resolution: {integrity: sha512-v/bRGOJlfRCO+NDKt0bZlIIWjhMKU8xbgEQBo+rV9C8S6czZvs96LZ/v24/GvpEnovZlL4QDpku/RzWHVbmPpA==}
 
   '@next/swc-darwin-arm64@16.1.6':
     resolution: {integrity: sha512-wTzYulosJr/6nFnqGW7FrG3jfUUlEf8UjGA0/pyypJl42ExdVgC6xJgcXQ+V8QFn6niSG2Pb8+MIG1mZr2vczw==}
@@ -2196,8 +2196,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@16.1.6':
-    resolution: {integrity: sha512-/cLY1egaH529ylSMSK+C8dA3nWDLL4hOFR4fca9OLWWxjcNwzsbuq2pPb/tmdWL9Zj3K1nTjd1pWQoSlaDQ0VA==}
+  '@next/third-parties@16.1.7':
+    resolution: {integrity: sha512-rwzBlYHQlK7hnqZ3ItQ/tORqpBV3EOHHlcGABWbW9XBlYxn11G8EwlgL7wI5mX2+THBHfv0W9kTD2ABCzHqXGA==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0-beta.0
       react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
@@ -9510,7 +9510,7 @@ snapshots:
 
   '@next/env@16.1.7': {}
 
-  '@next/eslint-plugin-next@16.1.6':
+  '@next/eslint-plugin-next@16.1.7':
     dependencies:
       fast-glob: 3.3.1
 
@@ -9562,7 +9562,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.1.7':
     optional: true
 
-  '@next/third-parties@16.1.6(next@16.1.7(@babel/core@7.29.0)(@playwright/test@1.58.2)(babel-plugin-macros@3.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4))(react@19.2.4)':
+  '@next/third-parties@16.1.7(next@16.1.7(@babel/core@7.29.0)(@playwright/test@1.58.2)(babel-plugin-macros@3.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4))(react@19.2.4)':
     dependencies:
       next: 16.1.7(@babel/core@7.29.0)(@playwright/test@1.58.2)(babel-plugin-macros@3.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4)
       react: 19.2.4
