@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function proxy(request: NextRequest) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const nonce = btoa(
+    String.fromCodePoint(...crypto.getRandomValues(new Uint8Array(16))),
+  );
 
   // https://docs.mapbox.com/mapbox-gl-js/guides/browsers-and-testing/#csp-directives
   const cspHeader = `
@@ -13,7 +15,7 @@ export function proxy(request: NextRequest) {
     font-src 'self' data: https://fonts.gstatic.com;
     worker-src 'self' blob:;
     child-src blob:;
-    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://pagead2.googlesyndication.com https://*.g.doubleclick.net https://*.google-analytics.com https://*.google.com https://*.googletagmanager.com;
+    connect-src 'self' https://api.resend.com/emails https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://pagead2.googlesyndication.com https://*.g.doubleclick.net https://*.google-analytics.com https://*.google.com https://*.googleadservices.com https://*.googletagmanager.com;
     manifest-src 'self';
     base-uri 'self';
     form-action 'self';
