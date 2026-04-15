@@ -89,7 +89,7 @@
     "oxfmt": "0.44.0",
     "postcss": "8.5.9",
     "react-email": "5.2.10",
-    "stylelint": "17.6.0",
+    "stylelint": "17.7.0",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1",
     "tailwindcss": "4.2.2",
