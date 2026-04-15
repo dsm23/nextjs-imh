@@ -81,7 +81,7 @@
     "eslint-plugin-mdx": "3.7.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.0.1",
-    "globals": "17.4.0",
+    "globals": "17.5.0",
     "graphql": "16.13.2",
     "jsdom": "29.0.2",
     "lefthook": "2.1.5",
