@@ -2,7 +2,7 @@ import type { FunctionComponent, HTMLAttributes } from "react";
 import type { Metadata } from "next";
 import Container from "~/components/container";
 import Paragraph from "~/components/paragraph";
-import { cn } from "~/utilities/ui";
+import cn from "~/lib/class-names";
 
 export function generateMetadata(): Metadata {
   return {
