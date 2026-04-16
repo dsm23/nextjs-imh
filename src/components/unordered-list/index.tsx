@@ -1,5 +1,5 @@
 import type { FunctionComponent, HTMLAttributes } from "react";
-import { cn } from "~/utilities/ui";
+import cn from "~/lib/class-names";
 
 const Ul: FunctionComponent<HTMLAttributes<HTMLUListElement>> = ({
   className,
