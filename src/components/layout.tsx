@@ -1,15 +1,8 @@
-import type { FunctionComponent, ReactNode } from "react";
-import Alert from "./alert";
+import type { FunctionComponent, PropsWithChildren } from "react";
 import Navbar from "./navbar";
 
-type Props = {
-  preview: boolean;
-  children: ReactNode;
-};
-
-const Layout: FunctionComponent<Props> = ({ preview, children }) => (
+const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => (
   <>
-    <Alert preview={preview} />
     <header className="contents">
       <Navbar />
     </header>

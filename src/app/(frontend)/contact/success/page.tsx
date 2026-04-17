@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const Contact = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl/tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         Thank You
       </h1>
 
-      <p className="text-lg leading-relaxed text-gray-700">
+      <p className="text-lg/relaxed text-gray-700">
         Thank you for getting in touch! We have received your message and will
         get back to you as soon as possible. Would you like to return to the{" "}
         <Anchor asChild>

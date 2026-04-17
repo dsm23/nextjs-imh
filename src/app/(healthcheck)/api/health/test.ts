@@ -6,7 +6,7 @@ describe("api", () => {
     it("should return a 200 status with the correct JSON body", async () => {
       const response = GET();
 
-      const data = await response.json();
+      const data = (await response.json()) as Pick<Response, "status">;
 
       expect(response.status).toBe(200);
       expect(data).toEqual({ status: "ok" });

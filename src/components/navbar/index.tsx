@@ -15,6 +15,7 @@ import styles from "./styles.module.css";
 
 type State = "default" | "products" | "services" | "policies";
 
+// oxlint-disable-next-line max-lines-per-function
 const Navbar = () => {
   const id = useId();
   const ripple = new Ripple();
@@ -106,7 +107,7 @@ const Navbar = () => {
           <div
             className={cn(
               "grid transform motion-reduce:transition-none motion-reduce:duration-0",
-              "data:[transition]:duration-150 data-transition:transition-[grid-template-rows]",
+              "data-transition:transition-[grid-template-rows] data-transition:duration-150",
               "data-enter:grid-rows-[1fr] data-enter:data-closed:grid-rows-[0fr]",
               "data-leave:grid-rows-[1fr] data-leave:data-closed:grid-rows-[0fr]",
             )}

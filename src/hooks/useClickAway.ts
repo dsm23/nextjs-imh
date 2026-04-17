@@ -10,18 +10,9 @@ const addEvent = (
   obj?.addEventListener(type, listener, options);
 };
 
-const removeEvent = (
-  obj: EventTarget | null,
-  type: string,
-  listener: globalThis.EventListener,
-  options?: boolean | globalThis.EventListenerOptions,
-): void => {
-  obj?.removeEventListener(type, listener, options);
-};
-
 const defaultEvents = ["mousedown", "touchstart"] as const;
 
-// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
+// oxlint-disable-next-line typescript/no-unnecessary-type-parameters
 const useClickAway = <E extends Event = Event>(
   ref: RefObject<HTMLElement | null>,
   onClickAway: (event: E) => void,
@@ -41,10 +32,16 @@ const useClickAway = <E extends Event = Event>(
       }
     };
 
-    events.forEach((eventName) => addEvent(document, eventName, handler));
+    const abortController = new AbortController();
+
+    for (const eventName of events) {
+      addEvent(document, eventName, handler, {
+        signal: abortController.signal,
+      });
+    }
 
     return () => {
-      events.forEach((eventName) => removeEvent(document, eventName, handler));
+      abortController.abort();
     };
   }, [events, ref]);
 };

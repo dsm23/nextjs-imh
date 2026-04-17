@@ -1,3 +1,5 @@
+// oxlint-disable react/jsx-no-constructed-context-values, no-use-before-define, typescript/no-unnecessary-condition
+
 import { createContext, forwardRef, useContext, useId } from "react";
 import type {
   ComponentPropsWithoutRef,
