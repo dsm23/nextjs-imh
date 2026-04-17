@@ -10,6 +10,33 @@ import {
 } from "@react-email/components";
 import type { Values } from "./schema";
 
+const main = {
+  backgroundColor: "#f6f9fc",
+  fontFamily:
+    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+};
+
+const container = {
+  margin: "20px auto",
+  padding: "20px 20px 48px",
+  backgroundColor: "#ffffff",
+};
+
+const paragraph = {
+  fontSize: "16px",
+  lineHeight: "26px",
+};
+
+const hr = {
+  borderColor: "#cccccc",
+  margin: "20px 0",
+};
+
+const footer = {
+  color: "#8898aa",
+  fontSize: "12px",
+};
+
 export const EmailTemplate = ({ name, email, message }: Values) => (
   <Html lang="en" dir="ltr">
     <Head />
@@ -60,30 +87,3 @@ Aliquam ullamcorper congue erat eu consectetur. Quisque facilisis velit id sem s
 } satisfies Values;
 
 export default EmailTemplate;
-
-const main = {
-  backgroundColor: "#f6f9fc",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
-
-const container = {
-  margin: "20px auto",
-  padding: "20px 20px 48px",
-  backgroundColor: "#ffffff",
-};
-
-const paragraph = {
-  fontSize: "16px",
-  lineHeight: "26px",
-};
-
-const hr = {
-  borderColor: "#cccccc",
-  margin: "20px 0",
-};
-
-const footer = {
-  color: "#8898aa",
-  fontSize: "12px",
-};

@@ -38,7 +38,7 @@ const RootLayout: FunctionComponent<Props> = async ({ children }) => {
           nonce={nonce ?? undefined}
         />
         <Toaster />
-        <Layout preview={false}>{children}</Layout>
+        <Layout>{children}</Layout>
         {/* HACK: Content-Security-Policy */}
         <div className="hidden">{nonce}</div>
       </body>

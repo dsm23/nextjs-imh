@@ -11,7 +11,7 @@ const Cross: FunctionComponent<Props> = ({ className, ...props }) => (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className={cn("h-6 w-6", className)}
+    className={cn("size-6", className)}
   >
     <path
       strokeLinecap="round"

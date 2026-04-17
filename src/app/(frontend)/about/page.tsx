@@ -17,7 +17,7 @@ export function generateMetadata(): Metadata {
 const Page: FunctionComponent = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl/tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         About Us
       </h1>
       <Paragraph>
@@ -27,9 +27,10 @@ const Page: FunctionComponent = () => (
         consultancy services to assess load, harmonics, flicker and generally
         hunt down power quality issues when electrical systems do not conform to
         international norms. If required we can call upon the services of the
-        internationally renowned "Electrotek systems" company of Tennessee whose
-        engineers can provide an independent program of works to measure and
-        improve power quality related issues in distributed electrical systems.
+        internationally renowned {'"'}Electrotek systems{'"'} company of
+        Tennessee whose engineers can provide an independent program of works to
+        measure and improve power quality related issues in distributed
+        electrical systems.
       </Paragraph>
     </article>
   </Container>

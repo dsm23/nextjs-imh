@@ -47,7 +47,7 @@ const Li: FunctionComponent<HTMLAttributes<HTMLLIElement>> = ({
 const Page: FunctionComponent = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl/tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         Equality, diversity, and inclusion policy
       </h1>
       <Paragraph>
@@ -67,9 +67,9 @@ const Page: FunctionComponent = () => (
         public.
       </Paragraph>
 
-      <H2>Our policy's purpose</H2>
+      <H2>Our policy{"'"}s purpose</H2>
 
-      <Paragraph>This policy's purpose is to:</Paragraph>
+      <Paragraph>This policy{"'"}s purpose is to:</Paragraph>
 
       <Ol>
         <Li>
@@ -152,14 +152,14 @@ const Page: FunctionComponent = () => (
             Take seriously complaints of bullying, harassment, victimisation and
             unlawful discrimination by fellow employees, customers, suppliers,
             visitors, the public and any others in the course of the
-            organisation's work activities.
+            organisation{"'"}s work activities.
           </Paragraph>
 
           <Paragraph>
-            Such acts will be dealt with as misconduct under the organisation's
-            grievance and/or disciplinary procedures, and appropriate action
-            will be taken. Particularly serious complaints could amount to gross
-            misconduct and lead to dismissal without notice.
+            Such acts will be dealt with as misconduct under the organisation
+            {"'"}s grievance and/or disciplinary procedures, and appropriate
+            action will be taken. Particularly serious complaints could amount
+            to gross misconduct and lead to dismissal without notice.
           </Paragraph>
 
           <Paragraph>
@@ -215,15 +215,15 @@ const Page: FunctionComponent = () => (
       <H2>Our disciplinary and grievance procedures</H2>
 
       <Paragraph>
-        Details of the organisation's grievance and disciplinary policies and
-        procedures can be found on request. This includes with whom an employee
-        should raise a grievance - usually their line manager.
+        Details of the organisation{"'"}s grievance and disciplinary policies
+        and procedures can be found on request. This includes with whom an
+        employee should raise a grievance - usually their line manager.
       </Paragraph>
 
       <Paragraph>
-        Use of the organisation's grievance or disciplinary procedures does not
-        affect an employee's right to make a claim to an employment tribunal
-        within three months of the alleged discrimination.
+        Use of the organisation{"'"}s grievance or disciplinary procedures does
+        not affect an employee{"'"}s right to make a claim to an employment
+        tribunal within three months of the alleged discrimination.
       </Paragraph>
     </article>
   </Container>

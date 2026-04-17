@@ -9,7 +9,7 @@ const useMedia = (query: string) => {
     window.addEventListener("resize", handler);
 
     return () => window.removeEventListener("resize", handler);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   return value;

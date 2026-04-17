@@ -3,7 +3,7 @@ import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ?? 3000;
 
 /**
  * Read environment variables from file.
@@ -17,12 +17,12 @@ const envFiles = [
   /** mode local file */ `.env.playwright.local`,
 ];
 
-envFiles.forEach((file) => {
+for (const file of envFiles) {
   const filePath = path.join(envDir, file);
   if (fs.existsSync(filePath)) {
     dotenv.config({ path: filePath });
   }
-});
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.

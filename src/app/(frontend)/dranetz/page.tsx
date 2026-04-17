@@ -1,6 +1,7 @@
 import type { FunctionComponent } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import refImage from "~/assets/Dranetz_HDPQ_G5-5_Voltage_Harmonics_Page_1.jpg";
 import Anchor from "~/components/anchor";
 import Container from "~/components/container";
@@ -22,7 +23,7 @@ export function generateMetadata(): Metadata {
 const Page: FunctionComponent = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl/tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         Dranetz
       </h1>
       <Paragraph>
@@ -57,7 +58,7 @@ const Page: FunctionComponent = () => (
 
       <Image
         className="mx-auto max-w-full text-center shadow-lg lg:max-w-(--breakpoint-md)"
-        src={refImage}
+        src={refImage satisfies StaticImageData}
         alt="G5-5 Data"
         placeholder="blur"
       />

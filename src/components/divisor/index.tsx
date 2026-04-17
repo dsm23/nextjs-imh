@@ -15,11 +15,11 @@ const Divisor: FunctionComponent<Props> = (props) => {
   const [autoplay, setAutoplay] = useState<boolean>(false);
 
   const callback = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
+    for (const entry of entries) {
       if (entry.isIntersecting) {
         setAutoplay(true);
       }
-    });
+    }
   };
 
   const observerOptions = {
@@ -31,11 +31,13 @@ const Divisor: FunctionComponent<Props> = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(callback, observerOptions);
 
-    observer.observe(animationContainer.current as SVGSVGElement);
+    if (animationContainer.current) {
+      observer.observe(animationContainer.current);
+    }
     return () => {
       observer.disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   useEffect(() => {

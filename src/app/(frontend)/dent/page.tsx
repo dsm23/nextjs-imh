@@ -18,7 +18,7 @@ export function generateMetadata(): Metadata {
 const Page: FunctionComponent = () => (
   <Container>
     <article>
-      <h1 className="my-8 text-2xl leading-tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
+      <h1 className="my-8 text-2xl/tight font-bold tracking-tight md:text-4xl md:tracking-tighter">
         Dent Instruments
       </h1>
       <Paragraph>
