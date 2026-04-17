@@ -37,7 +37,7 @@ const footer = {
   fontSize: "12px",
 };
 
-export const EmailTemplate = ({ name, email, message }: Values) => (
+const EmailTemplate = ({ name, email, message }: Values) => (
   <Html lang="en" dir="ltr">
     <Head />
     <Preview>UK distributor of power quality tools.</Preview>
