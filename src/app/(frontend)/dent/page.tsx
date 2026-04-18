@@ -23,10 +23,8 @@ const Page: FunctionComponent = () => (
       </h1>
       <Paragraph>
         Click here to go straight to the{" "}
-        <Anchor asChild>
-          <a href="https://www.dentinstruments.com/">
-            Dent Instruments Inc website
-          </a>
+        <Anchor href="https://www.dentinstruments.com/">
+          Dent Instruments Inc website
         </Anchor>
         .
       </Paragraph>

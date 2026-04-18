@@ -23,10 +23,7 @@ const Page: FunctionComponent = () => (
       </h1>
       <Paragraph>
         Click here to go straight to the{" "}
-        <Anchor asChild>
-          <a href="https://www.electrotek.com/">Electrotek website</a>
-        </Anchor>
-        .
+        <Anchor href="https://www.electrotek.com/">Electrotek website</Anchor>.
       </Paragraph>
       <Paragraph>
         Distributed systems of Power Quality Analysers gather considerable

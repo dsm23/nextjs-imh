@@ -1,28 +1,28 @@
-import { forwardRef } from "react";
-import type { AnchorHTMLAttributes } from "react";
-import { Slot } from "@radix-ui/react-slot";
+import type { FunctionComponent } from "react";
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
 import cn from "~/lib/class-names";
 
-type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  asChild?: boolean;
-};
-
-const Anchor = forwardRef<HTMLAnchorElement, Props>(
-  ({ className, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "a";
-    return (
-      <Comp
-        className={cn(
+const Anchor: FunctionComponent<useRender.ComponentProps<"a">> = ({
+  className,
+  render,
+  ...props
+}) =>
+  useRender({
+    defaultTagName: "a",
+    props: mergeProps<"a">(
+      {
+        className: cn(
           "-mx-1 rounded-sm px-1 font-semibold text-purple-800 underline underline-offset-2 hover:bg-yellow-300",
           className,
-        )}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
-
-Anchor.displayName = "Anchor";
+        ),
+      },
+      props,
+    ),
+    render,
+    state: {
+      slot: "a",
+    },
+  });
 
 export default Anchor;

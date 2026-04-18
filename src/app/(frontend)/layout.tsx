@@ -1,4 +1,4 @@
-import type { FunctionComponent, ReactNode } from "react";
+import type { FunctionComponent, PropsWithChildren } from "react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
@@ -17,20 +17,18 @@ export const viewport: Viewport = {
   themeColor: "#FFF",
 };
 
-type Props = {
-  children: ReactNode;
-};
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-const RootLayout: FunctionComponent<Props> = async ({ children }) => {
+const RootLayout: FunctionComponent<PropsWithChildren> = async ({
+  children,
+}) => {
   const nonce = (await headers()).get("csp-nonce");
 
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans`}>
         <RegisterServiceWorker />
         <GoogleTagManager

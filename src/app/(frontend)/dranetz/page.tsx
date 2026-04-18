@@ -28,10 +28,7 @@ const Page: FunctionComponent = () => (
       </h1>
       <Paragraph>
         To go straight to the{" "}
-        <Anchor asChild>
-          <a href="https://www.dranetz.com/">Dranetz website</a>
-        </Anchor>
-        .
+        <Anchor href="https://www.dranetz.com/">Dranetz website</Anchor>.
       </Paragraph>
 
       <Paragraph>
