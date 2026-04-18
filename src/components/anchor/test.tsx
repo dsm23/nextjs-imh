@@ -13,9 +13,7 @@ describe("components", () => {
 
   it("should render, polymorphic", () => {
     const { container } = render(
-      <Anchor asChild>
-        <button>Hello, World!</button>
-      </Anchor>,
+      <Anchor render={<button />}>Hello, World!</Anchor>,
     );
 
     expect(container.querySelector("button")).toBeInTheDocument();

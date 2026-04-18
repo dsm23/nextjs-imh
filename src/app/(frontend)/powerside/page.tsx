@@ -23,9 +23,7 @@ const Page: FunctionComponent = () => (
       </h1>
       <Paragraph>
         To go straight to the{" "}
-        <Anchor asChild>
-          <a href="https://powerside.com/">Powerside website</a>
-        </Anchor>
+        <Anchor href="https://powerside.com/">Powerside website</Anchor>
       </Paragraph>
     </article>
   </Container>

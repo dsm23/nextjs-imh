@@ -6,7 +6,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { toast } from "sonner";
-import Button from "~/components/button";
 import {
   FormControl,
   FormField,
@@ -14,8 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/form";
-import Input from "~/components/input";
-import Textarea from "~/components/textarea";
+import { Button } from "~/components/ui/button";
 import cn from "~/lib/class-names";
 import sendEmail from "./action";
 import { schema } from "./schema";
@@ -68,10 +66,10 @@ const Form: FunctionComponent<Props> = ({ className, ...props }) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name*</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
+              <FormControl className="peer row-start-2" required {...field} />
+              <FormLabel className="gap-x-0.5 peer-required:after:text-red-500 peer-required:after:content-['*']">
+                Name
+              </FormLabel>
               <FormMessage />
             </FormItem>
           )}
@@ -82,10 +80,15 @@ const Form: FunctionComponent<Props> = ({ className, ...props }) => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email*</FormLabel>
-              <FormControl>
-                <Input type="email" {...field} />
-              </FormControl>
+              <FormControl
+                type="email"
+                className="peer row-start-2"
+                required
+                {...field}
+              />
+              <FormLabel className="gap-x-0.5 peer-required:after:text-red-500 peer-required:after:content-['*']">
+                Email
+              </FormLabel>
               <FormMessage />
             </FormItem>
           )}
@@ -96,10 +99,10 @@ const Form: FunctionComponent<Props> = ({ className, ...props }) => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message*</FormLabel>
-              <FormControl>
-                <Textarea {...field} />
-              </FormControl>
+              <FormControl className="peer row-start-2" required {...field} />
+              <FormLabel className="gap-x-0.5 peer-required:after:text-red-500 peer-required:after:content-['*']">
+                Message
+              </FormLabel>
               <FormMessage />
             </FormItem>
           )}
