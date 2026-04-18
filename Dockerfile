@@ -16,8 +16,8 @@ ENV LEFTHOOK=0
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml ./
 
-RUN corepack enable pnpm
-RUN pnpm install --frozen-lockfile
+RUN corepack enable pnpm \
+  && pnpm install --frozen-lockfile
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -30,8 +30,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN corepack enable pnpm
-RUN pnpm run build
+RUN corepack enable pnpm \
+  && pnpm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
@@ -41,8 +41,11 @@ ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN addgroup --system --gid 1001 nodejs \
+  && adduser --system --uid 1001 nextjs
+
+RUN mkdir .next \
+  && chown nextjs:nodejs .next
 
 # COPY --from=builder /app/public ./public
 
