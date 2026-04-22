@@ -22,10 +22,7 @@ const Contact = () => (
       <p className="text-lg/relaxed text-gray-700">
         Thank you for getting in touch! We have received your message and will
         get back to you as soon as possible. Would you like to return to the{" "}
-        <Anchor asChild>
-          <Link href="/">homepage</Link>
-        </Anchor>
-        ?
+        <Anchor render={<Link href="/" />}>homepage</Anchor>?
       </p>
     </article>
   </Container>
