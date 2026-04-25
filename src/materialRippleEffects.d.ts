@@ -8,8 +8,8 @@ declare module "material-ripple-effects" {
   }
 
   class Ripple {
-    constructor(options?: RippleOptions);
-    create(event: MouseEvent<HTMLButtonElement>, color?: string): void;
+    public constructor(options?: RippleOptions);
+    public create(event: MouseEvent<HTMLButtonElement>, color?: string): void;
   }
 
   export default Ripple;
