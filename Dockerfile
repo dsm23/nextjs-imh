@@ -1,12 +1,14 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:2780b5c3bab67f1f76c781860de469442999ed1a0d7992a5efdf2cffc0e3d769
 
 FROM node:24.15.0-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f AS base
-
-# renovate: datasource=repology depName=alpine_3_22/gcompat versioning=loose
-ARG GCOMPAT_VERSION="1.1.0-r4"
+FROM dhi.io/node:24.15.0@sha256:c4db36449d7ad1a2e97a91750673da63212edd5a2ebd6fe458b381191e0c424e AS hardened
 
 # Install dependencies only when needed
 FROM base AS deps
+
+# renovate: datasource=repology depName=alpine_3_23/gcompat versioning=loose
+ARG GCOMPAT_VERSION="1.1.0-r4"
+
 # Check https://github.com/nodejs/docker-node/tree/4adafb930bf239b610fa37c4f691bbf98dd65578#nodealpine to understand why gcompat might be needed.
 RUN apk add --no-cache "gcompat=${GCOMPAT_VERSION}"
 WORKDIR /app
@@ -34,27 +36,18 @@ RUN corepack enable pnpm \
   && pnpm run build
 
 # Production image, copy all the files and run next
-FROM base AS runner
+FROM hardened AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
-
-RUN mkdir .next \
-  && chown nextjs:nodejs .next
-
-# COPY --from=builder /app/public ./public
-
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
+COPY --from=builder /app/.next/standalone/ ./
+COPY --from=builder /app/.next/static/ ./.next/static/
+# COPY --from=builder /app/public/ ./public/
 
 EXPOSE 3000
 
