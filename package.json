@@ -61,7 +61,7 @@
     "dotenv": "17.4.2",
     "eslint-plugin-better-tailwindcss": "4.4.1",
     "jsdom": "29.0.2",
-    "knip": "6.6.3",
+    "knip": "6.7.0",
     "lefthook": "2.1.6",
     "npm-run-all2": "8.0.4",
     "oxfmt": "0.46.0",
