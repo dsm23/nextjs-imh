@@ -51,8 +51,8 @@ importers:
         specifier: 19.2.5
         version: 19.2.5(react@19.2.5)
       react-email:
-        specifier: 6.0.1
-        version: 6.0.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 6.0.2
+        version: 6.0.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-hook-form:
         specifier: 7.74.0
         version: 7.74.0(react@19.2.5)
@@ -4302,8 +4302,8 @@ packages:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
     engines: {node: '>=18'}
 
-  nypm@0.6.5:
-    resolution: {integrity: sha512-K6AJy1GMVyfyMXRVB88700BJqNUkByijGJM8kEHpLdcAt+vSQAVfkWWHYzuRXHSY6xA2sNc5RjTj0p9rE2izVQ==}
+  nypm@0.6.6:
+    resolution: {integrity: sha512-vRyr0r4cbBapw07Xw8xrj9Teq3o7MUD35rSaTcanDbW+aK2XHDgJFiU6ZTj2GBw7Q12ysdsyFss+Vdz4hQ0Y6Q==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4587,8 +4587,8 @@ packages:
     peerDependencies:
       react: ^19.2.5
 
-  react-email@6.0.1:
-    resolution: {integrity: sha512-lDzTaqQcogOJ6aDCZVzo/oYVZOf/BjiP9xSvODPSyCI64BkPcGg4nd4pFwy9TSPnxWT/o5MjMlo2FsmHfn83pg==}
+  react-email@6.0.2:
+    resolution: {integrity: sha512-A1SXcnARZjmJveqeJU7Dvu7am2SNpkvzvLviHBZ+QB8QGfB4w5NpnngFONudXZthTy6Xb6k0O7HOlBiLDnLxRg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -9478,7 +9478,7 @@ snapshots:
       path-key: 4.0.0
       unicorn-magic: 0.3.0
 
-  nypm@0.6.5:
+  nypm@0.6.6:
     dependencies:
       citty: 0.2.2
       pathe: 2.0.3
@@ -9833,7 +9833,7 @@ snapshots:
       react: 19.2.5
       scheduler: 0.27.0
 
-  react-email@6.0.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-email@6.0.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@babel/parser': 7.27.0
       '@babel/traverse': 7.27.0
@@ -9850,7 +9850,7 @@ snapshots:
       marked: 15.0.12
       mime-types: 3.0.2
       normalize-path: 3.0.0
-      nypm: 0.6.5
+      nypm: 0.6.6
       ora: 8.2.0
       prismjs: 1.30.0
       prompts: 2.4.2
