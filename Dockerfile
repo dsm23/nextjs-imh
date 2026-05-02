@@ -46,6 +46,7 @@ ENV NODE_ENV=production
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder /app/.next/standalone/ ./
+COPY --from=builder /app/.next/cache/ ./.next/cache/
 COPY --from=builder /app/.next/static/ ./.next/static/
 # COPY --from=builder /app/public/ ./public/
 
@@ -53,14 +54,10 @@ EXPOSE 3000
 
 ENV PORT=3000
 
+HEALTHCHECK --start-interval=5s --start-period=5s \
+  CMD ["node", "--eval", "\"fetch('http://0.0.0.0:3000/api/health').then(r => process.exit(r.status === 200 ? 0 : 1))\""]
+
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
-
-HEALTHCHECK --interval=30s \
-  --timeout=10s \
-  --start-period=5s \
-  --retries=3 \
-  CMD node -e "fetch('http://0.0.0.0:3000/api/health').then(r => { if (r.status !== 200) process.exit(1) })"
-
 CMD ["node", "server.js"]
