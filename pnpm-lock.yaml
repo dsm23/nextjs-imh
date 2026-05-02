@@ -94,8 +94,8 @@ importers:
         specifier: 1.59.1
         version: 1.59.1
       '@react-email/ui':
-        specifier: 6.0.4
-        version: 6.0.4(@babel/core@7.29.0)(@playwright/test@1.59.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 6.0.5
+        version: 6.0.5(@babel/core@7.29.0)(@playwright/test@1.59.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@tailwindcss/postcss':
         specifier: 4.2.4
         version: 4.2.4
@@ -2107,8 +2107,8 @@ packages:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
       react-dom: ^18.0 || ^19.0 || ^19.0.0-rc
 
-  '@react-email/ui@6.0.4':
-    resolution: {integrity: sha512-AePeEH4naD/UKWuVDj7ICpVfkMJpcnBjB3rosIgK9zctx1jPmb9kV2K9r4OjMTONBrYWqVY5pjgyzU088ogv4Q==}
+  '@react-email/ui@6.0.5':
+    resolution: {integrity: sha512-5XvP8CxSJH1CxOCYUEubYFiTaOPjtxJqMBsN69+hHVYHGR9psYgIBnRA2MDDfK5LdoC9r+QovN0ZgBrLd+tduQ==}
 
   '@react-types/shared@3.34.0':
     resolution: {integrity: sha512-gp6xo/s2lX54AlTjOiqwDnxA7UW79BNvI9dB9pr3LZTzRKCd1ZA+ZbgKw/ReIiWuvvVw/8QFJpnqeeFyLocMcQ==}
@@ -7322,7 +7322,7 @@ snapshots:
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  '@react-email/ui@6.0.4(@babel/core@7.29.0)(@playwright/test@1.59.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@react-email/ui@6.0.5(@babel/core@7.29.0)(@playwright/test@1.59.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       esbuild: 0.28.0
       next: 16.2.3(@babel/core@7.29.0)(@playwright/test@1.59.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
