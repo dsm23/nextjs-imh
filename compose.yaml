@@ -1,0 +1,27 @@
+services:
+  web:
+    build:
+      context: .
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: .env
+        required: false
+      - path: .env.local
+        required: false
+      - path: .env.${NODE_ENV:-development}
+        required: false
+      - path: .env.${NODE_ENV:-development}.local
+        required: false
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - "--eval"
+        - '"fetch(''http://0.0.0.0:3000/api/health'').then(r => process.exit(r.status === 200 ? 0 : 1))"'
+      start_interval: 5s
+      start_period: 5s
