@@ -2,8 +2,12 @@
   "recommendations": [
     "bradlc.vscode-tailwindcss",
     "editorconfig.editorconfig",
+    "exiasr.hadolint",
+    "jasonnutter.vscode-codeowners",
     "joshbolduc.commitlint",
+    "ms-azuretools.vscode-containers",
     "ms-playwright.playwright",
+    "nefrob.vscode-just-syntax",
     "oxc.oxc-vscode",
     "stylelint.vscode-stylelint",
     "unifiedjs.vscode-mdx"
