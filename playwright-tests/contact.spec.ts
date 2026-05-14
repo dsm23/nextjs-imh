@@ -6,7 +6,7 @@ test("has title", async ({ browserName, page }) => {
 
   await page.goto("/contact");
 
-  await expect(page).toHaveTitle(/IMH | Contact/);
+  await expect(page).toHaveTitle(/IMH | Contact/v);
 });
 
 test("has heading", async ({ browserName, page }) => {
