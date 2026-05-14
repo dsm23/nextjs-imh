@@ -15,5 +15,6 @@ src/**/*.spec.[jt]sx
 !next.config.ts
 !package.json
 !pnpm-lock.yaml
+!pnpm-workspace.yaml
 !postcss.config.js
 !tsconfig.json

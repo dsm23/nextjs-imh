@@ -1,61 +1,54 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:2780b5c3bab67f1f76c781860de469442999ed1a0d7992a5efdf2cffc0e3d769
 
-FROM node:24.15.0-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f AS base
-FROM dhi.io/node:24.15.0@sha256:36c6a39aadb0d2d10180e0fb0e653966457480afc6b02b0669656757d5c8da5b AS hardened
+FROM ghcr.io/pnpm/pnpm:11.0.9@sha256:a48f87a9bec3c86956a1bc3165c6498aff076234d0a01e628bca98a0523c2a9a AS base
+FROM dhi.io/node:26.1.0-alpine3.23@sha256:89ba306d54a9025da2e7862ff22ae13a95d825a0e459217138242115dfc700a5 AS runtime
 
-# Install dependencies only when needed
+# renovate: datasource=docker depName=dhi.io/node
+ARG NODE_VERSION="26.1.0"
+
+# Stage 1: Install dependencies only when needed
 FROM base AS deps
 
-# renovate: datasource=repology depName=alpine_3_23/gcompat versioning=loose
-ARG GCOMPAT_VERSION="1.1.0-r4"
-
-# Check https://github.com/nodejs/docker-node/tree/4adafb930bf239b610fa37c4f691bbf98dd65578#nodealpine to understand why gcompat might be needed.
-RUN apk add --no-cache "gcompat=${GCOMPAT_VERSION}"
 WORKDIR /app
 
 ENV LEFTHOOK=0
 
-# Install dependencies based on the preferred package manager
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-RUN corepack enable pnpm \
-  && pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+  pnpm runtime set node "$NODE_VERSION" -g && pnpm install --frozen-lockfile
 
-# Rebuild the source code only when needed
+# Stage 2: Build stage
 FROM base AS builder
+
 WORKDIR /app
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED=1
-
-RUN corepack enable pnpm \
+RUN pnpm runtime set node "$NODE_VERSION" -g \
   && pnpm run build
 
-# Production image, copy all the files and run next
-FROM hardened AS runner
+# Stage 3: Production image
+FROM runtime
+
 WORKDIR /app
 
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
+# COPY --from=builder /app/public ./public
+
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder /app/.next/standalone/ ./
 COPY --from=builder /app/.next/cache/ ./.next/cache/
 COPY --from=builder /app/.next/static/ ./.next/static/
-# COPY --from=builder /app/public/ ./public/
 
 EXPOSE 3000
 
 ENV PORT=3000
-
-HEALTHCHECK --start-interval=5s --start-period=5s \
-  CMD ["node", "--eval", "\"fetch('http://0.0.0.0:3000/api/health').then(r => process.exit(r.status === 200 ? 0 : 1))\""]
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
