@@ -4,7 +4,7 @@ import { expect, test } from "@playwright/test";
 test("has title", async ({ page }) => {
   await page.goto("/about");
 
-  await expect(page).toHaveTitle(/IMH | About Us/);
+  await expect(page).toHaveTitle(/IMH | About Us/v);
 });
 
 test("has heading", async ({ page }) => {
