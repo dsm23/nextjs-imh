@@ -10,7 +10,6 @@ export default defineConfig({
     "react",
     "typescript",
     "unicorn",
-    "vitest",
   ],
   jsPlugins: ["eslint-plugin-better-tailwindcss"],
   categories: {
@@ -93,8 +92,6 @@ export default defineConfig({
         ignore: ["elevation", "toaster"],
       },
     ],
-    "jest/no-conditional-expect": "off",
-    "jest/no-conditional-in-test": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/anchor-has-content": "off",
     "jsx-a11y/heading-has-content": "off",
@@ -102,8 +99,7 @@ export default defineConfig({
     "oxc/no-rest-spread-properties": "off",
     "react/button-has-type": "off",
     "react/forbid-component-props": "off",
-    // TODO: remove when it supports tsx
-    "react/jsx-filename-extension": "off",
+    "react/jsx-filename-extension": ["warn", { extensions: ["jsx", "tsx"] }],
     "react/no-multi-comp": "off",
     "react/only-export-components": "off",
     // "react/only-export-components": [
@@ -159,21 +155,37 @@ export default defineConfig({
       },
     ],
     "unicorn/no-negated-condition": "off",
-    "vitest/consistent-vitest-vi": "warn",
-    "vitest/no-conditional-expect": "off",
-    "vitest/no-conditional-in-test": "off",
-    "vitest/no-importing-vitest-globals": "off",
-    "vitest/no-standalone-expect": [
-      "warn",
-      {
-        additionalTestBlockFunctions: ["fc.property"],
-      },
-    ],
-    "vitest/require-test-timeout": "off",
   },
   settings: {
     "better-tailwindcss": {
       entryPoint: "./src/styles/index.css",
     },
   },
+  overrides: [
+    {
+      files: [
+        "**/*.{spec,test}.{ts,tsx,js,jsx}",
+        "**/{spec,test}.{ts,tsx,js,jsx}",
+        "**/__tests__/**/*",
+      ],
+      rules: {
+        "jest/no-conditional-expect": "off",
+        "jest/no-conditional-in-test": "off",
+        "jsx-a11y/control-has-associated-label": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "vitest/consistent-vitest-vi": "warn",
+        "vitest/no-conditional-expect": "off",
+        "vitest/no-conditional-in-test": "off",
+        "vitest/no-importing-vitest-globals": "off",
+        "vitest/no-standalone-expect": [
+          "warn",
+          {
+            additionalTestBlockFunctions: ["fc.property"],
+          },
+        ],
+        "vitest/require-test-timeout": "off",
+      },
+      plugins: ["vitest"],
+    },
+  ],
 });
