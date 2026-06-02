@@ -3,7 +3,6 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
-import Ripple from "material-ripple-effects";
 import { Router } from "~/constants";
 import cn from "~/lib/class-names";
 import Hamburger from "../hamburger";
@@ -18,7 +17,6 @@ type State = "default" | "products" | "services" | "policies";
 // oxlint-disable-next-line max-lines-per-function
 const Navbar = () => {
   const id = useId();
-  const ripple = new Ripple();
 
   const [open, setOpen] = useState(false);
 
@@ -37,7 +35,6 @@ const Navbar = () => {
       <button
         className={styles.hamburger}
         onClick={toggle}
-        onMouseDown={(e) => ripple.create(e, "light")}
         aria-controls={id}
         aria-expanded={open}
       >
