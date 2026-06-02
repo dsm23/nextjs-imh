@@ -3,7 +3,6 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
-import { Router } from "~/constants";
 import cn from "~/lib/class-names";
 import Hamburger from "../hamburger";
 import Nav from "../nav";
@@ -28,7 +27,7 @@ const Navbar = () => {
 
   return (
     <Nav onClose={handleClose}>
-      <Link href={Router.Home} className={cn(styles.navLink, styles.navHome)}>
+      <Link href="/" className={cn(styles.navLink, styles.navHome)}>
         IMH
       </Link>
 
@@ -43,21 +42,21 @@ const Navbar = () => {
       </button>
       <div className="hidden md:flex">
         <Link
-          href={Router.About}
+          href="/about"
           className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
           About
         </Link>
         <Link
-          href={Router.Contact}
+          href="/contact"
           className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
           Contact
         </Link>
         <Link
-          href={Router.TechnicalHelp}
+          href="/technical-help"
           className={cn("block", styles.navLink)}
           onClick={handleClose}
         >
@@ -65,7 +64,7 @@ const Navbar = () => {
         </Link>
         <NavDropdown label="Policies">
           <Link
-            href={Router.InclusionPolicy}
+            href="/inclusion-policy"
             className={cn("block", styles.navLink)}
           >
             Inclusion Policy
@@ -73,25 +72,22 @@ const Navbar = () => {
         </NavDropdown>
         <NavDropdown label="Products and Services">
           <span className={cn("block", styles.navLink)}>Products</span>
-          <Link href={Router.Dent} className={cn("block", styles.navLink)}>
+          <Link href="/dent" className={cn("block", styles.navLink)}>
             Dent Instruments
           </Link>
-          <Link href={Router.Dranetz} className={cn("block", styles.navLink)}>
+          <Link href="/dranetz" className={cn("block", styles.navLink)}>
             Dranetz
           </Link>
-          <Link
-            href={Router.Electrotek}
-            className={cn("block", styles.navLink)}
-          >
+          <Link href="/electrotek" className={cn("block", styles.navLink)}>
             Electrotek Systems
           </Link>
-          <Link href={Router.Powerside} className={cn("block", styles.navLink)}>
+          <Link href="/powerside" className={cn("block", styles.navLink)}>
             Powerside
           </Link>
           <div className="mx-3 border-b-2 border-gray-200" />
           <span className={cn("block", styles.navLink)}>Services</span>
           <Link
-            href={Router.Consultancy}
+            href="/consulting-from-imh"
             className={cn("block", styles.navLink)}
           >
             Consultancy from IMH
@@ -128,21 +124,21 @@ const Navbar = () => {
                 >
                   <div className="overflow-hidden">
                     <Link
-                      href={Router.About}
+                      href="/about"
                       className={cn("block", styles.navLink)}
                       onClick={handleClose}
                     >
                       About
                     </Link>
                     <Link
-                      href={Router.Contact}
+                      href="/contact"
                       className={cn("block", styles.navLink)}
                       onClick={handleClose}
                     >
                       Contact
                     </Link>
                     <Link
-                      href={Router.TechnicalHelp}
+                      href="/technical-help"
                       className={cn("block", styles.navLink)}
                       onClick={handleClose}
                     >
@@ -151,7 +147,7 @@ const Navbar = () => {
 
                     <NavDropdown label="Policies">
                       <Link
-                        href={Router.InclusionPolicy}
+                        href="/inclusion-policy"
                         className={cn("block", styles.navLink)}
                       >
                         Inclusion Policy
@@ -162,25 +158,25 @@ const Navbar = () => {
                         Products
                       </span>
                       <Link
-                        href={Router.Dent}
+                        href="/dent"
                         className={cn("block", styles.navLink)}
                       >
                         Dent Instruments
                       </Link>
                       <Link
-                        href={Router.Dranetz}
+                        href="/dranetz"
                         className={cn("block", styles.navLink)}
                       >
                         Dranetz
                       </Link>
                       <Link
-                        href={Router.Electrotek}
+                        href="/electrotek"
                         className={cn("block", styles.navLink)}
                       >
                         Electrotek Systems
                       </Link>
                       <Link
-                        href={Router.Powerside}
+                        href="/powerside"
                         className={cn("block", styles.navLink)}
                       >
                         Powerside
@@ -190,7 +186,7 @@ const Navbar = () => {
                         Services
                       </span>
                       <Link
-                        href={Router.Consultancy}
+                        href="/consulting-from-imh"
                         className={cn("block", styles.navLink)}
                       >
                         Consultancy from IMH
@@ -255,7 +251,7 @@ const Navbar = () => {
                     Go Back
                   </button>
                   <Link
-                    href={Router.InclusionPolicy}
+                    href="/inclusion-policy"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
@@ -282,28 +278,28 @@ const Navbar = () => {
                     Go Back
                   </button>
                   <Link
-                    href={Router.Dent}
+                    href="/dent"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
                     Dent Instruments
                   </Link>
                   <Link
-                    href={Router.Dranetz}
+                    href="/dranetz"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
                     Dranetz
                   </Link>
                   <Link
-                    href={Router.Electrotek}
+                    href="/electrotek"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
                     Electrotek Systems
                   </Link>
                   <Link
-                    href={Router.Powerside}
+                    href="/powerside"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
@@ -330,7 +326,7 @@ const Navbar = () => {
                     Go Back
                   </button>
                   <Link
-                    href={Router.Consultancy}
+                    href="/consulting-from-imh"
                     className={cn("block", styles.navLink)}
                     onClick={handleClose}
                   >
