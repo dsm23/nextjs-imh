@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: "standalone",
+  productionBrowserSourceMaps: true,
+
+  typedRoutes: true,
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -9,8 +13,6 @@ const nextConfig: NextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  output: "standalone",
-  productionBrowserSourceMaps: true,
   rewrites() {
     return [
       { source: "/healthz", destination: "/api/health" },
