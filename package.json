@@ -39,7 +39,7 @@
     "swetrix": "4.4.0",
     "tailwind-merge": "3.6.0",
     "typed-query-selector": "2.12.2",
-    "valibot": "1.4.1"
+    "valibot": "1.4.2"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
